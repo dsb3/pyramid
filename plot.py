@@ -62,7 +62,6 @@ validgrades = ["6", "7", "8", "9",
 
 ticks = {} 
 newest = {}
-highest = {}
 
 
 # Pre-populate our ticks data structure with data
@@ -118,10 +117,6 @@ for rope in ticks.keys():
   for grade in ticks[rope].keys():
     ticks[rope][grade].sort(reverse=1)
 
-  # Save max grade for each rope type
-  # - take the keys (grades) for this rope, and sort them by comparing the
-  #   relative index inside validgrades, then save the last element
-  highest[rope] = sorted( ticks[rope].keys(), cmp=lambda x,y:cmp(validgrades.index(x), validgrades.index(y)))[-1]
 
 
 # CSV data is now loaded into struct.
