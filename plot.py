@@ -1,8 +1,14 @@
 #!/bin/env python2
 #
-# Plot Horst training pyramids for "ticks.csv" in current directory
+# Generate Horst training pyramids
+#
+# Graphs Top Rope, Lead, Down Climb, Down Lead (or others)
+# Reads from $1 (default to "ticks.csv" in current directory)
+#
 #
 
+
+import sys
 import re
 import csv
 
@@ -80,7 +86,16 @@ for rope in validrope:
     ticks[rope][grade] = []
 
 
-with open('ticks.csv', 'rb') as csvfile:
+
+# Handle input file as first arg, or default to "./ticks.csv"
+# TODO: make sure file exists
+infile="./ticks.csv"
+
+if len(sys.argv) > 1:
+  infile=sys.argv[1]
+
+
+with open(infile, 'rb') as csvfile:
   csvfile = csv.reader(csvfile)
   for row in csvfile:
     # Need at least four elements
@@ -339,8 +354,8 @@ for gradei in reversed(range( 3, len(validgrades))):
   # - full pyramid of ticks means we stop printing more
   # - or, after two full pyramids of ticks with overflow we stop
   #
-  # TODO: if our pyramid contains ONLY overflow *AND* there aren't 
-  #       any actual ticks at a lower grade, then stop.
+  # TODO: if the last row in the pyramid contains ONLY overflow *AND*
+  #       there aren't any actual ticks at a lower grade, then stop.
   #
   # TODO: if our pyramid shows the end of our last real ticks,
   #       then stop faster than otherwise to avoid just showing
@@ -358,8 +373,8 @@ for gradei in reversed(range( 3, len(validgrades))):
 
 
 
-  # TODO: scan the ticks data to avoid printing if there is
-  #       *NO* data for a rope.  E.g. TR only data
+  # Did we stop printing for all ropes?  If so, exit our
+  # main loop and stop.
   keep_printing=0
   for r in print_for.keys():
     if print_for[r] > 0 or print_for[r] == -1000: 
@@ -368,5 +383,6 @@ for gradei in reversed(range( 3, len(validgrades))):
   # break out of the for loop, and exit
   if not keep_printing:
     break
+
 
 
