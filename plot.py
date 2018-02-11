@@ -354,12 +354,8 @@ for gradei in reversed(range( 3, len(validgrades))):
   # - full pyramid of ticks means we stop printing more
   # - or, after two full pyramids of ticks with overflow we stop
   #
-  # TODO: if the last row in the pyramid contains ONLY overflow *AND*
-  #       there aren't any actual ticks at a lower grade, then stop.
-  #
-  # TODO: if our pyramid shows the end of our last real ticks,
-  #       then stop faster than otherwise to avoid just showing
-  #       ticks and overflow for more time
+  # - if the last row in this pyramid contains ONLY overflow ticks
+  #   and there aren't real ticks below, then stop very aggressively
   #
   for rope in usedrope:
     nticks = sum( pyr[rope]["filled"] )
@@ -371,6 +367,20 @@ for gradei in reversed(range( 3, len(validgrades))):
     if nticks + nflows >= 15:
       print_for[rope] -= 1
 
+    # Count any ticks that are below the last row.  If there are any
+    # then keep printing pyramids.  If there are none then we stop
+    # at least when the last row is all overflow.
+    ticksbelow=0
+    i = gradei-4
+    while i >= 0:
+      ticksbelow += len( ticks[rope][ (validgrades[i]) ] )
+      i -= 1
+
+    # no ticks below, and fourth row is fully "flow" ticks, then stop
+    # very aggressively.
+    # TODO: unify these steps, and thresholds
+    if ticksbelow == 0 and pyr[rope]["flowed"][3] == 8:
+      print_for[rope] -= 10
 
 
   # Did we stop printing for all ropes?  If so, exit our
