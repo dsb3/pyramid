@@ -1,0 +1,48 @@
+
+ gr( ##)     Pyramid for Top Rope 11c                                               
+11c(  0)               [ ]                                                          
+11b(  1)             [X] [ ]                                                        
+11a(  1)         [X] [ ] [ ] [ ]                                                    
+10d(  2) [X] [X] [ ] [ ] [ ] [ ] [ ] [ ]                                            
+
+ gr( ##)     Pyramid for Top Rope 11b                                               
+11b(  1)               [X]                                                          
+11a(  1)             [X] [ ]                                                        
+10d(  2)         [X] [X] [ ] [ ]                                                    
+10c( 12) [X] [X] [X] [X] [X] [X] [X] [X]                                            
+
+ gr( ##)     Pyramid for Top Rope 11a                                               
+11a(  1)               [X]                                                          
+10d(  2)             [X] [X]                                                        
+10c( 12)         [X] [X] [X] [X]                                                    
+10b( 12) [X] [X] [X] [X] [X] [X] [X] [X]                                            
+
+ gr( ##)     Pyramid for Top Rope 10d                                               
+10d(  2)               [X]                                                          
+10c( 12)             [X] [X]                                                        
+10b( 12)         [X] [X] [X] [X]                                                    
+10a(  7) [X] [X] [X] [X] [X] [X] [X] [+]                                            
+
+ gr( ##)     Pyramid for Top Rope 10c       gr( ##)       Pyramid for Lead 10c       
+10c( 12)               [X]                 10c(  0)               [ ]                 
+10b( 12)             [X] [X]               10b(  4)             [X] [X]               
+10a(  7)         [X] [X] [X] [X]           10a(  1)         [X] [+] [+] [ ]           
+  9( 12) [X] [X] [X] [X] [X] [X] [X] [X]     9(  6) [X] [X] [X] [X] [X] [X] [ ] [ ]   
+
+ gr( ##)     Pyramid for Top Rope 10b       gr( ##)       Pyramid for Lead 10b       
+10b( 12)               [X]                 10b(  4)               [X]                 
+10a(  7)             [X] [X]               10a(  1)             [X] [+]               
+  9( 12)         [X] [X] [X] [X]             9(  6)         [X] [X] [X] [X]           
+  8(  3) [X] [X] [X] [+] [+] [+] [+] [+]     8(  5) [X] [X] [X] [X] [X] [+] [+] [+]   
+
+ gr( ##)     Pyramid for Top Rope 10a       gr( ##)       Pyramid for Lead 10a       
+10a(  7)               [X]                 10a(  1)               [X]                 
+  9( 12)             [X] [X]                 9(  6)             [X] [X]               
+  8(  3)         [X] [X] [X] [+]             8(  5)         [X] [X] [X] [X]           
+  7(  1) [X] [+] [+] [+] [+] [+] [+] [+]     7(  1) [X] [+] [+] [+] [+] [+] [+] [+]   
+
+ gr( ##)      Pyramid for Top Rope 9        gr( ##)        Pyramid for Lead 9        
+  9( 12)               [X]                   9(  6)               [X]                 
+  8(  3)             [X] [X]                 8(  5)             [X] [X]               
+  7(  1)         [X] [+] [+] [+]             7(  1)         [X] [+] [+] [+]           
+  6(  0) [+] [+] [+] [+] [+] [+] [+] [+]     6(  0) [+] [+] [+] [+] [+] [+] [+] [+]   
