@@ -124,30 +124,25 @@ for rope in ticks.keys():
     ticks[rope][grade].sort(reverse=1)
 
 
-print "DEBUG"
-print ticks
-print newest
+# print "DEBUG"
+# print ticks
+# print newest
 
 # With data set loaded, we can now trim validrope (all rope types
 # we understand) into usedrope (all rope types that we've used)
 # for outputting.  This way we don't wait to display a rope that
 # doesn't appear in the dataset.
 
-print "validrope", validrope
-
-# take a COPY 
+# use a full slice to take a copy of the original (in the same order)
 usedrope = validrope[:]
 
 # delete any that didn't get their newest flag updated
 for rope in validrope:
-  print "Considering %s with newest %s" % (rope, newest[rope])
   if newest[rope] == "2000-00-00":
-    print "Removing", rope
     usedrope.remove(rope)
 
 
-print "validrope", validrope
-print "usedrope", usedrope
+
 
 # CSV data is now loaded into structure, ready to graph.
 
@@ -343,6 +338,13 @@ for gradei in reversed(range( 3, len(validgrades))):
   # analyse row just printed for each rope
   # - full pyramid of ticks means we stop printing more
   # - or, after two full pyramids of ticks with overflow we stop
+  #
+  # TODO: if our pyramid contains ONLY overflow *AND* there aren't 
+  #       any actual ticks at a lower grade, then stop.
+  #
+  # TODO: if our pyramid shows the end of our last real ticks,
+  #       then stop faster than otherwise to avoid just showing
+  #       ticks and overflow for more time
   #
   for rope in usedrope:
     nticks = sum( pyr[rope]["filled"] )
