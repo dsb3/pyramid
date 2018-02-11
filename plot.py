@@ -60,8 +60,12 @@ validgrades = ["6", "7", "8", "9",
               ]
 
 
+# ticks data structure - this drives the graph output below
 ticks = {} 
+
+# newest tick - for future use only
 newest = {}
+
 
 
 # Pre-populate our ticks data structure with data
@@ -119,7 +123,7 @@ for rope in ticks.keys():
 
 
 
-# CSV data is now loaded into struct.
+# CSV data is now loaded into structure, ready to graph.
 
 
 
@@ -128,8 +132,6 @@ for rope in ticks.keys():
 # TODO: look at SVG output to be interactive
 
 # Output format
-#
-# LEAD              ---- TOPROPE           ---- ...
 #
 # highestgrade + 1
 #               [ ]                  ...
@@ -146,14 +148,32 @@ for rope in ticks.keys():
 # ...
 # ...
 #
+# Each vertical strip is rope (TR, L) generated separately but
+# aligned by grades.
+#
+# The separation of pyramids is an indication of TR discrepancy.
+#
+# Ticks at each grade are [X]
+# Overflow where excess climbs are cascaded down are [+]
+# Empty boxes are [ ]
+#
+#
+# TODO: for graphics output, graphical distinction for RP, F, OS.
+#       for graphics, shade distinction for newer vs older ticks
+#       e.g. ticks > 3 mo are bright, > 6 mo are dimmer, > 9 are
+#       very faint, and > 12 are grey and look empty
+#
 # Each vertical strip is generated separately.  I want these to line
-# up horizontall, -- the separation between them being an indication of
+# up horizontally, -- the separation between them being an indication of
 # lead to tr discrepancy.
 
 # Overfull grades flow down to empty holes below
 
-# SVG dynamic slider -- slide RE/ RP/ F/ OS
 
+# TODO:
+# - dynamic graphical output with slider (SVG/javascript can do this?)
+#   to show cumulative data RE + RP + F + OS, or RP + F+ OS, or ....
+#
 
 
 # First draft -- Print text output
@@ -178,34 +198,41 @@ for rope in ticks.keys():
 # 
 
 
+print_row=0
+print_for={}
+
+# defaults to zero
+for rope in validrope:
+  print_for[rope]=-1000   # flag never seen
+
+
 # Pyramid is 4 rows high, so can't start below 4th rung
 #
 # We need grade as an index into validgrades more often than we need "grade",
 # the textual equivalent
 
-print_for={}
-
 for gradei in reversed(range( 3, len(validgrades))):
   grade=validgrades[gradei]
 
-  # for this row, do I print anything?
-  print_row=0
-
-  # if I need to print for either rope, we output on both
+  # From top down, when I find data for either rope, I start printing all
   for rope in validrope:
-    if len( ticks[rope][validgrades[gradei-1]]) > 0 or len( ticks[rope][validgrades[gradei]]) > 0:
-      print_row = 1
-      print_for[rope] = 1
-    else:
-      print_for[rope] = 0
+    # only look to start if we've not already done so - this lets decrementing
+    # print_for allow us to stop printing rows
+    if not print_row:
+      if len( ticks[rope][validgrades[gradei-1]]) > 0 or len( ticks[rope][validgrades[gradei]]) > 0:
+        print_row = 1
 
-  # nothing yet?  continue on next grade
+    # Separately flag to start printing this rope type, if we've not seen it yet
+    if print_for[rope] <= -1000:
+      if len( ticks[rope][validgrades[gradei-1]]) > 0 or len( ticks[rope][validgrades[gradei]]) > 0:
+        # starting number is how aggressively we stop printing pyramids.
+        # -= 3 on any pyrs with all [X]; -= 1 with all [X] or [+]
+        print_for[rope] = 4  # xxx 3
+
+
+  # Nothing found yet?  Or both sets ended, then skip this grade
   if not print_row:
     continue
-
-  # TODO:
-  # Handle unusual case of missing rows in the middle of the data set.
-
 
 
   # gather row data for validropes.
@@ -254,12 +281,12 @@ for gradei in reversed(range( 3, len(validgrades))):
   # Header, if we have data in the top two rows
   print
   for rope in validrope:
-    if pyr[rope]["filled"][:2] == [0, 0]:
-      header=""
-      print "         {:^32}".format(header),
-    else:
+    if print_for[rope] > 0:
       header="Pyramid for %s %s" % ( abbrev[rope], grade)
       print " gr( ##) {:^32} ".format(header),
+    else:
+      header=""
+      print "         {:^32}".format(header),
   print
 
   # print pyramid, row by row
@@ -272,18 +299,46 @@ for gradei in reversed(range( 3, len(validgrades))):
       # empty=0
 
       # we might not be printing 
-      if pyr[rope]["filled"][:2] == [0, 0]:
-        boxes=""
-      else:
+      if print_for[rope] > 0:
         boxes="[X] "*filled + "[+] "*flowed + "[ ] "*empty
+      else:
+        boxes=""
 
       # Squelch row prefix if not printing
-      if pyr[rope]["filled"][:2] == [0, 0]:
-        row_prefix=""
-      else:
+      if print_for[rope] > 0:
         row_prefix="{:>3}({:3})".format( validgrades[gradei-i], len( ticks[rope][ validgrades[gradei-i] ] ) )
+      else:
+        row_prefix=""
       
       print "{:6} {:^32} ".format( row_prefix, boxes ), 
     print ""
+
+
+  # analyse row just printed for each rope
+  # - full pyramid of ticks means we stop printing more
+  # - or, after two full pyramids of ticks with overflow we stop
+  #
+  for rope in validrope:
+    nticks = sum( pyr[rope]["filled"] )
+    nflows = sum( pyr[rope]["flowed"][:4] )   # discard overflow
+
+    if nticks >= 15:
+      print_for[rope] -= 2     # -3 since it also counts below
+
+    if nticks + nflows >= 15:
+      print_for[rope] -= 1
+
+
+
+  # TODO: scan the ticks data to avoid printing if there is
+  #       *NO* data for a rope.  E.g. TR only data
+  keep_printing=0
+  for r in print_for.keys():
+    if print_for[r] > 0 or print_for[r] == -1000: 
+      keep_printing=1
+
+  # break out of the for loop, and exit
+  if not keep_printing:
+    break
 
 
