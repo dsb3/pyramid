@@ -307,18 +307,12 @@ for gradei in reversed(range( 3, len(validgrades))):
 
 
 
-  # TODO:
-  # - if pyramid is full of ticks, stop printing this rope type after one full card
-  # - if pyramid is full of ticks/overflow, stop printing after TWO full cards
-  # If either match, then below either print blank spot (blank one rope type) or
-  # stop processing (blank all rope types)
-
-
   # Header, if we have data in the top two rows
   print
   for rope in usedrope:
     if print_for[rope] > 0:
-      header="Pyramid for %s %s" % ( abbrev[rope], grade)
+      # TODO: update header again when updating for boulder grades
+      header="Pyramid for %s 5.%s" % ( abbrev[rope], grade)
       print " gr( ##) {:^32} ".format(header),
     else:
       header=""
@@ -346,7 +340,7 @@ for gradei in reversed(range( 3, len(validgrades))):
       else:
         row_prefix=""
       
-      print "{:6} {:^32} ".format( row_prefix, boxes ), 
+      print "{:7} {:^32} ".format( row_prefix, boxes ), 
     print ""
 
 
