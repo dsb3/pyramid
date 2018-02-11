@@ -39,6 +39,8 @@ from datetime import datetime
 
 abbrev     = { "L":  "Lead", 
                "TR": "Top Rope",
+               "DC": "Down Climb",
+               "DL": "Down Lead",
                "OS": "Onsight",
                "F":  "Flash",
                "RP": "Redpoint",
@@ -49,10 +51,10 @@ abbrev     = { "L":  "Lead",
              }
 
 
-validrope   = ['TR', 'L']
+validrope   = ['TR', 'L', 'DC', 'DL']
 validascent = ['OS', 'F', 'RP']
 
-validgrades = ["6", "7", "8", "9",
+validgrades = ["5", "6", "7", "8", "9",
                "10a", "10b", "10c", "10d",
                "11a", "11b", "11c", "11d",
                "12a", "12b", "12c", "12d",
@@ -122,6 +124,30 @@ for rope in ticks.keys():
     ticks[rope][grade].sort(reverse=1)
 
 
+print "DEBUG"
+print ticks
+print newest
+
+# With data set loaded, we can now trim validrope (all rope types
+# we understand) into usedrope (all rope types that we've used)
+# for outputting.  This way we don't wait to display a rope that
+# doesn't appear in the dataset.
+
+print "validrope", validrope
+
+# take a COPY 
+usedrope = validrope[:]
+
+# delete any that didn't get their newest flag updated
+for rope in validrope:
+  print "Considering %s with newest %s" % (rope, newest[rope])
+  if newest[rope] == "2000-00-00":
+    print "Removing", rope
+    usedrope.remove(rope)
+
+
+print "validrope", validrope
+print "usedrope", usedrope
 
 # CSV data is now loaded into structure, ready to graph.
 
@@ -202,7 +228,7 @@ print_row=0
 print_for={}
 
 # defaults to zero
-for rope in validrope:
+for rope in usedrope:
   print_for[rope]=-1000   # flag never seen
 
 
@@ -215,7 +241,7 @@ for gradei in reversed(range( 3, len(validgrades))):
   grade=validgrades[gradei]
 
   # From top down, when I find data for either rope, I start printing all
-  for rope in validrope:
+  for rope in usedrope:
     # only look to start if we've not already done so - this lets decrementing
     # print_for allow us to stop printing rows
     if not print_row:
@@ -235,9 +261,9 @@ for gradei in reversed(range( 3, len(validgrades))):
     continue
 
 
-  # gather row data for validropes.
+  # gather row data for usedrope.
   pyr={}
-  for rope in validrope:
+  for rope in usedrope:
     pyr[rope]={}
     pyr[rope]["filled"]=[0, 0, 0, 0]      # empty four row pyramid for ticks
     pyr[rope]["flowed"]=[0, 0, 0, 0, 0]   # empty four row pyramid for surplus flowed from above, with unused fifth row var
@@ -280,7 +306,7 @@ for gradei in reversed(range( 3, len(validgrades))):
 
   # Header, if we have data in the top two rows
   print
-  for rope in validrope:
+  for rope in usedrope:
     if print_for[rope] > 0:
       header="Pyramid for %s %s" % ( abbrev[rope], grade)
       print " gr( ##) {:^32} ".format(header),
@@ -292,7 +318,7 @@ for gradei in reversed(range( 3, len(validgrades))):
   # print pyramid, row by row
   for i in range(0, 4):
     # row length is 1, 2, 4, 8 (or 2**j)
-    for rope in validrope:
+    for rope in usedrope:
       filled=pyr[rope]["filled"][i]
       flowed=pyr[rope]["flowed"][i]
       empty=pyr[rope]["empty"][i]
@@ -318,7 +344,7 @@ for gradei in reversed(range( 3, len(validgrades))):
   # - full pyramid of ticks means we stop printing more
   # - or, after two full pyramids of ticks with overflow we stop
   #
-  for rope in validrope:
+  for rope in usedrope:
     nticks = sum( pyr[rope]["filled"] )
     nflows = sum( pyr[rope]["flowed"][:4] )   # discard overflow
 
