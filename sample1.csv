@@ -1,3 +1,6 @@
+# Sample data set showing widely spaced, sparse data
+# to demonstrate empty pyramids being generated between
+# areas of tick population
 Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-01,12d,TR,OS,
 2018-01-02,11d,L,OS,
