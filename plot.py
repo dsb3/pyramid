@@ -6,6 +6,15 @@
 # Reads from $1 (default to "ticks.csv" in current directory)
 #
 #
+# INPUT FILE -- expected data structure is CSV format with
+# headers.
+#
+# Headers are expected to be:
+# Date, Grade, Rope, Attempt, with anything else ignored.
+#
+# If Rope is not set we use a generic "Cx" for "Climbing"
+# If Ascent is not set we use "RP" to assume redpoint
+#
 
 
 import sys
@@ -47,6 +56,7 @@ abbrev     = { "L":  "Lead",
                "TR": "Top Rope",
                "DC": "Down Climb",
                "DL": "Down Lead",
+               "Cx": "Climbing",  # Generic term for when rope isn't specified
                "OS": "Onsight",
                "F":  "Flash",
                "RP": "Redpoint",
@@ -57,7 +67,7 @@ abbrev     = { "L":  "Lead",
              }
 
 
-validrope   = ['TR', 'L', 'DC', 'DL']
+validrope   = ['TR', 'L', 'DC', 'DL', 'Cx']
 validascent = ['OS', 'F', 'RP']
 
 validgrades = ["5", "6", "7", "8", "9",
@@ -95,40 +105,77 @@ if len(sys.argv) > 1:
   infile=sys.argv[1]
 
 
-with open(infile, 'rb') as csvfile:
-  csvfile = csv.reader(csvfile)
-  for row in csvfile:
-    # Need at least four elements
-    if len(row) < 4:
-      continue
+# Default header values to look for
+header_fields = { }
+first_row = 1
 
-    # extract data
-    (date, grade, rope, ascent) = row[:4]
+# Open file
+csvfile = csv.DictReader(open(infile))
+for row in csvfile:
 
-    # ensure valid date (also strips header lines)
-    if not re.match("^20\d\d-\d\d-\d\d$", date):
-      continue
+  # Examine headers to try to auto-detect and adapt to variations.
+  # TODO: this whole thing could be a lambda function
+  #
+  if first_row:
+    for k in ["Date", "date"]:
+      if k in row.keys():
+        header_fields["date"] = k
+        break
+    for k in ["Grade", "grade"]:
+      if k in row.keys():
+        header_fields["grade"] = k
+        break
+    for k in ["Rope", "rope"]:
+      if k in row.keys():
+        header_fields["rope"] = k
+        break
+    for k in ["Ascent", "ascent", "Attempt", "attempt"]:
+      if k in row.keys():
+        header_fields["ascent"] = k
+        break
+    first_row=0
 
-    # Brief attempts to map entered grades into canonical grades.
-    # - drop and ignore any -/+ suffix
-    # - drop and ignore any /x suffix (e.g. 11a/b -> 11a)
-    # - TODO: map naked 10 grade into 10b or 10c or ??
-    grade = re.sub('[-+]$', '', grade)   # 8+    -> 8
-    grade = re.sub('(1[0-5][abcd])/[abcd]$', '\\1', grade)    # 11a/b -> 11a
+
+  # These two are mandatory
+  (date, grade) = (row[ header_fields["date"] ], row[ header_fields["grade"] ])
+
+  # Default values for these two
+  try:
+    rope = row[ header_fields["rope"] ]
+  except KeyError:
+    rope = "Cx"
+
+  try:
+    ascent = row[ header_fields["ascent"] ]
+  except KeyError:
+    ascent = "RP"
 
 
-    # only include valid data items
-    if rope not in validrope or ascent not in validascent or grade not in validgrades:
-      continue
 
-    # Save newest tick seen for rope type for aging ticks
-    if newest[rope] < date:
-      newest[rope] = date
+  # ensure valid date (also strips header lines)
+  if not re.match("^20\d\d-\d\d-\d\d$", date):
+    continue
+
+  # Brief attempts to map entered grades into canonical grades.
+  # - drop and ignore any -/+ suffix
+  # - drop and ignore any /x suffix (e.g. 11a/b -> 11a)
+  # - TODO: map naked 10 grade into 10b or 10c or ??
+  grade = re.sub('[-+]$', '', grade)   # 8+    -> 8
+  grade = re.sub('(1[0-5][abcd])/[abcd]$', '\\1', grade)    # 11a/b -> 11a
+
+
+  # only include valid data items
+  if rope not in validrope or ascent not in validascent or grade not in validgrades:
+    continue
+
+  # Save newest tick seen for rope type for aging ticks
+  if newest[rope] < date:
+    newest[rope] = date
  
-    # Append dates
-    ticks[rope][grade].append(date)
+  # Append dates
+  ticks[rope][grade].append(date)
 
-    # TODO: append "attempt" dates to annotate graph
+  # TODO: append "attempt" dates to annotate graph
 
 
 
