@@ -1,0 +1,11 @@
+[packages]
+
+sys = "*"
+re = "*"
+csv = "*"
+django-heroku = "*"
+
+
+[requires]
+python_version = "2.7"
+
