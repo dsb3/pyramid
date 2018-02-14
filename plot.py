@@ -1,4 +1,4 @@
-#!/bin/env python2
+#!/bin/env python3
 #
 # Generate Horst training pyramids
 #
@@ -355,16 +355,16 @@ for gradei in reversed(range( 3, len(validgrades))):
 
 
   # Header, if we have data in the top two rows
-  print
+  print ("")
   for rope in usedrope:
     if print_for[rope] > 0:
       # TODO: update header again when updating for boulder grades
       header="Pyramid for %s 5.%s" % ( abbrev[rope], grade)
-      print " gr( ##) {:^32} ".format(header),
+      print (" gr( ##) {:^32} ".format(header), end=" ")
     else:
       header=""
-      print "         {:^32}".format(header),
-  print
+      print ("         {:^32} ".format(header), end=" ")
+  print ("")
 
   # print pyramid, row by row
   for i in range(0, 4):
@@ -387,8 +387,8 @@ for gradei in reversed(range( 3, len(validgrades))):
       else:
         row_prefix=""
       
-      print "{:7} {:^32} ".format( row_prefix, boxes ), 
-    print ""
+      print ("{:8} {:^32} ".format( row_prefix, boxes ), end=" ")
+    print ("")
 
 
   # analyse row just printed for each rope
