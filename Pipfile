@@ -1,8 +1,8 @@
 [packages]
 
-#sys = "*"
-#re = "*"
-#csv = "*"
+django = "*"
+gunicorn = "*"
+
 #django-heroku = "*"
 
 
