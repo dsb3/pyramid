@@ -1,11 +1,11 @@
 [packages]
 
-sys = "*"
-re = "*"
-csv = "*"
-django-heroku = "*"
+#sys = "*"
+#re = "*"
+#csv = "*"
+#django-heroku = "*"
 
 
 [requires]
-python_version = "2.7"
+python_version = "3.6.4"
 
