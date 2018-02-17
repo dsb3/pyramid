@@ -16,7 +16,6 @@
 # If Ascent is not set we use "RP" to assume redpoint
 #
 
-
 import sys
 import re
 import csv
@@ -70,13 +69,36 @@ abbrev     = { "L":  "Lead",
 validrope   = ['TR', 'L', 'DC', 'DL', 'Cx']
 validascent = ['OS', 'F', 'RP']
 
-validgrades = ["5", "6", "7", "8", "9",
+# Set this to pyramid without RP
+# validascent = ['OS', 'F']
+
+validyds = ["5", "6", "7", "8", "9",
                "10a", "10b", "10c", "10d",
                "11a", "11b", "11c", "11d",
                "12a", "12b", "12c", "12d",
                "13a", "13b", "13c", "13d"
               ]
 
+# Bouldering grades
+validboulder = [ "VB", "V0", "V1", "V2", "V3",
+                 "V4", "V5", "V6", "V7", "V8",
+                 "V9", "V10", "V11", "V12" ]
+
+# S.A., Oz.
+validewbank = [ "10", "11", "12", "13", "14",
+                "15", "16", "17", "18", "19",
+                "20", "21", "22", "23", "24",
+                "25", "26", "27", "28", "29" ]
+
+# Font -- scales do not correlate for roped/boulders
+validfont = [ "3", "4", "5", "6a", "6a+", "6b",
+              "6b+", "6c", "6c+", "7a", "7a+",
+              "7b", "7b+", "7c", "7c+", "8a" ]
+ 
+
+# default to YDS
+# TODO: auto-detect, or manual select grading scheme
+validgrades = validyds
 
 # ticks data structure - this drives the graph output below
 ticks = {} 
@@ -199,6 +221,7 @@ for rope in ticks.keys():
 usedrope = validrope[:]
 
 # delete any that didn't get their newest flag updated
+# TODO: resort usedrope in order of highest tick
 for rope in validrope:
   if newest[rope] == "2000-00-00":
     usedrope.remove(rope)
