@@ -1,1 +1,1 @@
-web: gunicorn webgraphs.wsgi
+web: gunicorn wsgi
