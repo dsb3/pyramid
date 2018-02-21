@@ -31,7 +31,7 @@ def example1(plotfor):
 
 
 @application.route('/plot/<regex("[A-Za-z]+(.csv)?"):plotfor>/<showfor>/')
-def example2(infile, show):
+def example2(plotfor, showfor):
     ctype = "text/plain"
     data = text_pyramid(file = plotfor, show=showfor)
     return Response(data, mimetype=ctype)
