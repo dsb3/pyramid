@@ -26,11 +26,19 @@ def hello():
 def favicon():
     # Send a different favicon for regular or "L"ocalhost use.
     ico = "favicon.ico"
-    if "localhost" in request.host or "127.0.0.1" in request.host:
+    if "localhost" in request.host or "127.0.0.1" in request.host or "0.0.0.0" in request.host:
       ico = "favicon.L.ico"
     return send_from_directory(os.path.join(application.root_path, 'static'),
                                ico, mimetype='image/vnd.microsoft.icon')
 
+#########
+
+@application.route('/robots.txt')
+def robotstxt():
+    return send_from_directory(os.path.join(application.root_path, 'static'),
+                               "robots.txt", mimetype='text/plain')
+
+#########
 
 @application.route('/plot/<regex("[A-Za-z]+(.csv)?"):plotfor>/')
 def example1(plotfor):
