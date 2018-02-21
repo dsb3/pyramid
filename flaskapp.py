@@ -1,7 +1,7 @@
 #!/bin/env python
 
 import os
-from flask import Flask, Response, send_from_directory
+from flask import Flask, Response, request, send_from_directory
 from werkzeug.routing import BaseConverter
 
 # text graph creator
@@ -24,8 +24,12 @@ def hello():
 
 @application.route('/favicon.ico')
 def favicon():
+    # Send a different favicon for regular or "L"ocalhost use.
+    ico = "favicon.ico"
+    if "localhost" in request.host or "127.0.0.1" in request.host:
+      ico = "favicon.L.ico"
     return send_from_directory(os.path.join(application.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+                               ico, mimetype='image/vnd.microsoft.icon')
 
 
 @application.route('/plot/<regex("[A-Za-z]+(.csv)?"):plotfor>/')
