@@ -1,7 +1,7 @@
 #!/bin/env python
 
 import os
-from flask import Flask, Response, request, send_from_directory
+from flask import Flask, Response, redirect, request, send_from_directory
 from werkzeug.routing import BaseConverter
 
 # text graph creator
@@ -20,7 +20,7 @@ application.url_map.converters['regex'] = RegexConverter
 
 @application.route("/")
 def hello():
-    return "<h1 style='color:blue'>Hello There!</h1>"
+    return redirect("/plot/ticks.csv/", code=302)
 
 @application.route('/favicon.ico')
 def favicon():
