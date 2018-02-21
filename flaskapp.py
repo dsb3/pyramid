@@ -27,13 +27,14 @@ def hello():
 def example1(plotfor):
     ctype = "text/plain"
     data = text_pyramid(file = plotfor, show="RP")
-
     return Response(data, mimetype=ctype)
 
 
-@application.route('/plot/<regex("[A-Za-z]+(.csv)?"):infile>/<show>/')
+@application.route('/plot/<regex("[A-Za-z]+(.csv)?"):plotfor>/<showfor>/')
 def example2(infile, show):
-    return "infile: %s, show: %s" % (infile, show)
+    ctype = "text/plain"
+    data = text_pyramid(file = plotfor, show=showfor)
+    return Response(data, mimetype=ctype)
 
 
 if __name__ == "__main__":
