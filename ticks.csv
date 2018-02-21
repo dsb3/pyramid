@@ -1,9 +1,9 @@
 Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-02,8,TR,OS,Pink,TRC MV,Horseshoe right,"Weak climbing day; many route attempts, one success"
 2018-01-06,9,TR,RP,Green,TRC NR,,North Raleigh
-2018-01-06,9,TR,OS,Red,TRC NR,,"Slippery, reachy"
-2018-01-06,9,TR,OS,Yellow,TRC NR,,Very overhung
-2018-01-06,9,TR,OS,?,TRC NR,,
+2018-01-06,9,TR,OS,Red,TRC NR,Tower,"Slippery, reachy"
+2018-01-06,9,TR,OS,Yellow,TRC NR,Back Right,Very overhung
+2018-01-06,9+,TR,OS,Green,TRC NR,Back Left,Hard last hold - overhanging moves
 2018-01-06,9,TR,OS,?,TRC NR,,
 2018-01-06,10a,TR,OS,Black,TRC NR,,Lava shaped rocks
 2018-01-06,10c,TR,OS,Blue,TRC NR,,"Slab, and crimps"
@@ -19,7 +19,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-09,10c,TR,RP,Red,TRC MV,Horseshoe Right Arete,"Overhanging, heel hooks, felt easier than before"
 2018-01-09,11b,TR,RP,Red,TRC MV,Right of Lead,Overhanging tall wall.  Third attempt!
 2018-01-09,10c,TR,X,Pink,TRC MV,Horseshoe Back,Very chalked up - abandoned attempt
-2018-01-09,10d,TR,RP,Yellow,TRC MV,Next to Desk,The 10- that's really 10+
+2018-01-09,10a,TR,RP,Yellow,TRC MV,Desk area,The 10- that's really a 10+
 2018-01-09,10b,TR,RP,Black,TRC MV,Horseshoe Right,"Tall, technical."
 2018-01-09,10b,TR,RP,Pink,TRC MV,Prow Right,"Tall, easy but calls for endurance"
 2018-01-09,10c,TR,RP,Yellow,TRC MV,Reactor Right,"Slick, upstairs on reactor"
@@ -32,67 +32,70 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-11,10c,TR,H1,Purple,TRC MV,Prow,Still fell at the lip
 2018-01-14,8,TR,RE,Black,TRC MV,Reactor,Pocket Calculator - warm up
 2018-01-14,10b,TR,H6,Green,TRC MV,Back Corner Arete,"Slab in Majorca -- tried, tried, tried again at the crux"
-2018-01-14,10c,TR,A,Red,TRC MV,Reactor,Reactor wall; aided both the crux moves
-2018-01-14,10b,TR,H6,Green,TRC MV,Back Corner Arete,"Approx - got the crux move for the first time, but couldn't stick it regularly"
+2018-01-14,10c,TR,A2,Red,TRC MV,Reactor,Reactor wall; aided both the crux moves
+2018-01-14,10b,TR,H6,Green,TRC MV,Back Corner Arete,"Approximate count - today I got the crux move for the first time, but couldn't stick it regularly"
 2018-01-14,10c,TR,H1,Purple,TRC MV,Prow,Crimpy at the lip - fell again; just can't remember the sequence
-2018-01-14,10b,TR,RP,Green,TRC MV,Back Corner Arete,Slab in Majorca -- at last.  Changed shoes to Mythos and stuck the slab move
+2018-01-14,10b,TR,RP,Green,TRC MV,Back Corner Arete,Slab in Majorca -- at last.  Changed shoes to Mythos and stuck the slab move on the first try
 2018-01-14,10b,TR,RE,Yellow,TRC MV,Back Alley Overhang,Overhanging upstairs
 2018-01-16,8,L,RP,Black,TRC MV,Prow,Warm up lap
 2018-01-16,9,L,F,Yellow,TRC MV,Lead Cave,Got too much beta to claim OS.
 2018-01-16,10b,L,RP,Orange,TRC MV,Horseshoe Left,Might have claimed this as 10c on TR.  FELT EASY today on lead!
 2018-01-16,10b,L,RP,Pink,TRC MV,Prow,FELT EASY!
 2018-01-16,10a,TR,OS,Yellow,TRC MV,Back Corner,"Holy cow, felt like a 10+.  Stemming."
-2018-01-16,9+,TR,X,Red,TRC MV,Back Corner,"9+, felt like a 10. Right arm hurt; gave up before I hurt it worse"
+2018-01-16,9+,TR,X,Red,TRC MV,Back Corner,"Claimed to be 9+, but climbed like a mid-10. Right arm hurt; gave up before I hurt it worse"
 2018-01-16,7,TR,RE,Green,TRC MV,Horseshoe Back,Cool-down
 2018-01-19,9,TR,RE,Black,TRC MV,Horseshoe Back,Warm up
-2018-01-19,10b,TR,RE,Yellow,TRC MV,Horseshoe Right,Drop-knee - demo of crux for Mary
-2018-01-19,10c,TR,H1,Red,TRC MV,Horseshoe Rear,Low percentage crux move at top.  Got it on second attempt.
+2018-01-19,10b,TR,RE,Yellow,TRC MV,Horseshoe Right,Drop-knee - Climbed it again to give demo of crux move for Mary
+2018-01-19,10c,TR,H1,Red,TRC MV,Horseshoe Rear,Low percentage crux move at top.  Got the move on second attempt.
 2018-01-19,10d,TR,H5,Blue,TRC MV,Reactor,Loved the route - very pumpy.  Good project.
-2018-01-19,9+,TR,H1,Red,TRC MV,Back Corner Edge,"Low percentage, balanced crux.  9+ climbs more like a 10."
+2018-01-19,9+,TR,H1,Red,TRC MV,Back Corner Edge,"Low percentage, balanced crux.  9+ still climbs like a 10."
 2018-01-19,11c,TR,X,Black,TRC MV,Horseshoe Rear,Got 2/3 of the way up.  Falls galore.
 2018-01-19,10d,TR,H2 A1,Blue,TRC MV,Reactor,"Tried again, aided the crux move, got the rest with fewer falls"
 2018-01-21,8,L,F,Yellow,Cliff Hangars,Arch,Cliff Hangars today - warmup
-2018-01-21,9,L,F,Yellow,Cliff Hangars,Arch,
-2018-01-21,9,L,F,Red,Cliff Hangars,Arch,
-2018-01-21,8,L,H1,Blue,Cliff Hangars,Lead wall right,"HARD second clip, hung to reset brain and go back to clip"
-2018-01-21,9,L,OS,Green,Cliff Hangars,Lead wall left,
-2018-01-21,10b,L,RP,Orange,Cliff Hangars,Facing Cafe,
-2018-01-21,11c,TR,H4 A1,Pink,Cliff Hangars,Arch,
-2018-01-21,8,L,OS,Pink,Cliff Hangars,Arch,
-2018-01-21,11a,TR,OS,Yellow,Cliff Hangars,Arete,
-2018-01-21,10b,TR,H1,Yellow,Cliff Hangars,Back Wall,
-2018-01-21,10c,TR,H4,Purple,Cliff Hangars,Facing Cafe,
-2018-01-24,7,TR,DC,Pink,TRC MV,Reactor,
-2018-01-24,9,TR,X,Black,TRC MV,Right of Reactor,"JP - fell, hurt my knee."
+2018-01-21,9,L,F,Yellow,Cliff Hangars,Arch,Felt easy
+2018-01-21,9,L,F,Red,Cliff Hangars,Arch,Still felt easy
+2018-01-21,8,L,H1,Blue,Cliff Hangars,Lead wall right,"HARD roofish second clip, hung to reset brain and go back to clip"
+2018-01-21,9,L,OS,Green,Cliff Hangars,Lead wall left,Crazy off balance moves; very exposed and think-y
+2018-01-21,10b,L,RP,Orange,Cliff Hangars,Facing Cafe,Lead of the route I TR back in November
+2018-01-21,11c,TR,H4 A1,Pink,Cliff Hangars,Arch,Hard as nails; loved the sequences
+2018-01-21,8,L,OS,Pink,Cliff Hangars,Arch,"Easy climb, but I could tell I was tiring"
+2018-01-21,11a,TR,OS,Yellow,Cliff Hangars,Arete,"Felt easy, route was set like MV so it flowed easily"
+2018-01-21,10b,TR,H1,Yellow,Cliff Hangars,Back Wall,Fell on the last move from the top
+2018-01-21,10c,TR,H4,Purple,Cliff Hangars,Facing Cafe,"Last burn - fell, fell, fell, plus spun a hold"
+2018-01-24,7,TR,RE,Pink,TRC MV,Reactor,"Warm-up on something easy, with downclimb"
+2018-01-24,7,DC,RP,Pink,TRC MV,Reactor,Downclimb RP
+2018-01-24,9,TR,X,Black,TRC MV,Right of Reactor,"JP route - very weird sequence, fell, hurt my knee."
 2018-01-24,9,TR,X,Black,TRC MV,Right of Reactor,"Tried again, fell again, hurt my knee again"
 2018-01-24,10d,TR,H2,Blue,TRC MV,Reactor,Very close to sending
 2018-01-24,9+,TR,H1,Red,TRC MV,Back Alley,Fell at crux move again
-2018-01-24,9+,TR,RE,Red,TRC MV,Back Alley,
+2018-01-24,9,TR,RE,Red,TRC MV,Back Alley,Easy for a 9
 2018-01-24,10b,TR,RP,Yellow,TRC MV,Back Alley Arete,Hard foot switch on exposed arete
 2018-01-24,10c,TR,RP,Black,TRC MV,Back Alley,Very strenuous moves
 2018-01-24,10b,TR,RE,Orange,TRC MV,Horseshoe Left,Overhanging - pumpy
 2018-01-24,11c,TR,X,Black,TRC MV,Horseshoe,Short attempt
 2018-01-24,7,TR,RE,Yellow,TRC MV,Horseshoe,
-2018-01-24,7,TR,DC,Green,TRC MV,Horseshoe Left,With downclimb for mileage
-2018-01-24,6,TR,DC,Blue,TRC MV,Horseshoe Right,With downclimb for mileage
+2018-01-24,7,TR,OS,Green,TRC MV,Horseshoe Left,Suspect this was the first time I climbed it?
+2018-01-24,7,DC,RP,Green,TRC MV,Horseshoe Left,With downclimb for mileage
+2018-01-24,6,TR,RE,Blue,TRC MV,Horseshoe Right,Up
+2018-01-24,6,DC,RP,Blue,TRC MV,Horseshoe Right,With downclimb for mileage
 2018-01-25,8,TR,OS,Black,TRC MV,Horseshoe Right,Strenuous warm-up
 2018-01-25,9,TR,OS,Red,TRC MV,Horseshoe,Felt easier
 2018-01-25,10c,TR,OS,Pink,TRC MV,Horseshoe,Felt tricky
 2018-01-25,11c,TR,X,Green,TRC MV,Horseshoe,"Banged my knee again, hurting it"
 2018-01-25,10d,TR,H1,Blue,TRC MV,Reactor,I think I just fell once; but could have been twice?
 2018-01-25,5,TR,OS,Yellow,TRC MV,Right of Reactor,Climbed up ...
-2018-01-25,5,TR,DC,Yellow,TRC MV,Right of Reactor,Needed to succeed at something - onsight downclimb
+2018-01-25,5,DC,RP,Yellow,TRC MV,Right of Reactor,"Needed to succeed at something - ""onsight"" downclimb, except I just climbed up it, so RP"
 2018-01-25,10a,TR,Hn,Black,TRC MV,Back Alley,"Holy cow, this is hard.  Greased up, and a huge JP struggle."
 2018-01-25,10c,TR,H1,Purple,TRC MV,Prow,Still falling at the crux roof
 2018-01-25,9,L,H1,Yellow,TRC MV,Lead Wall,Hung once - had a swinging fall risk at the crux that would have me hit a kid
 2018-01-25,10c,TR,OS,Pink,TRC MV,Lead Wall,Seconded - the highlight of my night.  Might be able to go lead it.
 2018-01-25,11c,TR,X,Blue,TRC MV,Lead Wall,Seconded - got partway up and felt dizzy so quit and lowered.
-2018-01-28,8,L,RE,Black,TRC MV,Prow,
-2018-01-28,9-,L,H1,Pink,TRC MV,Pumpy - fumbled an early clip multiple times so hung to recover,
-2018-01-28,9-,L,RP,Pink,TRC MV,Pumpy,
-2018-01-28,9,L,RE,Yellow,TRC MV,Cruxy lip,
-2018-01-28,10d,TR,A1,Orange,TRC MV,Need to rework lower section,
-2018-01-28,6,TR,RE,Green,TRC MV,Speed climb,
+2018-01-28,8,L,RE,Black,TRC MV,Prow,Warm up
+2018-01-28,9-,L,H1,Pink,TRC MV,Lead area,Pumpy - fumbled an early clip multiple times so hung to recover
+2018-01-28,9-,L,RP,Pink,TRC MV,Lead area,Pumpy
+2018-01-28,9,L,RE,Yellow,TRC MV,Lead area,Cruxy Lip
+2018-01-28,10d,TR,A1,Orange,TRC MV,Horseshoe Rear,Need to re-work lower section
+2018-01-28,6,TR,RE,Green,TRC MV,Horseshoe Left,Speed climb
 2018-01-30,9,TR,RE,Red,TRC MV,Horseshoe Rear,Warm-up on 9
 2018-01-30,10c,TR,RP,Red,TRC MV,Horseshoe Rear,"Hard, long-throw crux at top"
 2018-01-30,10d,TR,H1,Orange,TRC MV,Horseshoe Rear,Fell at lower crux
@@ -154,3 +157,37 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-02-10,10a,TR,OS,Black,TRC NR,Back Left,"Burly, but easy read for the onsight"
 2018-02-10,10b,TR,OS,Yellow,TRC NR,Prow,Easy sequences except one hard move near the top.
 2018-02-10,8,L,H1,Blue,TRC NR,Tower,Slippery hold at the top caused mental fatigue; rested and reset and moved through it
+2018-02-11,9,TR,OS,Red,TRC MV,Back Alley,Warm-up; really balancey
+2018-02-11,10a,TR,OS,Black,TRC MV,Back Alley,VERY balancey on the arete
+2018-02-11,10d,TR,OS,Purple,TRC MV,Back Alley,"Burly, but felt easier than a 10+"
+2018-02-11,10b,TR,H1,Pink,TRC MV,Back Alley,Fell misreading the route
+2018-02-11,10b,TR,RP,Pink,TRC MV,Back Alley,Back on to get the send
+2018-02-11,10b,TR,RE,Pink,TRC MV,Horseshoe,"Repeat of ""like a mule"" to show Cole the beta"
+2018-02-11,11b,TR,X,Orange,TRC MV,Back Alley,Looking for a new project
+2018-02-13,11?,TR,X,Black,TRC MV,Horseshoe Right,Looked like a warm-up.  Was not a warm-up!
+2018-02-13,9,TR,OS,Yellow,TRC MV,Back Alley,Felt easy!
+2018-02-13,9,TR,RP,Red,TRC MV,Back Alley,I tried to cheat through an 11 move on these holds and fell off.  Did that lose me the OS?
+2018-02-13,11b,TR,"H, A",Green,TRC MV,Back Alley,Hard - feels workable
+2018-02-13,11b,TR,"H, A",Green,TRC MV,Back Alley,Progress - can get first 2/3 in one shot.  Crimps at the top are HARD
+2018-02-13,11b,TR,"H, X",Orange,TRC MV,Back Alley,Hard as nails.  Huge moves.  Shane got the flash!
+2018-02-13,8,TR,OS,Pink,TRC MV,Back Wall,"Hard for an 8, very flowy moves"
+2018-02-13,6,TR,OS,Pink,TRC MV,Back Alley,Just climbed to downclimb the other one
+2018-02-13,8,DC,OS,Purple,TRC MV,Back Alley,Hard reverse dyno
+2018-02-13,11b,TR,"H, X",Green,TRC MV,Back Alley,Went back for another try
+2018-02-13,11a,TR,X,Black,TRC MV,Horseshoe Right,"Went back to try this, hit a bad spinner hold and took a painful fall.  Session over."
+2018-02-15,9+,TR,RP,Orange,TRC MV,Back Alley,Warm up
+2018-02-15,10d,TR,OS,Yellow,TRC MV,Horseshoe Left,"Felt hard, but easy enough to o/s"
+2018-02-15,10b,TR,OS,Purple,TRC MV,Horseshoe Right,Another new route - slightly contrived movement
+2018-02-15,11a,TR,"H, A",Black,TRC MV,Horseshoe Right,Same route as before; a few holds had been updated - had to aid through one move
+2018-02-15,11b,TR,"H, A",Green,TRC MV,Back Alley,"Back to my proj - first two thirds easy, one crux move still stumps me"
+2018-02-15,11b,TR,"H, X",Pink,TRC MV,Back Alley,Pink fins - hurt my shoulder again trying the mantle move
+2018-02-15,7+,TR,OS,Red,TRC MV,Back Alley,Easy route for fun - enjoyed the movement
+2018-02-15,9+,TR,OS,Green,TRC MV,Horseshoe Left,"Very hard for a 9, had to fight to stay on the whole way"
+2018-02-17,7,TR,OS,Grey,TRC MV,Horseshoe Right,Warm up with Jocelyn
+2018-02-17,7,DC,RP,Grey,TRC MV,Horseshoe Right,Downclimb to make a 7 worthwhile
+2018-02-17,10b,TR,RE,Pink,TRC MV,Prow,Just went up so I could try to come down
+2018-02-17,10b,DC,"H, X",Pink,TRC MV,Prow,"Tried to downclimb, but just too pumpy.  Fell a few times and lowered off the rest"
+2018-02-17,11c,TR,X,Pink,TRC MV,Back Corner,New route - too hard - brain not engaged - gave up.
+2018-02-17,10b,TR,RE,Pink,TRC MV,Back Alley,Climbed it because it was there.
+2018-02-17,11a,TR,"H, A",Black,TRC MV,Horseshoe Right,"More progress, still one move I aid through.  Still many falls."
+2018-02-17,10d,TR,X,Yellow,TRC MV,Horseshoe Left,Brain wasn't in it today.  Climbed to the second lip.  Didn't want to climb any more.  Lowered off.
