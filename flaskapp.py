@@ -1,6 +1,7 @@
 #!/bin/env python
 
-from flask import Flask, Response
+import os
+from flask import Flask, Response, send_from_directory
 from werkzeug.routing import BaseConverter
 
 # text graph creator
@@ -21,13 +22,19 @@ application.url_map.converters['regex'] = RegexConverter
 def hello():
     return "<h1 style='color:blue'>Hello There!</h1>"
 
+@application.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(application.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 @application.route('/plot/<regex("[A-Za-z]+(.csv)?"):plotfor>/')
 def example1(plotfor):
-    ctype = "text/plain"
-    data = text_pyramid(file = plotfor, show="RP")
-    return Response(data, mimetype=ctype)
+    #ctype = "text/plain"
+    #data = text_pyramid(file = plotfor, show="RP")
+    #return Response(data, mimetype=ctype)
+    return "<pre>" + text_pyramid(file = plotfor, show="RP")
+
 
 
 @application.route('/plot/<regex("[A-Za-z]+(.csv)?"):plotfor>/<showfor>/')
