@@ -40,7 +40,7 @@ def robotstxt():
 
 #########
 
-@application.route('/plot/<regex("[A-Za-z]+(.csv)?"):plotfor>/')
+@application.route('/plot/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
 def example1(plotfor):
     #ctype = "text/plain"
     #data = text_pyramid(file = plotfor, show="RP")
@@ -49,7 +49,7 @@ def example1(plotfor):
 
 
 
-@application.route('/plot/<regex("[A-Za-z]+(.csv)?"):plotfor>/<showfor>/')
+@application.route('/plot/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<showfor>/')
 def example2(plotfor, showfor):
     ctype = "text/plain"
     data = text_pyramid(file = plotfor, show=showfor)
