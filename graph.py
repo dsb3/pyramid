@@ -21,6 +21,7 @@ types="RP"
 if len(sys.argv) > 2:
   types=sys.argv[2]
 
-text_pyramid(file = infile, show = types)
+
+print( text_pyramid(file = infile, show = types) )
 
 

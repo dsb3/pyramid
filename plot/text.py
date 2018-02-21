@@ -228,12 +228,15 @@ def pyramid(file = "ticks.csv", show = "RP"):
     for grade in ticks[rope].keys():
       ticks[rope][grade].sort(reverse=1)
   
+
+  # create output buffer containing the graph
+  outbuffer = ""
   
   # print "DEBUG"
   # print ticks
   # print newest
   
-  print ("Printing pyramids for", file, "for ascents in", validascent)
+  outbuffer += "Printing pyramids in %s for ascents in %s\n" % (file, validascent)
 
   # With data set loaded, we can now trim validrope (all rope types
   # we understand) into usedrope (all rope types that we've used)
@@ -401,16 +404,16 @@ def pyramid(file = "ticks.csv", show = "RP"):
   
   
     # Header, if we have data in the top two rows
-    print ("")
+    outbuffer += "\n"
     for rope in usedrope:
       if print_for[rope] > 0:
         # TODO: update header again when updating for boulder grades
         header="Pyramid for %s 5.%s" % ( abbrev[rope], grade)
-        print (" gr( ##) {:^32} ".format(header), end=" ")
+        outbuffer += " gr( ##) {:^32} ".format(header)
       else:
         header=""
-        print ("         {:^32} ".format(header), end=" ")
-    print ("")
+        outbuffer += "         {:^32} ".format(header)
+    outbuffer += "\n"
   
     # print pyramid, row by row
     for i in range(0, 4):
@@ -433,8 +436,8 @@ def pyramid(file = "ticks.csv", show = "RP"):
         else:
           row_prefix=""
         
-        print ("{:8} {:^32} ".format( row_prefix, boxes ), end=" ")
-      print ("")
+        outbuffer += "{:8} {:^32} ".format( row_prefix, boxes )
+      outbuffer += "\n"
   
   
     # analyse row just printed for each rope
@@ -482,4 +485,5 @@ def pyramid(file = "ticks.csv", show = "RP"):
       break
   
   
-  
+  return outbuffer
+
