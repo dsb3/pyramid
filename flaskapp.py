@@ -18,16 +18,19 @@ class RegexConverter(BaseConverter):
 application.url_map.converters['regex'] = RegexConverter
 
 
+# 
 @application.route("/")
 def hello():
     return redirect("/plot/dave-rope.csv/", code=302)
 
+
 @application.route('/favicon.ico')
 def favicon():
-    # Send a different favicon for regular or "L"ocalhost use.
-    ico = "favicon.ico"
+    # Send a different favicon to distinguish when running on "L"ocalhost
     if "localhost" in request.host or "127.0.0.1" in request.host or "0.0.0.0" in request.host:
       ico = "favicon.L.ico"
+    else:
+      ico = "favicon.ico"
     return send_from_directory(os.path.join(application.root_path, 'static'),
                                ico, mimetype='image/vnd.microsoft.icon')
 

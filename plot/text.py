@@ -84,9 +84,9 @@ def pyramid(file = "ticks.csv", show = "RP"):
                 ]
   
   # Bouldering grades
-  validboulder = [ "VB", "V0", "V1", "V2", "V3",
-                   "V4", "V5", "V6", "V7", "V8",
-                   "V9", "V10", "V11", "V12" ]
+  validboulder = [ "v0", "v1", "v2", "v3",
+                   "v4", "v5", "v6", "v7", "v8",
+                   "v9", "v10", "v11", "v12" ]
   
   # S.A., Oz.
   validewbank = [ "10", "11", "12", "13", "14",
@@ -188,7 +188,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
   
   
     # These two are mandatory
-    (date, grade) = (row[ header_fields["date"] ], row[ header_fields["grade"] ])
+    (date, grade) = (row[ header_fields["date"] ], row[ header_fields["grade"] ].lower())
   
     # We generate default values for these two
     try:
@@ -215,11 +215,14 @@ def pyramid(file = "ticks.csv", show = "RP"):
     # - TODO: handle capitalization errors
     # - TODO: handle optional 5. prefix for YDS
     if grade not in validgrades:
-      grade = re.sub('[-+]$', '', grade)           # 8+    -> 8
-      grade = re.sub('(.*)/[\w]+$', '\\1', grade)  # 11a/b -> 11a
+      grade = re.sub('[-+]*$',  '', grade)  # 8+    -> 8
+      grade = re.sub('/[\w]+$', '', grade)  # 11a/b -> 11a
   
 
-    # DEBUG # print ("rope", rope, "ascent", ascent, "grade", grade)
+    # DEBUG
+    # print ("rope", rope, "ascent", ascent, "grade", grade)
+
+
     # only include valid data items
     if rope not in validrope or ascent not in validascent or grade not in validgrades:
       continue
