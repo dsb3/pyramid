@@ -20,7 +20,7 @@ application.url_map.converters['regex'] = RegexConverter
 
 @application.route("/")
 def hello():
-    return redirect("/plot/ticks.csv/", code=302)
+    return redirect("/plot/dave-rope.csv/", code=302)
 
 @application.route('/favicon.ico')
 def favicon():

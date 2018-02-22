@@ -3,7 +3,7 @@
 # Generate Horst training pyramids
 #
 # Graphs Top Rope, Lead, Down Climb, Down Lead (or others)
-# Reads from $1 (default to "ticks.csv" in current directory)
+# Reads from $1 (will default to "ticks.csv" in current directory)
 #
 #
 # INPUT FILE -- expected data structure is CSV format with
@@ -24,8 +24,6 @@ from datetime import datetime
 
 
 # pyramid will print graphs based on "file"
-#
-# Default to ticks.csv and RP or "better" climbs.
 #
 
 def pyramid(file = "ticks.csv", show = "RP"):
