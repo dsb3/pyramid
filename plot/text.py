@@ -48,16 +48,6 @@ def pyramid(file = "ticks.csv", show = "RP"):
   #   }
   # }
   
-  # Load data file
-  # Date, Grade, Rope, Ascent, (ignored)
-  #
-  
-  # Ignore any ascents that don't get graphed
-  # - OS, F, RP
-  #
-  # TODO: later include RE for mileage graphs.
-  #
-  
   abbrev     = { "L":  "Lead", 
                  "TR": "Top Rope",
                  "DC": "Down Climb",
@@ -113,7 +103,6 @@ def pyramid(file = "ticks.csv", show = "RP"):
    
   
   # default to YDS
-  # TODO: auto-detect, or manual select grading scheme
   validgrades = validyds
 
 
@@ -137,16 +126,6 @@ def pyramid(file = "ticks.csv", show = "RP"):
   
   
   
-  # Pre-populate our ticks data structure with data
-  # to avoid constant checking for KeyError if we have
-  # individual grades with no climbs logged
-  for rope in validrope:
-    ticks[rope] = {}
-    newest[rope] = "2000-00-00"
-    for grade in validgrades:
-      ticks[rope][grade] = []
-  
-  
   
   # Default header values to look for
   header_fields = { }
@@ -164,25 +143,56 @@ def pyramid(file = "ticks.csv", show = "RP"):
         if k in row.keys():
           header_fields["date"] = k
           break
-      for k in ["Grade", "grade"]:
+
+      for k in ["Grade", "grade", "YDS", "yds"]:
         if k in row.keys():
           header_fields["grade"] = k
+          validgrades = validyds     # already defaults to this value
           break
+      for k in ["V", "v"]:
+        if k in row.keys():
+          header_fields["grade"] = k
+          validgrades = validboulder
+          break
+      for k in ["Ewbank", "ewbank"]:
+        if k in row.keys():
+          header_fields["grade"] = k
+          validgrades = validewbank
+          break
+      for k in ["Font", "font"]:
+        if k in row.keys():
+          header_fields["grade"] = k
+          validgrades = validfont
+          break
+
       for k in ["Rope", "rope"]:
         if k in row.keys():
           header_fields["rope"] = k
           break
+
       for k in ["Ascent", "ascent", "Attempt", "attempt"]:
         if k in row.keys():
           header_fields["ascent"] = k
           break
+
+      # Having examined header fields we don't re-examine on future rows
       first_row=0
+  
+      # Pre-populate our ticks data structure with data
+      # to avoid constant checking for KeyError if we have
+      # individual grades with no climbs logged
+      for rope in validrope:
+        ticks[rope] = {}
+        newest[rope] = "2000-00-00"
+        for grade in validgrades:
+          ticks[rope][grade] = []
+  
   
   
     # These two are mandatory
     (date, grade) = (row[ header_fields["date"] ], row[ header_fields["grade"] ])
   
-    # Default values for these two
+    # We generate default values for these two
     try:
       rope = row[ header_fields["rope"] ]
     except KeyError:
@@ -194,19 +204,24 @@ def pyramid(file = "ticks.csv", show = "RP"):
       ascent = "RP"
   
   
-  
-    # ensure valid date (also strips header lines)
+    # ensure valid date (also strips comments or extraneous lines)
     if not re.match("^20\d\d-\d\d-\d\d$", date):
       continue
   
-    # Brief attempts to map entered grades into canonical grades.
+
+    # Brief attempts to map entered grades into canonical grades if they
+    # aren't already valid.
     # - drop and ignore any -/+ suffix
-    # - drop and ignore any /x suffix (e.g. 11a/b -> 11a)
+    # - drop and ignore any /x suffix (e.g. 11a/b -> 11a, or 25/26 -> 25)
     # - TODO: map naked 10 grade into 10b or 10c or ??
-    grade = re.sub('[-+]$', '', grade)   # 8+    -> 8
-    grade = re.sub('(1[0-5][abcd])/[abcd]$', '\\1', grade)    # 11a/b -> 11a
+    # - TODO: handle capitalization errors
+    # - TODO: handle optional 5. prefix for YDS
+    if grade not in validgrades:
+      grade = re.sub('[-+]$', '', grade)           # 8+    -> 8
+      grade = re.sub('(.*)/[\w]+$', '\\1', grade)  # 11a/b -> 11a
   
-  
+
+    # DEBUG # print ("rope", rope, "ascent", ascent, "grade", grade)
     # only include valid data items
     if rope not in validrope or ascent not in validascent or grade not in validgrades:
       continue
@@ -222,7 +237,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
   
   
   
-  # Parse through data before displaying (TODO:  this is for future enhancements)
+  # Parse through data before displaying (TODO: this is for future enhancements)
   for rope in ticks.keys():
     # Sort entries for each day
     for grade in ticks[rope].keys():
@@ -232,9 +247,15 @@ def pyramid(file = "ticks.csv", show = "RP"):
   # create output buffer containing the graph
   outbuffer = ""
   
-  # print "DEBUG"
-  # print ticks
-  # print newest
+
+  # DEBUG
+  #import pprint
+  #pp = pprint.PrettyPrinter(indent=4)
+  #outbuffer += pp.pformat(ticks)
+  #outbuffer += "\n"
+  #outbuffer += pp.pformat(newest)
+  #outbuffer += "\n"
+  # /DEBUG
   
   outbuffer += "Printing pyramids in %s for ascents in %s\n" % (file, validascent)
 
@@ -407,8 +428,8 @@ def pyramid(file = "ticks.csv", show = "RP"):
     outbuffer += "\n"
     for rope in usedrope:
       if print_for[rope] > 0:
-        # TODO: update header again when updating for boulder grades
-        header="Pyramid for %s 5.%s" % ( abbrev[rope], grade)
+        # TODO: update header to prepend "5." for YDS grades only
+        header="Pyramid for %s %s" % ( abbrev[rope], grade)
         outbuffer += " gr( ##) {:^32} ".format(header)
       else:
         header=""
