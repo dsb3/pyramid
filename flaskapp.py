@@ -21,7 +21,7 @@ application.url_map.converters['regex'] = RegexConverter
 # 
 @application.route("/")
 def hello():
-    return redirect("/plot/dave-rope.csv/", code=302)
+    return redirect("/text/dave-rope/", code=302)
 
 
 @application.route('/favicon.ico')
@@ -43,7 +43,7 @@ def robotstxt():
 
 #########
 
-@application.route('/plot/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
+@application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
 def example1(plotfor):
     #ctype = "text/plain"
     #data = text_pyramid(file = plotfor, show="RP")
@@ -52,7 +52,7 @@ def example1(plotfor):
 
 
 
-@application.route('/plot/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<showfor>/')
+@application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<showfor>/')
 def example2(plotfor, showfor):
     ctype = "text/plain"
     data = text_pyramid(file = plotfor, show=showfor)
@@ -61,4 +61,6 @@ def example2(plotfor, showfor):
 
 if __name__ == "__main__":
     application.run(debug=True)
+
+
 

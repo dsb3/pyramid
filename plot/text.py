@@ -128,9 +128,18 @@ def pyramid(file = "ticks.csv", show = "RP"):
   # Default header values to look for
   header_fields = { }
   first_row = 1
-  
-  # Open file
-  csvfile = csv.DictReader(open(file))
+
+  # Try to open file named as-is
+  try:
+    csvfile = csv.DictReader(open(file))
+  except (FileNotFoundError, IOError):
+    try:
+      csvfile = csv.DictReader(open(file + ".csv"))
+    except (FileNotFoundError, IOError):
+      return "File could not be opened"
+
+
+  # Work with opened file
   for row in csvfile:
   
     # Examine headers to try to auto-detect and adapt to variations.
