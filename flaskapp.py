@@ -8,8 +8,10 @@ from werkzeug.routing import BaseConverter
 from plot.text import pyramid as text_pyramid
 
 
-application = Flask(__name__)
+# Create application with /static path defined
+application = Flask(__name__, static_url_path='/static')
 
+# cut/pastd from stack exchange to permit regex in routes
 class RegexConverter(BaseConverter):
     def __init__(self, url_map, *items):
         super(RegexConverter, self).__init__(url_map)
@@ -18,11 +20,13 @@ class RegexConverter(BaseConverter):
 application.url_map.converters['regex'] = RegexConverter
 
 
-# 
+
+# Special cases for index, favicon and robots, which feed from /static/ even
+# though the URL does not contain that path
 @application.route("/")
 def hello():
-    return redirect("/text/dave-rope/", code=302)
-
+    return send_from_directory(os.path.join(application.root_path, 'static'),
+                               "index.html", mimetype='text/html')
 
 @application.route('/favicon.ico')
 def favicon():
@@ -33,8 +37,6 @@ def favicon():
       ico = "favicon.ico"
     return send_from_directory(os.path.join(application.root_path, 'static'),
                                ico, mimetype='image/vnd.microsoft.icon')
-
-#########
 
 @application.route('/robots.txt')
 def robotstxt():
