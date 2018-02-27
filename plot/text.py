@@ -109,8 +109,8 @@ def pyramid(file = "ticks.csv", show = "RP"):
   # so: "RP" -> "RP", "F", "OS"
   # or: "OS" -> "OS" only
   try:
-    if validascent.index(show) > 0:   # is NOT the first element
-      del validascent[0: validascent.index(show)]
+    if validascent.index(show.upper()) > 0:   # is NOT the first element
+      del validascent[0: validascent.index(show.upper())]
   except ValueError:   # not in validascent at all, print everything
     pass
 
