@@ -80,7 +80,7 @@
 
 <!-- header lines. x=10, and x=width-10 to align -->
 <text x='10' y='20' fill='black'>Pyramid for Leading 5.10d</text>
-<text text-anchor="end" x='540' y='20' fill='black'>2018-02-27</text>
+<text text-anchor="end" x='540' y='20' fill='black'>2018-02-28</text>
 
 
 <!-- draw legend in top right blank space -->
