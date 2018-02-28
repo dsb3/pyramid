@@ -1,0 +1,159 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" 
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ width='550px' height='300px'>
+
+<title>Pyramid for Leading 5.10d</title>
+
+
+<!-- DEBUG: horiz/vertical alignment marks -->
+<!--
+<line x1="50" y1="0" x2="50" y2="300" style="stroke:rgb(255,0,0); stroke-width:1" />
+<line x1="300" y1="0" x2="300" y2="300" style="stroke:rgb(255,0,0); stroke-width:1" />
+
+<line x1="0" y1="75" x2="550" y2="75" style="stroke:rgb(255,0,0); stroke-width:1" />
+<line x1="0" y1="135" x2="550" y2="135" style="stroke:rgb(255,0,0); stroke-width:1" />
+<line x1="0" y1="195" x2="550" y2="195" style="stroke:rgb(255,0,0); stroke-width:1" />
+<line x1="0" y1="255" x2="550" y2="255" style="stroke:rgb(255,0,0); stroke-width:1" />
+-->
+
+<!-- define crosshatch -->
+<pattern id="xhatch" width="5" height="5" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="0" y2="5" style="stroke:black; stroke-width:1" />
+</pattern>
+
+
+
+<!-- header lines. x=10, and x=width-10 to align -->
+<text x='10' y='20' fill='black'>Pyramid for Leading 5.10d</text>
+<text text-anchor="end" x='540' y='20' fill='black'>2018-02-27</text>
+
+
+<!-- legend top right -->
+
+<text text-anchor="end" alignment-baseline='middle'
+      x='520' y='75' fill='black' transform="translate(-20)">Redpoint</text>
+<rect x='520' y='75' rx='4' ry='5' width='30' height='30'
+  style='fill:none; stroke: blue; stroke-width: 2'
+  transform="translate(-15, -15)" />
+<rect x='520' y='75' rx='2' ry='2' width='25' height='25'
+  style='fill:green; stroke: none;'
+  transform="translate(-12.5, -12.5)" />
+
+
+<text text-anchor="end" alignment-baseline='middle'
+      x='520' y='115' fill='black' transform="translate(-20)">Flash/OS</text>
+<rect x='520' y='115' rx='4' ry='5' width='30' height='30'
+  style='fill:none; stroke: blue; stroke-width: 2'
+  transform="translate(-15, -15)" />
+<rect x='520' y='115' rx='2' ry='2' width='25' height='25'
+  style='fill:green; stroke: none;'
+  transform="translate(-12.5, -12.5)" />
+<rect x='520' y='115' rx='3' ry='3' width='20' height='20' style='fill:darkgreen; stroke: none;'
+  transform="rotate(45, 520, 115) translate(-10, -10)" />
+
+
+<text text-anchor="end" alignment-baseline='middle'
+      x='520' y='155' fill='black' transform="translate(-20)">Cascaded</text>
+<rect x='520' y='155' rx='4' ry='5' width='30' height='30'
+  style='fill:none; stroke: blue; stroke-width: 2'
+  transform="translate(-15, -15)" />
+<rect x='520' y='155' rx='2' ry='2' width='25' height='25'
+  style='fill:url(#xhatch)'
+  transform="translate(-12.5, -12.5)" />
+
+
+<text text-anchor="end" alignment-baseline='middle'
+      x='520' y='195' fill='black' transform="translate(-20)">Pending</text>
+<rect x='520' y='195' rx='4' ry='5' width='30' height='30'
+  style='fill:none; stroke: blue; stroke-width: 2'
+  transform="translate(-15, -15)" />
+
+
+
+
+<!-- first row -->
+<text x='25' y='75' fill='black' text-anchor='middle' alignment-baseline='middle'>10d</text>
+
+<!-- center 300, 75 -->
+<rect x='300' y='75' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2'
+  transform="translate(-25, -25)" />
+<rect x='300' y='75' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;'
+  transform="translate(-20, -20)" />
+<!-- diamond: square rotated 45 degrees around the center of the object -->
+<rect x='300' y='75' rx='7' ry='7' width='30' height='30' style='fill:darkgreen; stroke: none;'
+  transform="rotate(45, 300, 75) translate(-15, -15)" />
+
+
+<!--
+<rect x='275' y='50' rx='5' ry='5' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='280' y='55' rx='7' ry='7' width='40' height='40' style='fill:green; stroke: none;' />
+<rect x='285' y='60' rx='7' ry='7' width='30' height='30' style='fill:darkgreen; stroke: none;' transform="rotate(45, 300, 75)" />
+-->
+
+
+<!-- second row -->
+<text x='10' y='135' fill='black'>10c</text>
+
+<rect x='245' y='110' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='250' y='115' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='305' y='110' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='310' y='115' width='40' height='40' style='fill:green; stroke: none;' />
+
+
+
+<!-- third row -->
+<text x='10' y='195' fill='black'>10b</text>
+
+<rect x='185' y='170' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='190' y='175' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='245' y='170' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='250' y='175' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='305' y='170' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='310' y='175' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='365' y='170' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='370' y='175' width='40' height='40' style='fill:green; stroke: none;' />
+
+
+
+
+<!-- fourth row -->
+<text x='10' y='255' fill='black'>10a</text>
+
+<rect x='65' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='70' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='125' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='130' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='185' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='190' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='245' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='250' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='305' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='310' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='365' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='370' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='425' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='430' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+
+<rect x='485' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
+<rect x='490' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+
+
+
+
+
+</svg>
