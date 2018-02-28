@@ -9,7 +9,7 @@
 
 
 <!-- DEBUG: horiz/vertical alignment marks -->
-<!--
+
 <line x1="50" y1="0" x2="50" y2="300" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="300" y1="0" x2="300" y2="300" style="stroke:rgb(255,0,0); stroke-width:1" />
 
@@ -17,7 +17,7 @@
 <line x1="0" y1="135" x2="550" y2="135" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="0" y1="195" x2="550" y2="195" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="0" y1="255" x2="550" y2="255" style="stroke:rgb(255,0,0); stroke-width:1" />
--->
+
 
 
 
@@ -99,7 +99,8 @@
 
 
 <!-- first row -->
-<text x='25' y='75' fill='black' text-anchor='middle' alignment-baseline='middle'>10d</text>
+<text x='25' y='75' fill='black' text-anchor='middle' alignment-baseline='baseline'>10d</text>
+<text x='25' y='80' fill='black' text-anchor='middle' alignment-baseline='hanging'>(1)</text>
 
 <!-- "g" group of elements are all created at (0,0) with internal/relative transforms
      to center around the axis; then the whole group is transformed to locate in the
@@ -112,7 +113,8 @@
 
 
 <!-- second row -->
-<text x='10' y='135' fill='black'>10c</text>
+<text x='25' y='135' fill='black' text-anchor='middle' alignment-baseline='baseline'>10c</text>
+<text x='25' y='140' fill='black' text-anchor='middle' alignment-baseline='hanging'>(3)</text>
 
 <g transform="translate(270, 135)">
 <use xlink:href="#flash"/>
@@ -125,7 +127,8 @@
 
 
 <!-- third row -->
-<text x='10' y='195' fill='black'>10b</text>
+<text x='25' y='195' fill='black' text-anchor='middle' alignment-baseline='baseline'>10b</text>
+<text x='25' y='200' fill='black' text-anchor='middle' alignment-baseline='hanging'>(6)</text>
 
 <g transform="translate(210, 195)">
 <use xlink:href="#redpoint"/>
@@ -148,7 +151,8 @@
 
 
 <!-- fourth row -->
-<text x='10' y='255' fill='black'>10a</text>
+<text x='25' y='255' fill='black' text-anchor='middle' alignment-baseline='baseline'>10a</text>
+<text x='25' y='260' fill='black' text-anchor='middle' alignment-baseline='hanging'>(4)</text>
 
 <g transform="translate(90, 255)">
 <use xlink:href="#redpoint"/>
