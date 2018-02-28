@@ -33,94 +33,122 @@
 
 <!-- legend top right -->
 
+<g opacity="0.66">
+
+<g transform="translate(520, 60)">
 <text text-anchor="end" alignment-baseline='middle'
-      x='520' y='75' fill='black' transform="translate(-20)">Redpoint</text>
-<rect x='520' y='75' rx='4' ry='5' width='30' height='30'
+      x='0' y='0' fill='black' transform="translate(-20)">Redpoint</text>
+<rect x='0' y='0' rx='4' ry='5' width='30' height='30'
   style='fill:none; stroke: blue; stroke-width: 2'
   transform="translate(-15, -15)" />
-<rect x='520' y='75' rx='2' ry='2' width='25' height='25'
+<rect x='0' y='0' rx='2' ry='2' width='25' height='25'
   style='fill:green; stroke: none;'
   transform="translate(-12.5, -12.5)" />
+</g>
 
-
+<g transform="translate(520,100)">
 <text text-anchor="end" alignment-baseline='middle'
-      x='520' y='115' fill='black' transform="translate(-20)">Flash/OS</text>
-<rect x='520' y='115' rx='4' ry='5' width='30' height='30'
+      x='0' y='0' fill='black' transform="translate(-20)">Flash/OS</text>
+<rect x='0' y='0' rx='4' ry='5' width='30' height='30'
   style='fill:none; stroke: blue; stroke-width: 2'
   transform="translate(-15, -15)" />
-<rect x='520' y='115' rx='2' ry='2' width='25' height='25'
+<rect x='0' y='0' rx='2' ry='2' width='25' height='25'
   style='fill:green; stroke: none;'
   transform="translate(-12.5, -12.5)" />
-<rect x='520' y='115' rx='3' ry='3' width='20' height='20' style='fill:darkgreen; stroke: none;'
-  transform="rotate(45, 520, 115) translate(-10, -10)" />
+<rect x='0' y='0' rx='3' ry='3' width='20' height='20' style='fill:darkgreen; stroke: none;'
+  transform="rotate(45, 0, 0) translate(-10, -10)" />
+</g>
 
-
+<g transform="translate(520, 140)">
 <text text-anchor="end" alignment-baseline='middle'
-      x='520' y='155' fill='black' transform="translate(-20)">Cascaded</text>
-<rect x='520' y='155' rx='4' ry='5' width='30' height='30'
+      x='0' y='0' fill='black' transform="translate(-20)">Cascaded</text>
+<rect x='0' y='0' rx='4' ry='5' width='30' height='30'
   style='fill:none; stroke: blue; stroke-width: 2'
   transform="translate(-15, -15)" />
-<rect x='520' y='155' rx='2' ry='2' width='25' height='25'
+<rect x='0' y='0' rx='2' ry='2' width='25' height='25'
   style='fill:url(#xhatch)'
   transform="translate(-12.5, -12.5)" />
+</g>
 
-
+<g transform="translate(520, 180)">
 <text text-anchor="end" alignment-baseline='middle'
-      x='520' y='195' fill='black' transform="translate(-20)">Pending</text>
-<rect x='520' y='195' rx='4' ry='5' width='30' height='30'
+      x='0' y='0' fill='black' transform="translate(-20)">Pending</text>
+<rect x='0' y='0' rx='4' ry='5' width='30' height='30'
   style='fill:none; stroke: blue; stroke-width: 2'
   transform="translate(-15, -15)" />
+</g>
 
+<!-- end legend block -->
+</g>
 
 
 
 <!-- first row -->
 <text x='25' y='75' fill='black' text-anchor='middle' alignment-baseline='middle'>10d</text>
 
-<!-- center 300, 75 -->
-<rect x='300' y='75' rx='5' ry='5' width='50' height='50'
-  style='fill:none; stroke: blue; stroke-width: 2'
-  transform="translate(-25, -25)" />
-<rect x='300' y='75' rx='7' ry='7' width='40' height='40'
-  style='fill:green; stroke: none;'
-  transform="translate(-20, -20)" />
-<!-- diamond: square rotated 45 degrees around the center of the object -->
-<rect x='300' y='75' rx='7' ry='7' width='30' height='30' style='fill:darkgreen; stroke: none;'
-  transform="rotate(45, 300, 75) translate(-15, -15)" />
+<!-- "g" group of elements are all created at (0,0) with internal/relative transforms
+     to center around the axis; then the whole group is transformed to locate in the
+     correct spot on the canvas. -->
 
+<g transform="translate(300, 75)">
+<!-- blue --> <rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+<!-- dark diamond --> <rect x='0' y='0' rx='7' ry='7' width='30' height='30' 
+  style='fill:darkgreen; stroke: none;' transform="rotate(45, 0, 0) translate(-15, -15)" />
+</g>
 
-<!--
-<rect x='275' y='50' rx='5' ry='5' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='280' y='55' rx='7' ry='7' width='40' height='40' style='fill:green; stroke: none;' />
-<rect x='285' y='60' rx='7' ry='7' width='30' height='30' style='fill:darkgreen; stroke: none;' transform="rotate(45, 300, 75)" />
--->
 
 
 <!-- second row -->
 <text x='10' y='135' fill='black'>10c</text>
 
-<rect x='245' y='110' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='250' y='115' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(270, 135)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
-<rect x='305' y='110' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='310' y='115' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(330, 135)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
 
 
 <!-- third row -->
 <text x='10' y='195' fill='black'>10b</text>
 
-<rect x='185' y='170' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='190' y='175' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(210, 195)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
-<rect x='245' y='170' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='250' y='175' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(270, 195)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
-<rect x='305' y='170' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='310' y='175' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(330, 195)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- hatch --><rect x='0' y='0' rx='2' ry='2' width='40' height='40'
+  style='fill:url(#xhatch)' transform="translate(-20, -20)" />
+</g>
 
-<rect x='365' y='170' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='370' y='175' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(390, 195)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+</g>
+
 
 
 
@@ -128,29 +156,61 @@
 <!-- fourth row -->
 <text x='10' y='255' fill='black'>10a</text>
 
-<rect x='65' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='70' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(90, 255)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
-<rect x='125' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='130' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(150, 255)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
-<rect x='185' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='190' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(210, 255)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
-<rect x='245' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='250' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(270, 255)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
-<rect x='305' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='310' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(330, 255)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- green box --> <rect x='0' y='0' rx='7' ry='7' width='40' height='40'
+  style='fill:green; stroke: none;' transform="translate(-20, -20)" />
+</g>
 
-<rect x='365' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='370' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(390, 255)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- hatch --><rect x='0' y='0' rx='2' ry='2' width='40' height='40'
+  style='fill:url(#xhatch)' transform="translate(-20, -20)" />
+</g>
 
-<rect x='425' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='430' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(450, 255)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+<!-- hatch --><rect x='0' y='0' rx='2' ry='2' width='40' height='40'
+  style='fill:url(#xhatch)' transform="translate(-20, -20)" />
+</g>
 
-<rect x='485' y='230' width='50' height='50' style='fill:none; stroke: blue; stroke-width: 2' />
-<rect x='490' y='235' width='40' height='40' style='fill:green; stroke: none;' />
+<g transform="translate(510, 255)">
+<!-- blue --><rect x='0' y='0' rx='5' ry='5' width='50' height='50'
+  style='fill:none; stroke: blue; stroke-width: 2' transform="translate(-25, -25)" />
+</g>
+
+
 
 
 
