@@ -9,7 +9,7 @@
 
 
 <!-- DEBUG: horiz/vertical alignment marks -->
-
+<!--
 <line x1="50" y1="0" x2="50" y2="300" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="300" y1="0" x2="300" y2="300" style="stroke:rgb(255,0,0); stroke-width:1" />
 
@@ -17,7 +17,7 @@
 <line x1="0" y1="135" x2="550" y2="135" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="0" y1="195" x2="550" y2="195" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="0" y1="255" x2="550" y2="255" style="stroke:rgb(255,0,0); stroke-width:1" />
-
+-->
 
 
 
