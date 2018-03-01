@@ -131,15 +131,15 @@ def pyramid(file = "ticks.csv", show = "RP"):
 
   # Try to open file named as-is
   try:
-    csvfile = csv.DictReader(open(file))
+    fh = open(file)
   except (FileNotFoundError, IOError):
     try:
-      csvfile = csv.DictReader(open(file + ".csv"))
+      fh = open(file + ".csv")
     except (FileNotFoundError, IOError):
       return "File could not be opened"
 
-
-  # Work with opened file
+  # Use a filter to strip comments from the CSV while we read it
+  csvfile = csv.DictReader(filter(lambda row: row[0]!='#', fh))
   for row in csvfile:
   
     # Examine headers to try to auto-detect and adapt to variations.
