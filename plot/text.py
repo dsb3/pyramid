@@ -23,272 +23,47 @@ import csv
 from datetime import datetime
 
 
+# Import our cfg variables (definitions of rope types, grades, etc)
+from plot.cfg import abbrev, validrope, validascent, \
+        validyds, validboulder, validewbank, validfont, validgrades
+
+from plot.readcsv import readticks
+
+
+
 # pyramid will print graphs based on "file"
 #
 
 def pyramid(file = "ticks.csv", show = "RP"):
 
-  # Data structure to generate
-  #
-  # ticks {
-  #   L {
-  #     newest = date    # used for age gradients
-  #     11a { 
-  #       OS [ date, date, ... ]
-  #       F  [ date, date, ... ]
-  #       RP [ date, date, ... ]
-  #     }
-  #     10d { ... }
-  #     ...
-  #   }
-  #   TR {
-  #    ...
-  #   }
-  # }
-  
-  abbrev     = { "L":  "Lead", 
-                 "TR": "Top Rope",
-                 "DC": "Down Climb",
-                 "DL": "Down Lead",
-                 "Cx": "Climbing",  # Generic term for when rope isn't specified
-
-                 "B":  "Boulder",          # allow flexibility in separating bouldering gym/outdoors
-                 "IB": "Indoor Boulder",
-                 "OB": "Outdoor Boulder",
-
-                 "Trad":  "Trad",
-                 "Sport": "Sport",
-
-                 "OS": "Onsight",
-                 "F":  "Flash",
-                 "RP": "Redpoint",
-                 "RE": "Repeat",    # here and below aren't graphed yet
-                 "H":  "Hung",
-                 "A":  "Aided",
-                 "X":  "Failed Attempt",
-               }
-  
-  
-  validrope   = ['TR', 'L', 'DC', 'DL', 'Cx', "B", "IB", "OB"]
-
-  # validascent can include "RE" (repeat) and better.  By default
-  # we only graph "RP" (first redpoint) and better.
-  validascent = ['RE', 'RP', 'F', 'OS']
-  
-  
-  validyds = ["5", "6", "7", "8", "9",
-                 "10a", "10b", "10c", "10d",
-                 "11a", "11b", "11c", "11d",
-                 "12a", "12b", "12c", "12d",
-                 "13a", "13b", "13c", "13d"
-                ]
-  
-  # Bouldering grades
-  validboulder = [ "v0", "v1", "v2", "v3",
-                   "v4", "v5", "v6", "v7", "v8",
-                   "v9", "v10", "v11", "v12" ]
-  
-  # S.A., Oz.
-  validewbank = [ "10", "11", "12", "13", "14",
-                  "15", "16", "17", "18", "19",
-                  "20", "21", "22", "23", "24",
-                  "25", "26", "27", "28", "29" ]
-  
-  # Font -- scales do not correlate for roped/boulders
-  validfont = [ "3", "4", "5", "6a", "6a+", "6b",
-                "6b+", "6c", "6c+", "7a", "7a+",
-                "7b", "7b+", "7c", "7c+", "8a" ]
-   
-  
-  # default to YDS
-  validgrades = validyds
+  # Call our function to turn the CSV file into ticks() data structure
+  ticks = readticks(file, show)
 
 
-  # If "show" is set, filter validascent so as to graph
-  # only climbs of that type or better.
-  # so: "RP" -> "RP", "F", "OS"
-  # or: "OS" -> "OS" only
-  try:
-    if validascent.index(show.upper()) > 0:   # is NOT the first element
-      del validascent[0: validascent.index(show.upper())]
-  except ValueError:   # not in validascent at all, print everything
-    pass
-
-
-
-  # ticks data structure - this drives the graph output below
-  ticks = {} 
-  
-  # newest tick - for future use only
-  newest = {}
-  
-  
-  
-  
-  # Default header values to look for
-  header_fields = { }
-  first_row = 1
-
-  # Try to open file named as-is
-  try:
-    fh = open(file)
-  except (FileNotFoundError, IOError):
-    try:
-      fh = open(file + ".csv")
-    except (FileNotFoundError, IOError):
-      return "File could not be opened"
-
-  # Use a filter to strip comments from the CSV while we read it
-  csvfile = csv.DictReader(filter(lambda row: row[0]!='#', fh))
-  for row in csvfile:
-  
-    # Examine headers to try to auto-detect and adapt to variations.
-    # TODO: this whole thing could be a lambda function
-    #
-    if first_row:
-      for k in ["Date", "date"]:
-        if k in row.keys():
-          header_fields["date"] = k
-          break
-
-      for k in ["Grade", "grade", "YDS", "yds"]:
-        if k in row.keys():
-          header_fields["grade"] = k
-          validgrades = validyds     # already defaults to this value
-          break
-      for k in ["V", "v"]:
-        if k in row.keys():
-          header_fields["grade"] = k
-          validgrades = validboulder
-          break
-      for k in ["Ewbank", "ewbank"]:
-        if k in row.keys():
-          header_fields["grade"] = k
-          validgrades = validewbank
-          break
-      for k in ["Font", "font"]:
-        if k in row.keys():
-          header_fields["grade"] = k
-          validgrades = validfont
-          break
-
-      for k in ["Rope", "rope"]:
-        if k in row.keys():
-          header_fields["rope"] = k
-          break
-
-      for k in ["Ascent", "ascent", "Attempt", "attempt"]:
-        if k in row.keys():
-          header_fields["ascent"] = k
-          break
-
-      # Having examined header fields we don't re-examine on future rows
-      first_row=0
-  
-      # Pre-populate our ticks data structure with data
-      # to avoid constant checking for KeyError if we have
-      # individual grades with no climbs logged
-      for rope in validrope:
-        ticks[rope] = {}
-        newest[rope] = "2000-00-00"
-        for grade in validgrades:
-          ticks[rope][grade] = []
-  
-  
-  
-    # These two are mandatory
-    (date, grade) = (row[ header_fields["date"] ], row[ header_fields["grade"] ].lower())
-  
-    # We generate default values for these two
-    try:
-      rope = row[ header_fields["rope"] ]
-    except KeyError:
-      rope = "Cx"
-  
-    try:
-      ascent = row[ header_fields["ascent"] ]
-    except KeyError:
-      ascent = "RP"
-  
-  
-    # ensure valid date (also strips comments or extraneous lines)
-    if not re.match("^20\d\d-\d\d-\d\d$", date):
-      continue
-  
-
-    # Brief attempts to map entered grades into canonical grades if they
-    # aren't already valid.
-    # - drop and ignore any -/+ suffix
-    # - drop and ignore any /x suffix (e.g. 11a/b -> 11a, or 25/26 -> 25)
-    # - TODO: map naked 10 grade into 10b or 10c or ??
-    # - TODO: handle capitalization errors
-    # - TODO: handle optional 5. prefix for YDS
-    if grade not in validgrades:
-      grade = re.sub('[-+]*$',  '', grade)  # 8+    -> 8
-      grade = re.sub('/[\w]+$', '', grade)  # 11a/b -> 11a
-  
-
-    # DEBUG
-    # print ("rope", rope, "ascent", ascent, "grade", grade)
-
-
-    # only include valid data items
-    if rope not in validrope or ascent not in validascent or grade not in validgrades:
-      continue
-  
-    # Save newest tick seen for rope type for aging ticks
-    if newest[rope] < date:
-      newest[rope] = date
-   
-    # Append dates
-    ticks[rope][grade].append(date)
-  
-    # TODO: append "attempt" dates to annotate graph
-  
-  
-  
-  # Parse through data before displaying (TODO: this is for future enhancements)
-  for rope in ticks.keys():
-    # Sort entries for each day
-    for grade in ticks[rope].keys():
-      ticks[rope][grade].sort(reverse=1)
-  
-
-  # create output buffer containing the graph
-  outbuffer = ""
-  
-
-  # DEBUG
-  #import pprint
-  #pp = pprint.PrettyPrinter(indent=4)
-  #outbuffer += pp.pformat(ticks)
-  #outbuffer += "\n"
-  #outbuffer += pp.pformat(newest)
-  #outbuffer += "\n"
-  # /DEBUG
-  
-  outbuffer += "Printing pyramids in %s for ascents in %s\n" % (file, validascent)
-
-  # With data set loaded, we can now trim validrope (all rope types
-  # we understand) into usedrope (all rope types that we've used)
-  # for outputting.  This way we don't wait to display a rope that
-  # doesn't appear in the dataset.
-  
-  # use a full slice to take a copy of the original (in the same order)
+  # Parse data to calculate usedrope (which rope types are present)
+  # so take a copy of valid ropes and delete those not seen
   usedrope = validrope[:]
-  
-  # delete any that didn't get their newest flag updated
-  # TODO: resort usedrope in order of highest tick
+
+  # delete any that don't have data present
   for rope in validrope:
-    if newest[rope] == "2000-00-00":
+    count = 0
+    try:
+      for grade in validgrades:
+        count += len (ticks[rope][grade])
+    except KeyError:
+      pass
+  
+    # No counted ticks for the rope
+    if (count == 0):
       usedrope.remove(rope)
-  
-  
-  
+
+
+
   
   # CSV data is now loaded into structure, ready to graph.
-  
-  
+  outbuffer = ""
+  outbuffer += "Printing pyramids in %s for ascents in %s\n" % (file, validascent)
+
   
   
   
