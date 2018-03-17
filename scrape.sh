@@ -4,5 +4,6 @@
 # refresh data
 #
 
-wget -O dave-rope.csv 'https://docs.google.com/spreadsheet/ccc?key=1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg&output=csv'
+wget -4 -O dave-rope.csv 'https://docs.google.com/spreadsheet/ccc?key=1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg&output=csv'
+
 

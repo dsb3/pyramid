@@ -63,7 +63,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-21,10b,TR,H1,Yellow,Cliff Hangars,Back Wall,Fell on the last move from the top
 2018-01-21,10c,TR,H4,Purple,Cliff Hangars,Facing Cafe,"Last burn - fell, fell, fell, plus spun a hold"
 2018-01-24,7,TR,RE,Pink,TRC MV,Reactor,"Warm-up on something easy, with downclimb"
-2018-01-24,7,DC,RP,Pink,TRC MV,Reactor,Downclimb RP
+2018-01-24,7,DC,F,Pink,TRC MV,Reactor,Downclimb RP
 2018-01-24,9,TR,X,Black,TRC MV,Right of Reactor,"JP route - very weird sequence, fell, hurt my knee."
 2018-01-24,9,TR,X,Black,TRC MV,Right of Reactor,"Tried again, fell again, hurt my knee again"
 2018-01-24,10d,TR,H2,Blue,TRC MV,Reactor,Very close to sending
@@ -84,7 +84,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-25,11c,TR,X,Green,TRC MV,Horseshoe,"Banged my knee again, hurting it"
 2018-01-25,10d,TR,H1,Blue,TRC MV,Reactor,I think I just fell once; but could have been twice?
 2018-01-25,5,TR,OS,Yellow,TRC MV,Right of Reactor,Climbed up ...
-2018-01-25,5,DC,RP,Yellow,TRC MV,Right of Reactor,"Needed to succeed at something - ""onsight"" downclimb, except I just climbed up it, so RP"
+2018-01-25,5,DC,F,Yellow,TRC MV,Right of Reactor,"Needed to succeed at something - ""onsight"" downclimb, except I just climbed up it, so RP"
 2018-01-25,10a,TR,Hn,Black,TRC MV,Back Alley,"Holy cow, this is hard.  Greased up, and a huge JP struggle."
 2018-01-25,10c,TR,H1,Purple,TRC MV,Prow,Still falling at the crux roof
 2018-01-25,9,L,H1,Yellow,TRC MV,Lead Wall,Hung once - had a swinging fall risk at the crux that would have me hit a kid
@@ -184,7 +184,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-02-15,7+,TR,OS,Red,TRC MV,Back Alley,Easy route for fun - enjoyed the movement
 2018-02-15,9+,TR,OS,Green,TRC MV,Horseshoe Left,"Very hard for a 9, had to fight to stay on the whole way"
 2018-02-17,7,TR,OS,Grey,TRC MV,Horseshoe Right,Warm up with Jocelyn
-2018-02-17,7,DC,RP,Grey,TRC MV,Horseshoe Right,Downclimb to make a 7 worthwhile
+2018-02-17,7,DC,F,Grey,TRC MV,Horseshoe Right,Downclimb to make a 7 worthwhile
 2018-02-17,10b,TR,RE,Pink,TRC MV,Prow,Just went up so I could try to come down
 2018-02-17,10b,DC,"H, X",Pink,TRC MV,Prow,"Tried to downclimb, but just too pumpy.  Fell a few times and lowered off the rest"
 2018-02-17,11c,TR,X,Pink,TRC MV,Back Corner,New route - too hard - brain not engaged - gave up.
@@ -218,11 +218,11 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-01,9,DC,H1,Red,TRC MV,Horseshoe Back,"Tried the downclimb, fell down the last move due to traffic in the vicinity"
 2018-03-01,10c,TR,A1,Red,TRC MV,Reactor Wall,"Aided the one move, otherwise it'll go"
 2018-03-01,8,TR,RE,Blue,TRC MV,Back Alley,Went up
-2018-03-01,9,DC,RP,Yellow,TRC MV,Back Alley,"Had to wait for traffic, but downclimbed.  So hard!"
+2018-03-01,9,DC,F,Yellow,TRC MV,Back Alley,"Had to wait for traffic, but downclimbed.  So hard!"
 2018-03-01,8,TR,RP,Green,TRC MV,Back Corner,"Corner route - led it before, never on TR."
 2018-03-01,7,TR,RP,Yellow,TRC MV,Back Corner,"Led it before, never on TR.  Cool down."
 2018-03-02,7,TR,OS,Yellow,TRC NR,Tower Inside,Warm up
-2018-03-02,7,DC,RP,Yellow,TRC NR,Tower Inside,Downclimbed for the first time with Mary belaying
+2018-03-02,7,DC,F,Yellow,TRC NR,Tower Inside,Downclimbed for the first time with Mary belaying
 2018-03-02,9+,TR,OS,Blue,TRC NR,Back right,Lots of full reach moves - didn't see any short-person beta available
 2018-03-02,10b,TR,RE,Yellow,TRC NR,Prow,"Body position is key, hard throw at the end"
 2018-03-02,9,TR,OS,Red,TRC NR,Front Desk,Hurt my finger slapping for the arete
@@ -235,9 +235,9 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-08,10b,L,RP,Green,TRC MV,Lead Wall,Finally powered through the crux section!
 2018-03-08,10a,L,H1,Pink,TRC MV,Prow,"Went off-route to clip, took a penalty fall, then finished"
 2018-03-08,9,TR,RE,Red,TRC MV,Back Arete,Up the arete
-2018-03-08,9,DC,RP,Red,TRC MV,Back Arete,"And down -- didn't get hands on start hold, but downclimb to ground"
+2018-03-08,9,DC,F,Red,TRC MV,Back Arete,"And down -- didn't get hands on start hold, but downclimb to ground"
 2018-03-08,9+,TR,RE,Orange,TRC MV,Back Alley,Up the overhang -- and a rest to tighten shoelaces
-2018-03-08,9+,DC,RP,Orange,TRC MV,Back Alley,Downclimb was pumpy but easier
+2018-03-08,9+,DC,F,Orange,TRC MV,Back Alley,Downclimb was pumpy but easier
 2018-03-08,10d,TR,H1,Yellow,TRC MV,Horseshoe Left,Bungled sequence at upper roof - also in demo shoes
 2018-03-08,10d,TR,RE,Yellow,TRC MV,Horseshoe Left,Went back to get it clean - also in my own shoes
 2018-03-08,11a,TR,H1,Black,TRC MV,Horseshoe Right,"BEST EFFORT YET - forgot sequence after the first crux and took a fall, otherwise it's in the bag"
@@ -252,3 +252,24 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-11,11c,TR,X,Green,TRC MV,Horseshoe Rear,"Worked the lower moves, and felt my fingers starting to hurt"
 2018-03-11,5+,TR,RE,Black,TRC MV,Horseshoe Left,I'm assuming I did this route before ...
 2018-03-11,7,DC,OS,Green,TRC MV,Horseshoe Left,Maybe I upclimbed this before - not sure
+2018-03-13,9-,TR,RP,Blue,TRC NR,Back right,Warm-up
+2018-03-13,9-,DC,F,Blue,TRC NR,Back right,New rule - first downclimb that wasn't upclimbed will be claimed as flash; downclimb WITHOUT upclimbing the route is OS.
+2018-03-13,9,TR,H1,Green,TRC NR,Back left,Funky move with lead climber nearby
+2018-03-13,10-,TR,X,Orange,TRC NR,Lead wall,"Shane led, I seconded - got rope caught in clip and fell; couldn't get back on route."
+2018-03-13,10+,TR,H2,Yellow,TRC NR,Window,Fell twice working out beta
+2018-03-13,10+,TR,H1,Yellow,TRC NR,Window,Fell once really working out the beta
+2018-03-13,10+,TR,RP,Yellow,TRC NR,Window,Redpoint!
+2018-03-13,11-,TR,"H3, A1",Yellow,TRC NR,Back left,Working out the beta - have wanted to climb this for a while
+2018-03-13,10,TR,X,Yellow,TRC NR,Back left,Tweaky move; abandoned attempt
+2018-03-13,8,TR,OS,Green,TRC NR,Back left,"Looked at the ten, then climbed the eight.  Feet starting to hurt."
+2018-03-13,6+,L,OS,Black,TRC NR,Tower,Cool down on an easy lead - felt slippery
+2018-03-15,8-,TR,RE,Pink,TRC MV,HS R,Warm up
+2018-03-15,10c,TR,H1,Purple,TRC MV,HS L,Fell once when confused at scrunchy sequence.
+2018-03-15,10c,TR,RP,Purple,TRC MV,HS L,Went back to get it clean.
+2018-03-15,10b,TR,X,Pink,TRC MV,HS R,Fell at the second move; lowered.
+2018-03-15,10b,TR,RP,Pink,TRC MV,HS R,Went back to get it clean.
+2018-03-15,11a,TR,X,Black,TRC MV,HS R,My project - fell at the crux.  Lowered - no explosive energy today.
+2018-03-15,9,TR,OS,Black,TRC MV,HS R,Very hard - thought I would fall
+2018-03-15,10c,TR,H2,Yellow,TRC MV,Back Corner,Yellow slippery holds; hurt my finger
+2018-03-15,10c,TR,X,Red,TRC MV,HS,Hard move under the roof - lowered
+2018-03-15,7-,TR,OS,Grey,TRC MV,Reactor Left,Cool down
