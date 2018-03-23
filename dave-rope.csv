@@ -243,7 +243,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-08,11a,TR,H1,Black,TRC MV,Horseshoe Right,"BEST EFFORT YET - forgot sequence after the first crux and took a fall, otherwise it's in the bag"
 2018-03-08,11a,TR,X,Black,TRC MV,Horseshoe Right,End of the night.  Too tired.  Too late for hard climbs.
 2018-03-08,9,TR,RE,Red,TRC MV,Horseshoe Left,Up - and only stemming to rest ...
-2018-03-08,9,DC,H1,Red,TRC MV,Horseshoe Left,"So close - one slip and save, one slip and fall."
+2018-03-08,9,DC,H1,Red,TRC MV,Horseshoe Back,"So close - one slip and save, one slip and fall."
 2018-03-11,9,L,RE,Yellow,TRC MV,Lead wall,"Warm up, so Mary could second it"
 2018-03-11,10c,L,H2,Pink,TRC MV,Lead wall,"Went up, and took two hangs for mental clarity - this project will go!"
 2018-03-11,10d,TR,OS,Green,MV Classic,Doorway area,"Hard moves at the top, but got the onsight"
@@ -259,7 +259,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-13,10+,TR,H2,Yellow,TRC NR,Window,Fell twice working out beta
 2018-03-13,10+,TR,H1,Yellow,TRC NR,Window,Fell once really working out the beta
 2018-03-13,10+,TR,RP,Yellow,TRC NR,Window,Redpoint!
-2018-03-13,11-,TR,"H3, A1",Yellow,TRC NR,Back left,Working out the beta - have wanted to climb this for a while
+2018-03-13,11a,TR,"H3, A1",Yellow,TRC NR,Back left,Working out the beta - have wanted to climb this for a while
 2018-03-13,10,TR,X,Yellow,TRC NR,Back left,Tweaky move; abandoned attempt
 2018-03-13,8,TR,OS,Green,TRC NR,Back left,"Looked at the ten, then climbed the eight.  Feet starting to hurt."
 2018-03-13,6+,L,OS,Black,TRC NR,Tower,Cool down on an easy lead - felt slippery
@@ -279,9 +279,33 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-18,10c,TR,X,Red,TRC MV,HS,"Got through the lower crux, bashed my knuckles so lowered off"
 2018-03-18,10c,TR,"A, H2",Red,TRC MV,HS,Aided to the same point and climbed up - fell twice.  Climbs like an 11.
 2018-03-18,11a,TR,X,Black,TRC MV,HS R,Fell at the crux move again.  Still no explosive energy for the move.
-2018-03-18,11a,TR,X,Green,TRC MV,Desk Area,Fell at the crus move.  Lower section felt hard.  Not strong enough for crux yet.
+2018-03-18,11a,TR,X,Green,TRC MV,Desk Area,Lower section felt hard.  I'm just not strong enough to make the crux move yet.
 2018-03-18,11d,TR,"H, X",Purple,TRC MV,Right of lead,Easier than I expected - made it half way and called it a day.  Crimpy!
 2018-03-18,8,TR,RE,Blue,TRC MV,Back Alley,Up
 2018-03-18,8,DC,F,Blue,TRC MV,Back Alley,And Down.
 2018-03-18,9-,TR,H1,Green,TRC MV,Reactor Right,Fell!  On a 9-!  Reachy move done wrong caused my foot to pop off.
 2018-03-18,11d,TR,X,Pink,TRC MV,HS L,Went back to try the crimps - got up to the hard part and lowered off.
+2018-03-21,5,TR,OS,Red,TRC NR,Left Outside,Autobelay
+2018-03-21,7,DC,OS,Blue,TRC NR,Left Outside,Down on autobelay
+2018-03-21,7,TR,OS,Yellow,TRC NR,Left Outside,Autobelay
+2018-03-21,10c,TR,X,Orange,TRC NR,Left Outside,Autobelay; fell and auto-lowered
+2018-03-21,9-,TR,RE,Blue,TRC NR,Right Inside,Customary warm up route
+2018-03-21,9+,TR,RE,Blue,TRC NR,Right Outside,Repeat of a route - easier this time
+2018-03-21,8,DC,X,Green,TRC NR,Right Outside,Couldn't downclimb through the roof
+2018-03-21,10d,TR,RE,Blue,TRC NR,Tower Inside,Same route I knocked out recently - climbed easily
+2018-03-21,11a,TR,H1,Black,TRC NR,Tower Front,One hang - blobby/sloper holds threw me off
+2018-03-21,11a,TR,RP,Black,TRC NR,Tower Front,"Straight back to it, and climbed clean."
+2018-03-21,11a,TR,H2,Yellow,TRC NR,Left Rear,"Best attempt yet - two hangs, but did all the moves"
+2018-03-21,10d,TR,H2,Green,TRC NR,Left Front,Should have OS; botched the JP sequences
+2018-03-21,10d,TR,RP,Green,TRC NR,Left Front,Went back and easily climbed it clean
+2018-03-21,10d,TR,X,Green,TRC NR,Tower Outside,Auto belay - fell at the lower crux again
+2018-03-22,9,TR,OS,Orange,TRC NR,Left Front,Warm up
+2018-03-22,8,TR,OS,Green,TRC NR,Left Front,Up
+2018-03-22,8,DC,F,Green,TRC NR,Left Front,... down
+2018-03-22,9,TR,RE,Red,TRC NR,Tower Front,Felt really hard.  I need to use more tiny feet and less reach.
+2018-03-22,10c,TR,X,Black,TRC NR,Right Front,Stuck at the same crux move
+2018-03-22,10c,TR,X,Yellow,TRC NR,Right Overhang,Too scrunched to stick a hard move; swung out into space
+2018-03-22,11a,TR,H1,Yellow,TRC NR,Left Rear,Forgot foot sequence and pumped out
+2018-03-22,11a,TR,RP,Yellow,TRC NR,Left Rear,"YES! It felt easy.  I made an on the spot beta improvement on a hard move, too"
+2018-03-22,10c,TR,X,Black,TRC NR,Left Rear,"Pumpy, bouldery, didn't get far"
+2018-03-22,10c,TR,X,Black,TRC NR,Right Rear,"Pumpy, bouldery, did better but couldn't get over the lip"
