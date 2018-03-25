@@ -9,7 +9,7 @@ from plot.text import pyramid as text_pyramid
 
 # Handle input file as first arg, or use default filename.
 # TODO: make sure file exists
-infile="./dave-rope.csv"
+infile="./dave.csv"
 
 if len(sys.argv) > 1:
   infile=sys.argv[1]

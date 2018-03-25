@@ -1,4 +1,4 @@
-Printing pyramids in dave-rope.csv for ascents in ['RP', 'F', 'OS']
+Printing pyramids in dave.csv for ascents in ['RP', 'F', 'OS']
 
  gr( ##)     Pyramid for Top Rope 11c                                                                                         
 11c(  0)               [ ]                                                                                                    
