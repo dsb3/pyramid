@@ -8,6 +8,10 @@ from werkzeug.routing import BaseConverter
 from plot.text import pyramid as text_pyramid
 
 
+# scrape new data
+from plot.scrape import scrape
+
+
 # Create application with /static path defined
 application = Flask(__name__, static_url_path='/static')
 
@@ -63,6 +67,14 @@ def example2(plotfor, showfor):
 
 if __name__ == "__main__":
     application.run(debug=True)
+
+
+
+#########
+
+@application.route('/scrape/<regex("[A-Za-z0-9-]+"):plotfor>/')
+def example3(plotfor):
+    return "<pre>" + scrape(user = plotfor)
 
 
 
