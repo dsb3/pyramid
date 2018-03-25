@@ -1,6 +1,6 @@
 #!/bin/env python3
 #
-# Generate Horst training pyramids
+# Generate Horst training pyramids in text/graph format
 #
 # Graphs Top Rope, Lead, Down Climb, Down Lead (or others)
 # Reads from $1 (will default to "ticks.csv" in current directory)
@@ -39,25 +39,32 @@ def pyramid(file = "ticks.csv", show = "RP"):
   # Call our function to turn the CSV file into ticks() data structure
   ticks = readticks(file, show)
 
+  # If we got a string, return it as our error message
+  if isinstance(ticks, str):
+     return ticks
 
-  # Parse data to calculate usedrope (which rope types are present)
-  # so take a copy of valid ropes and delete those not seen
-  usedrope = validrope[:]
+
+  # Regardless of validrope, we now calculate usedrope that contains
+  # only those rope types we actually have data for.
+  usedrope = []
 
   # delete any that don't have data present
-  for rope in validrope:
+  for rope in ticks.keys():
     count = 0
     try:
-      for grade in validgrades:
+      for grade in ticks[rope].keys():
         count += len (ticks[rope][grade])
     except KeyError:
       pass
   
     # No counted ticks for the rope
-    if (count == 0):
-      usedrope.remove(rope)
+    if (count > 0):
+      usedrope.append(rope)
 
-
+  # TODO: I just edited the above to count only those ropes which are
+  # valid, instead of filtering validropes to remove those not seen.  This
+  # means we lost the inherant sorting of rope types, and should now resort
+  # the data so (e.g.) the highest grade seen on a rope sorts first.
 
   
   # CSV data is now loaded into structure, ready to graph.

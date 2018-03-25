@@ -32,30 +32,32 @@ from plot.cfg import abbrev, validrope, validascent, \
 
 def readticks(file = "ticks.csv", show = "RP"):
 
+  #
   # Data structure to generate
   #
   # ticks {
-  #   L {
-  #     11a { 
-  #       OS [ date, date, ... ]
-  #       F  [ date, date, ... ]
-  #       RP [ date, date, ... ]
-  #     }
-  #     10d { ... }
+  #   'L' {
+  #     11a [ date, date, ... ],
+  #     10d [ date, date, ... ],
   #     ...
   #   }
-  #   TR {
+  #   'TR' {
   #    ...
   #   }
+  #
   # }
   
 
-
-  # If "show" is set, filter validascent so as to graph
-  # only climbs of that type or better.
-  # so: "RP" -> "RP", "F", "OS"
-  # or: "OS" -> "OS" only
+  # By default, we will show all ticks of "RP" (redpoint) or "better"
+  # but if "show" is set, we filter validascent so as to graph only
+  # climbs of that value or higher.
   #
+  # So, default is: "RP", "F", "OS"
+  # Passing "F" gives: "F", "OS" only
+  # Passing "OS" gives: "OS" only
+  # Passing an invalid value returns the whole suite: "RE", "RP", "F", "OS"
+  #
+
   # NOTE: this edits the global variable validascent, also used
   # in the "display" functions.
   #
@@ -172,23 +174,34 @@ def readticks(file = "ticks.csv", show = "RP"):
       grade = re.sub('/[\w]+$', '', grade)  # 11a/b -> 11a
   
 
+    # Is the row we read from the file valid?  If not, continue ...
     # only include valid data items
     if rope not in validrope or ascent not in validascent or grade not in validgrades:
       continue
   
-   
-    # Append dates
+    # If so, append it to our data structure
     ticks[rope][grade].append(date)
+
+
+    # TODO: capture more data in the ticks structure
+    # capture "attempt" dates to annotate; capture ascent type in structure
   
-    # TODO: append "attempt" dates to annotate graph
   
-  
-  
-  # Parse through data before displaying (TODO: this is for future enhancements)
+  # /end "for row in csvfile"
+
+
+  # Before we return the data, we'll clean it up.
+
   for rope in ticks.keys():
-    # Sort entries for each day
+ #   count = 0
+    # Sort entries by date where they're found
     for grade in ticks[rope].keys():
       ticks[rope][grade].sort(reverse=1)
+ #     count += len ( ticks[rope][grade] )
+
+ #   # No ticks for this rope type?  Delete it.
+ #   if count == 0:
+ #     del ticks[rope]
   
 
   
