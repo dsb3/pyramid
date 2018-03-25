@@ -76,6 +76,9 @@ def readticks(file = "ticks.csv", show = "RP"):
   header_fields = { }
   first_row = 1
 
+  # Default to avoid erroring
+  validgrades = validyds     # already defaults to this value
+
   # Try to open file named as-is
   try:
     fh = open(file)
@@ -143,6 +146,9 @@ def readticks(file = "ticks.csv", show = "RP"):
   
   
     # These two are mandatory
+    if "date" not in header_fields.keys() or "grade" not in header_fields.keys():
+      return "CSV data headers are invalid"
+
     (date, grade) = (row[ header_fields["date"] ], row[ header_fields["grade"] ].lower())
   
     # We generate default values for these two

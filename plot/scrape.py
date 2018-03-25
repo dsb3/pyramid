@@ -43,6 +43,14 @@ def scrape(user = "dave", sub = "0"):
   url="https://docs.google.com/spreadsheets/d/" + pages[user] + "/export?format=csv&gid=" + gid
   data = urllib.request.urlopen(url).read().decode("utf-8")
 
+
+  # Sanity check content
+
+  # If this text exists, the google doc spreadsheet isn't readable by all
+  if data.find('<html lang="'):
+    return "Content not readable. Check that public sharing is enabled."
+
+  
   # Save to disk
   f = open(user + ".csv", "w")
   f.write(data)
