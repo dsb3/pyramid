@@ -76,7 +76,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
     # still too many ticks including the overflow?  cascade down.
     if pyr["filled"][i] + pyr["flowed"][i] > 2**i:
-      pyr["flowed"][i+1] += ( pyr["filled"][i] + pyr[rope]["flowed"][i] ) - 2**i
+      pyr["flowed"][i+1] += ( pyr["filled"][i] + pyr["flowed"][i] ) - 2**i
       pyr["flowed"][i] = 2**i - pyr["filled"][i]
 
   # iterate again, calculating "empty"
