@@ -42,11 +42,12 @@ Support gid for downloading different sheets in one doc
 
 - slider for RP / F / OS
 
-- fader for old dates
+- fade boxes to indicate old dates
 
 - show the colours of the routes that were climbed; hover/mouseover to show detail
 
 - show/hide legend based on what's being graphed
+
 
 
 
