@@ -97,9 +97,10 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
 
   # TODO: should be able to loop over these rather than generate each set manually
+  # count is total for that grade, not our truncated "graph this many" subset
   data["row1"] = {}
   data["row1"]["title"] = validgrades[gradei].lower()
-  data["row1"]["count"] = "({})".format(pyr["filled"][0])
+  data["row1"]["count"] = "({})".format( len( ticks[rope][ (validgrades[gradei]) ] ))
   data["row1"]["squares"] = []
   for i in range(pyr["filled"][0]):
     data["row1"]["squares"].append("redpoint")
@@ -110,7 +111,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
   data["row2"] = {}
   data["row2"]["title"] = validgrades[gradei - 1].lower()
-  data["row2"]["count"] = "({})".format(pyr["filled"][1])
+  data["row2"]["count"] = "({})".format( len( ticks[rope][ (validgrades[gradei -1]) ] ))
   data["row2"]["squares"] = []
   for i in range(pyr["filled"][1]):
     data["row2"]["squares"].append("redpoint")
@@ -121,7 +122,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
   data["row3"] = {}
   data["row3"]["title"] = validgrades[gradei - 2].lower()
-  data["row3"]["count"] = "({})".format(pyr["filled"][2])
+  data["row3"]["count"] = "({})".format( len( ticks[rope][ (validgrades[gradei -2]) ] ))
   data["row3"]["squares"] = []
   for i in range(pyr["filled"][2]):
     data["row3"]["squares"].append("redpoint")
@@ -132,7 +133,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
   data["row4"] = {}
   data["row4"]["title"] = validgrades[gradei - 3].lower()
-  data["row4"]["count"] = "({})".format(pyr["filled"][3])
+  data["row4"]["count"] = "({})".format( len( ticks[rope][ (validgrades[gradei -3]) ] ))
   data["row4"]["squares"] = []
   for i in range(pyr["filled"][3]):
     data["row4"]["squares"].append("redpoint")
