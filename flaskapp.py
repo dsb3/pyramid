@@ -7,6 +7,9 @@ from werkzeug.routing import BaseConverter
 # text graph creator
 from plot.text import pyramid as text_pyramid
 
+# graphical creator
+from plot.svg import pyramid as graph_pyramid
+from plot.svg import one_svg
 
 # scrape new data
 from plot.scrape import scrape
@@ -15,7 +18,7 @@ from plot.scrape import scrape
 # Create application with /static path defined
 application = Flask(__name__, static_url_path='/static')
 
-# cut/pastd from stack exchange to permit regex in routes
+# cut/pasted from stack exchange to permit regex in routes
 class RegexConverter(BaseConverter):
     def __init__(self, url_map, *items):
         super(RegexConverter, self).__init__(url_map)
@@ -50,31 +53,45 @@ def robotstxt():
 #########
 
 @application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
-def example1(plotfor):
-    #ctype = "text/plain"
-    #data = text_pyramid(file = plotfor, show="RP")
-    #return Response(data, mimetype=ctype)
-    return "<pre>" + text_pyramid(file = plotfor, show="RP")
+def text_user(plotfor):
+    return text_pyramid(file = plotfor, show="RP")
 
 
-
-@application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<showfor>/')
-def example2(plotfor, showfor):
-    ctype = "text/plain"
-    data = text_pyramid(file = plotfor, show=showfor)
-    return Response(data, mimetype=ctype)
+@application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/')
+def text_user_ascent(plotfor, showfor):
+    return text_pyramid(file = plotfor, show=showfor.upper())
 
 
-if __name__ == "__main__":
-    application.run(debug=True)
+#########
 
+
+# /graph/dave/  <-- page of graphs
+@application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
+def graph_user(plotfor):
+    return graph_pyramid(file = plotfor, show="RP")
+
+# /graph/dave/OS/  <-- page of graphs
+@application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/')
+def graph_user_ascent(plotfor, showfor):
+    return graph_pyramid(file = plotfor, show=showfor.upper())
+
+# /graph/dave/OS/TR/10b/  <-- one svg
+@application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/<regex("[A-Za-z]+"):showrope>/<regex("[A-Za-z0-9.]+"):showgrade>/')
+def graph_user_ascent_rope_grade(plotfor, showfor, showrope, showgrade):
+    return one_svg(file = plotfor, show=showfor.upper(), rope=showrope.upper(), grade=showgrade.upper())
 
 
 #########
 
 @application.route('/scrape/<regex("[A-Za-z0-9-]+"):plotfor>/')
-def example3(plotfor):
-    return "<pre>" + scrape(user = plotfor)
+def scrape_user(plotfor):
+    return scrape(user = plotfor)
+
+
+#########
+
+if __name__ == "__main__":
+    application.run(debug=True)
 
 
 
