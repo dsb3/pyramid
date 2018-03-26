@@ -182,7 +182,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
 
   
   # CSV data is now loaded into structure, ready to generate links to our graphs
-  outbuffer = ""
+  outbuffer = "<html> <head> <title> Pyramids for {} </title> </head> <body>".format(file)
 
   
   
@@ -236,10 +236,11 @@ def pyramid(file = "ticks.csv", show = "RP"):
       outbuffer += '<object type="image/svg+xml" data="/graph/{}/{}/{}/{}/" width="550" height="300" border="0"></object>\n'.format(file, show, rope, grade)
 
   
-    outbuffer += '</span>'
+    outbuffer += '</span>\n'
     # TODO: need to analyse data anyway to determine if/when to end early
 
   
+  outbuffer += "</body></html>"
   
   return outbuffer
 
