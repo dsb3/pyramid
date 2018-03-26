@@ -27,6 +27,9 @@
 -->
 
 
+{# entire image data is omitted - left blank - unless we have anything to print #}
+{% if not nodata %}
+
 <!-- create border around frame -->
 <rect x='0' y='0' width='550' height='300' style='fill: none; stroke: black; stroke-width: 2px' />
 
@@ -174,5 +177,8 @@
   <use xlink:href="#{{ sq }}"/>
   </g>
 {% endfor %}
+
+{# endif for printing/not printing entire content set #}
+{% endif %}
 
 </svg>

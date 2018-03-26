@@ -157,9 +157,15 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
     data["row4"]["squares"].append("pending")
 
 
+  # Shortcut for "don't print empty pyramids"
+  # - we actually want to print empty pyramids between large gaps in ticks
+  #   even if these should be rare in live data
+  if pyr["empty"] == [1, 2, 4, 8]:
+    data["nodata"] = 1
+
   return jinja2.Environment(
     loader=jinja2.FileSystemLoader('./plot/')
-  ).get_template('svg.j2').render(data)
+  ).get_template("svg.j2").render(data)
 
 
 
