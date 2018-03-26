@@ -17,10 +17,10 @@ import urllib.request
 
 # Hard-coded page ID prevents user from requesting random URLs
 pages = {
-  "dave": "1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg",
+  "dave":  "1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg",
   "shane": "1v30fRnnKASoTLeEuGRo0Zg2hcwOSqE95N9B74v4UhAs",
-  "cole": "15cOnJtF9VmatGTyBjB5W5qz3rJ_yuUgmfLEYDJvOHjg",
-  "mary": "16qmOaUZFPqneBN9bAbyn8fuDlcAvsJ0GdwKRec7rmWo"
+  "cole":  "15cOnJtF9VmatGTyBjB5W5qz3rJ_yuUgmfLEYDJvOHjg",
+  "mary":  "16qmOaUZFPqneBN9bAbyn8fuDlcAvsJ0GdwKRec7rmWo"
 }
 
 
