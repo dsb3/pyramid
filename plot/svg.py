@@ -30,39 +30,116 @@ from plot.readcsv import readticks
 
 def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
+  # call function to gather ticks data structure
+  ticks = readticks(file, show)
+
+  # If we got a string, return it as our error message
+  if isinstance(ticks, str):
+     return ticks
+
+
+  # Look up the grade index for the grade requested
+  try:
+    gradei = validgrades.index(grade.lower())
+  except:
+    return "No such grade"
+
+
+  # If we've requested a rope that wasn't used, error
+  if rope not in ticks.keys():
+     return "No data found"
+
+  # This is an abbreviated copy of the calculations done for text
+  # (there, we generate for all ropes simultaneously)
+
+  # TODO: enhance to capture flash/onsight/redpoint/etc.
+  pyr={}
+  pyr["filled"]=[0, 0, 0, 0]      # empty four row pyramid for ticks
+  pyr["flowed"]=[0, 0, 0, 0, 0]   # empty four row pyramid for surplus flowed from above, with unused fifth row var
+  pyr["empty"]=[0, 0, 0, 0]       # empty four row pyramid for empty box count
+
+  
+  # Prefill "flowed" for the top row with a count of all climbs "above"
+  for i in range(gradei+1, len(validgrades) - 1):
+    pyr["flowed"][0] += len( ticks[rope][ (validgrades[i]) ] )
+
+  # iterate over four rows, capturing "filled" from our ticks data
+  for i in range(0, 4):
+    pyr["filled"][i] = len( ticks[rope][ (validgrades[gradei - i]) ] )
+
+  # iterate again, cascading excess count into "flowed"
+  for i in range(0, 4):
+    # too many ticks for this row?  overflow to the next row.
+    if pyr["filled"][i] > 2**i:
+      pyr["flowed"][i+1] = pyr["filled"][i] - 2**i
+      pyr["filled"][i] = 2**i
+
+    # still too many ticks including the overflow?  cascade down.
+    if pyr["filled"][i] + pyr["flowed"][i] > 2**i:
+      pyr["flowed"][i+1] += ( pyr["filled"][i] + pyr[rope]["flowed"][i] ) - 2**i
+      pyr["flowed"][i] = 2**i - pyr["filled"][i]
+
+  # iterate again, calculating "empty"
+  for i in range(0, 4):
+    pyr["empty"][i] = 2**i - ( pyr["filled"][i] + pyr["flowed"][i] )
+
+
+
+
+
+
   # dataset to plot
   data={}
-
-
-  # TODO --- read csv file and process
-
-
-  # get index into validgrades (TODO: trap errors)
-  gradei = validgrades.index(grade.lower())
 
 
   data["title"] = "Pyramid for {} {}".format(abbrev[rope], grade.lower())
   data["date"] = "2018-xx-yy"
 
+
+  # TODO: should be able to loop over these rather than generate each set manually
   data["row1"] = {}
   data["row1"]["title"] = validgrades[gradei].lower()
-  data["row1"]["count"] = "(1)"
-  data["row1"]["squares"] = ("flash")
+  data["row1"]["count"] = "({})".format(pyr["filled"][0])
+  data["row1"]["squares"] = []
+  for i in range(pyr["filled"][0]):
+    data["row1"]["squares"].append("redpoint")
+  for i in range(pyr["flowed"][0]):
+    data["row1"]["squares"].append("cascade")
+  for i in range(pyr["empty"][0]):
+    data["row1"]["squares"].append("pending")
 
   data["row2"] = {}
   data["row2"]["title"] = validgrades[gradei - 1].lower()
-  data["row2"]["count"] = "(2)"
-  data["row2"]["squares"] = ("flash", "pending")
+  data["row2"]["count"] = "({})".format(pyr["filled"][1])
+  data["row2"]["squares"] = []
+  for i in range(pyr["filled"][1]):
+    data["row2"]["squares"].append("redpoint")
+  for i in range(pyr["flowed"][1]):
+    data["row2"]["squares"].append("cascade")
+  for i in range(pyr["empty"][1]):
+    data["row2"]["squares"].append("pending")
 
   data["row3"] = {}
   data["row3"]["title"] = validgrades[gradei - 2].lower()
-  data["row3"]["count"] = "(5)"
-  data["row3"]["squares"] = ("onsight", "flash", "redpoint", "redpoint")
+  data["row3"]["count"] = "({})".format(pyr["filled"][2])
+  data["row3"]["squares"] = []
+  for i in range(pyr["filled"][2]):
+    data["row3"]["squares"].append("redpoint")
+  for i in range(pyr["flowed"][2]):
+    data["row3"]["squares"].append("cascade")
+  for i in range(pyr["empty"][2]):
+    data["row3"]["squares"].append("pending")
 
   data["row4"] = {}
   data["row4"]["title"] = validgrades[gradei - 3].lower()
-  data["row4"]["count"] = "(3)"
-  data["row4"]["squares"] = ("onsight", "flash", "redpoint", "cascade", "pending", "pending", "pending", "pending")
+  data["row4"]["count"] = "({})".format(pyr["filled"][3])
+  data["row4"]["squares"] = []
+  for i in range(pyr["filled"][3]):
+    data["row4"]["squares"].append("redpoint")
+  for i in range(pyr["flowed"][3]):
+    data["row4"]["squares"].append("cascade")
+  for i in range(pyr["empty"][3]):
+    data["row4"]["squares"].append("pending")
 
 
   return jinja2.Environment(
@@ -123,10 +200,8 @@ def pyramid(file = "ticks.csv", show = "RP"):
     print_for[rope]=-1000   # flag never seen
   
   
-  # Pyramid is 4 rows high, so can't start below 4th rung
+  # Pyramid is 4 rows high, so never start below 4th rung
   #
-  # We need grade as an index into validgrades more often than we need "grade",
-  # the textual equivalent
   
   for gradei in reversed(range( 3, len(validgrades))):
     grade=validgrades[gradei]
