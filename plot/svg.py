@@ -52,6 +52,20 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
   # This is an abbreviated copy of the calculations done for text
   # (there, we generate for all ropes simultaneously)
 
+
+  # Determine the latest date for any climb on this rope
+  # union each set (unique) of ticks, and find the latest one
+  #
+  # This means the dates on each rope type reflect the latest of
+  # any climb on that rope; NOT the latest of any climb that's
+  # being graphed in that specific pyramid
+  #
+  alldates = set()
+  for g in ticks[rope].keys():
+    alldates |= set( ticks[rope][g] )
+  latestdate = sorted(alldates)[-1]
+
+
   # TODO: enhance to capture flash/onsight/redpoint/etc.
   pyr={}
   pyr["filled"]=[0, 0, 0, 0]      # empty four row pyramid for ticks
@@ -93,7 +107,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
 
   data["title"] = "Pyramid for {} {}".format(abbrev[rope], grade.lower())
-  data["date"] = "2018-xx-yy"
+  data["date"] = latestdate
 
 
   # TODO: should be able to loop over these rather than generate each set manually
