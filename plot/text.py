@@ -68,7 +68,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
 
   
   # CSV data is now loaded into structure, ready to graph.
-  outbuffer = ""
+  outbuffer = "<pre>"
   outbuffer += "Printing pyramids in %s for ascents in %s\n" % (file, validascent)
 
   
