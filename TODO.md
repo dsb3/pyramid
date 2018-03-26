@@ -25,7 +25,9 @@ Support gid for downloading different sheets in one doc
 
 ## svg
 
-- hover to show detail
+- shrink image to fit 3x wide more easily
+
+- add hover/mouseover to show detail
 
 - slider for RP / F / OS
 

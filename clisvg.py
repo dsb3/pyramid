@@ -29,7 +29,7 @@ if len(sys.argv) > 3:
 
 grade="11c"
 if len(sys.argv) > 4:
-  rope=sys.argv[4]
+  grade=sys.argv[4]
 
 print( one_svg(file = infile, show = types, rope=rope, grade=grade) )
 
