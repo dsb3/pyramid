@@ -24,7 +24,7 @@ from datetime import datetime
 from plot.cfg import abbrev, validrope, validascent, \
         validyds, validboulder, validewbank, validfont, validgrades
 
-from plot.readcsv import readticks
+from plot.readcsv import readticks, count_pyr
 
 
 
@@ -67,38 +67,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
 
   # TODO: enhance to capture flash/onsight/redpoint/etc.
-  pyr={}
-  pyr["filled"]=[0, 0, 0, 0]      # empty four row pyramid for ticks
-  pyr["flowed"]=[0, 0, 0, 0, 0]   # empty four row pyramid for surplus flowed from above, with unused fifth row var
-  pyr["empty"]=[0, 0, 0, 0]       # empty four row pyramid for empty box count
-
-  
-  # Prefill "flowed" for the top row with a count of all climbs "above"
-  for i in range(gradei+1, len(validgrades) - 1):
-    pyr["flowed"][0] += len( ticks[rope][ (validgrades[i]) ] )
-
-  # iterate over four rows, capturing "filled" from our ticks data
-  for i in range(0, 4):
-    pyr["filled"][i] = len( ticks[rope][ (validgrades[gradei - i]) ] )
-
-  # iterate again, cascading excess count into "flowed"
-  for i in range(0, 4):
-    # too many ticks for this row?  overflow to the next row.
-    if pyr["filled"][i] > 2**i:
-      pyr["flowed"][i+1] = pyr["filled"][i] - 2**i
-      pyr["filled"][i] = 2**i
-
-    # still too many ticks including the overflow?  cascade down.
-    if pyr["filled"][i] + pyr["flowed"][i] > 2**i:
-      pyr["flowed"][i+1] += ( pyr["filled"][i] + pyr["flowed"][i] ) - 2**i
-      pyr["flowed"][i] = 2**i - pyr["filled"][i]
-
-  # iterate again, calculating "empty"
-  for i in range(0, 4):
-    pyr["empty"][i] = 2**i - ( pyr["filled"][i] + pyr["flowed"][i] )
-
-
-
+  pyr=count_pyr(ticks, show, rope, grade)
 
 
 
@@ -162,6 +131,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
   #   even if these should be rare in live data
   if pyr["empty"] == [1, 2, 4, 8]:
     data["nodata"] = 1
+
 
   return jinja2.Environment(
     loader=jinja2.FileSystemLoader('./plot/')

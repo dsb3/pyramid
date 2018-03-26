@@ -217,3 +217,49 @@ def readticks(file = "ticks.csv", show = "RP"):
 
 # end readticks()
 
+
+
+# count_pyr will read the ticks and create pyr structure for
+# a single "show" (RP, F, OS, etc), single rope, and single grade
+#
+# TODO: the text graph creates a deeper nested pyr structure to
+# count for all ropes at once.  Update that code so it can use this.
+
+def count_pyr(ticks = "", show = "", rope = "", grade = ""):
+
+  # expect grade to be valid
+  gradei = validgrades.index(grade.lower())
+
+
+  dataset = {}
+  dataset["filled"]=[0, 0, 0, 0]      # empty four row pyramid for ticks
+  dataset["flowed"]=[0, 0, 0, 0, 0]   # empty four row pyramid for surplus flowed from above, with unused fifth row var
+  dataset["empty"]=[0, 0, 0, 0]       # empty four row pyramid for empty box count
+
+
+  # Prefill "flowed" for the top row with a count of all climbs "above"
+  for i in range(gradei+1, len(validgrades) - 1):
+    dataset["flowed"][0] += len( ticks[rope][ (validgrades[i]) ] )
+
+  # iterate over four rows, capturing "filled" from our ticks data
+  for i in range(0, 4):
+    dataset["filled"][i] = len( ticks[rope][ (validgrades[gradei - i]) ] )
+
+  # iterate again, cascading excess count into "flowed"
+  for i in range(0, 4):
+    # too many ticks for this row?  overflow to the next row.
+    if dataset["filled"][i] > 2**i:
+      dataset["flowed"][i+1] = dataset["filled"][i] - 2**i
+      dataset["filled"][i] = 2**i
+
+    # still too many ticks including the overflow?  cascade down.
+    if dataset["filled"][i] + dataset["flowed"][i] > 2**i:
+      dataset["flowed"][i+1] += ( dataset["filled"][i] + dataset["flowed"][i] ) - 2**i
+      dataset["flowed"][i] = 2**i - dataset["filled"][i]
+
+  # iterate again, calculating "empty"
+  for i in range(0, 4):
+    dataset["empty"][i] = 2**i - ( dataset["filled"][i] + dataset["flowed"][i] )
+
+
+  return dataset
