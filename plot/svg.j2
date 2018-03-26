@@ -93,6 +93,10 @@
 <use xlink:href="#redpoint" transform="scale(0.65)"/>
 </g>
 
+
+{# todo - dynamic j2 rendering of legend based on what appears in data set 
+   for now, just hide flash/OS and shuffle cascaded/pending higher up.
+
 <g transform="translate(520,100)">
 <text text-anchor="end" alignment-baseline='middle'
       x='0' y='0' fill='black' transform="translate(-60)">Flash/OS</text>
@@ -100,13 +104,15 @@
 <use xlink:href="#onsight" transform="scale(0.65)"/>
 </g>
 
-<g transform="translate(520, 140)">
+#}
+
+<g transform="translate(520, 100)">  {# 140 when f/os is back #}
 <text text-anchor="end" alignment-baseline='middle'
       x='0' y='0' fill='black' transform="translate(-20)">Cascaded</text>
 <use xlink:href="#cascade" transform="scale(0.65)"/>
 </g>
 
-<g transform="translate(520, 180)">
+<g transform="translate(520, 140)">  {# 180 when f/os is back #}
 <text text-anchor="end" alignment-baseline='middle'
       x='0' y='0' fill='black' transform="translate(-20)">Pending</text>
 <use xlink:href="#pending" transform="scale(0.65)"/>
