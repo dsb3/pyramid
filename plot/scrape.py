@@ -33,7 +33,7 @@ pages = {
 def scrape(user = "dave", sub = "0"):
 
   if user not in pages.keys():
-    return "User not defined"
+    return "<pre>User not defined"
 
   # hard coded - first page.
   gid="0"
@@ -48,7 +48,7 @@ def scrape(user = "dave", sub = "0"):
 
   # If this text exists, the google doc spreadsheet isn't readable by all
   if data.find('<html lang="'):
-    return "Content not readable. Check that public sharing is enabled."
+    return "<pre>Content not readable. Check that public sharing is enabled."
 
   
   # Save to disk
@@ -58,6 +58,6 @@ def scrape(user = "dave", sub = "0"):
   
   # Extract last line to return as a status indicator
   lines = data.split("\r\n")
-  return "Last line: " + lines[-1]
+  return "<pre>Last line: " + lines[-1]
 
 
