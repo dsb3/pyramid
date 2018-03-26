@@ -222,12 +222,19 @@ def readticks(file = "ticks.csv", show = "RP"):
 # count_pyr will read the ticks and create pyr structure for
 # a single "show" (RP, F, OS, etc), single rope, and single grade
 #
-# TODO: the text graph creates a deeper nested pyr structure to
-# count for all ropes at once.  Update that code so it can use this.
+# TODO: count redpoint, flash, onsight separately
+#
+# dataset {
+#   "filled" [ a, b, c, d ]            # count of climbed ticks at each row 
+#   "flowed" [ a, b, c, d, overflow ]  # count of overflowed ticks
+#   "empty"  [ a, b, c, d ]            # empty blocks to fill out pyramid
+#
+
+
 
 def count_pyr(ticks = "", show = "", rope = "", grade = ""):
 
-  # expect grade to be valid
+  # grade should have been checked before calling this.
   gradei = validgrades.index(grade.lower())
 
 

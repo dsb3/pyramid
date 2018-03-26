@@ -27,7 +27,7 @@ from datetime import datetime
 from plot.cfg import abbrev, validrope, validascent, \
         validyds, validboulder, validewbank, validfont, validgrades
 
-from plot.readcsv import readticks
+from plot.readcsv import readticks, count_pyr
 
 
 
@@ -72,9 +72,6 @@ def pyramid(file = "ticks.csv", show = "RP"):
   outbuffer += "Printing pyramids in %s for ascents in %s\n" % (file, validascent)
 
   
-  
-  
-  # TODO: look at SVG output to be interactive
   
   # Output format
   #
@@ -125,16 +122,6 @@ def pyramid(file = "ticks.csv", show = "RP"):
   # (deal with graphics later)
   
   
-  # Data structure to generate separately for each grade we graph
-  #
-  # pyr {
-  #   "TR" {
-  #     "filled" [ a, b, c, d ]            # count of climbed ticks at each row - graphed as [X]
-  #     "flowed" [ a, b, c, d, overflow ]  # count of overflowed ticks - graphed as [+]
-  #     "empty"  [ a, b, c, d ]            # empty blocks to fill out pyramid - graphed as [ ]
-  #     }
-  #   "L" { ... }
-  #
   
   # Iterate top down through validgrades.  For each grade, if we have a tick
   # for either that grade, or the one below, we start printing pyramids.  If
@@ -180,39 +167,10 @@ def pyramid(file = "ticks.csv", show = "RP"):
       continue
   
   
-    # gather row data for usedrope.
+    # gather row data for all usedrope.
     pyr={}
     for rope in usedrope:
-      pyr[rope]={}
-      pyr[rope]["filled"]=[0, 0, 0, 0]      # empty four row pyramid for ticks
-      pyr[rope]["flowed"]=[0, 0, 0, 0, 0]   # empty four row pyramid for surplus flowed from above, with unused fifth row var
-      pyr[rope]["empty"]=[0, 0, 0, 0]       # empty four row pyramid for empty box count
-  
-  
-      # Prefill "flowed" for the top row with a count of all climbs "above"
-      for i in range(gradei+1, len(validgrades) - 1):
-        pyr[rope]["flowed"][0] += len( ticks[rope][ (validgrades[i]) ] )
-  
-  
-      # iterate over four rows, capturing "filled" from our ticks data
-      for i in range(0, 4):
-        pyr[rope]["filled"][i] = len( ticks[rope][ (validgrades[gradei - i]) ] )
-  
-      # iterate again, cascading excess count into "flowed"
-      for i in range(0, 4):
-        # too many ticks for this row?  overflow to the next row.
-        if pyr[rope]["filled"][i] > 2**i:
-          pyr[rope]["flowed"][i+1] = pyr[rope]["filled"][i] - 2**i
-          pyr[rope]["filled"][i] = 2**i
-  
-        # still too many ticks including the overflow?  cascade down.
-        if pyr[rope]["filled"][i] + pyr[rope]["flowed"][i] > 2**i:
-          pyr[rope]["flowed"][i+1] += ( pyr[rope]["filled"][i] + pyr[rope]["flowed"][i] ) - 2**i
-          pyr[rope]["flowed"][i] = 2**i - pyr[rope]["filled"][i]
-  
-      # iterate again, calculating "empty"
-      for i in range(0, 4):
-        pyr[rope]["empty"][i] = 2**i - ( pyr[rope]["filled"][i] + pyr[rope]["flowed"][i] )
+      pyr[rope]=count_pyr(ticks, show, rope, grade)
   
   
   
