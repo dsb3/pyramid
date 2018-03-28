@@ -48,6 +48,9 @@ Support gid for downloading different sheets in one doc
 
 - show/hide legend based on what's being graphed
 
+- animate playing forward through time to show pyramids filling in
+
+- add date stamp to "last change for this pyramid"
 
 
 
