@@ -45,25 +45,36 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
     return "No such grade"
 
 
+  # TODO: If we try to graph for a grade "too low" (i.e. not four rows
+  # before we hit the bottom), error out.
+
+
   # If we've requested a rope that wasn't used, error
   if rope not in ticks.keys():
      return "No data found"
 
-  # This is an abbreviated copy of the calculations done for text
-  # (there, we generate for all ropes simultaneously)
 
+  # Determine the date stamp for the pyramid.
+  # - For each level gather the oldest ticks (redpoints, not cascades!)
+  #   that are shown.  Of those ticks, find the newest.  So, the oldest
+  #   tick in the top layer; the second oldest in second layer, fourth
+  #   oldest in third, and eighth oldest in fourth.
+  # - Of that set, find the newest.
+  # - i.e. at what date did we stop accumulating new ticks?
+  #   or, "when did we fill out the pyramid?"
+  #
 
-  # Determine the latest date for any climb on this rope
-  # union each set (unique) of ticks, and find the latest one
-  #
-  # This means the dates on each rope type reflect the latest of
-  # any climb on that rope; NOT the latest of any climb that's
-  # being graphed in that specific pyramid
-  #
-  alldates = set()
-  for g in ticks[rope].keys():
-    alldates |= set( ticks[rope][g] )
-  latestdate = sorted(alldates)[-1]
+  alldates = []
+  latestdate = ""
+  for i in range(0, 4):
+    # grade is gradei - i, number of boxes in row is 2^i
+    # since ticks is sorted, gather the "last n" for the grade
+    alldates += ticks[rope][ validgrades[gradei-i] ][-2**i:]
+
+  if len(alldates):
+    latestdate = sorted(alldates)[-1]
+  else:
+    latestdate = ""
 
 
   # TODO: enhance to capture flash/onsight/redpoint/etc.
