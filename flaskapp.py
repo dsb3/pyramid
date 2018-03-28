@@ -65,19 +65,21 @@ def text_user_ascent(plotfor, showfor):
 #########
 
 
-# /graph/dave/  <-- page of graphs
+# /graph/dave/  <-- page of all graphs
 @application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
 def graph_user(plotfor):
     return graph_pyramid(file = plotfor, show="RP")
 
-# /graph/dave/OS/  <-- page of graphs
+# /graph/dave/OS/  <-- page of all graphs
 @application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/')
 def graph_user_ascent(plotfor, showfor):
     return graph_pyramid(file = plotfor, show=showfor.upper())
 
-# /graph/dave/OS/TR/10b/  <-- one svg
+
+
+# /svg/dave/OS/TR/10b/  <-- one svg
 # Need to override default text/html mimetype for proper rendering
-@application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/<regex("[A-Za-z]+"):showrope>/<regex("[A-Za-z0-9.]+"):showgrade>/')
+@application.route('/svg/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/<regex("[A-Za-z]+"):showrope>/<regex("[A-Za-z0-9.]+"):showgrade>/')
 def graph_user_ascent_rope_grade(plotfor, showfor, showrope, showgrade):
     content = one_svg(file = plotfor, show=showfor.upper(), rope=showrope.upper(), grade=showgrade.upper())
     return Response(content, mimetype="image/svg+xml")

@@ -224,7 +224,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
 
     outbuffer += '<span style="white-space:nowrap">\n'
     for rope in usedrope:
-      outbuffer += '<object type="image/svg+xml" data="/graph/{}/{}/{}/{}/" width="550" height="300" border="0"></object>\n'.format(file, show, rope, grade)
+      outbuffer += '<object type="image/svg+xml" data="/svg/{}/{}/{}/{}/" width="550" height="300" border="0"></object>\n'.format(file, show, rope, grade)
 
   
     outbuffer += '</span>\n'
