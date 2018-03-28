@@ -41,12 +41,12 @@ validascent = ['RE', 'RP', 'F', 'OS']
 
 
 # Yosemite Decimal System (shortened)
-validyds = ["5", "6", "7", "8", "9",
-               "10a", "10b", "10c", "10d",
-               "11a", "11b", "11c", "11d",
-               "12a", "12b", "12c", "12d",
-               "13a", "13b", "13c", "13d"
-              ]
+validyds = ["6", "7", "8", "9",
+            "10a", "10b", "10c", "10d",
+            "11a", "11b", "11c", "11d",
+            "12a", "12b", "12c", "12d",
+            "13a", "13b", "13c", "13d"
+           ]
 
 # Bouldering grades
 validboulder = [ "v0", "v1", "v2", "v3",
