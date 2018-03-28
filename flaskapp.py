@@ -9,6 +9,7 @@ from plot.text import pyramid as text_pyramid
 
 # graphical creator
 from plot.svg import pyramid as graph_pyramid
+from plot.svg import highest as graph_highest
 from plot.svg import one_svg
 
 # scrape new data
@@ -76,11 +77,22 @@ def graph_user_ascent(plotfor, showfor):
     return graph_pyramid(file = plotfor, show=showfor.upper())
 
 
+# /highest/dave/  <-- page of highest pyramid only in each rope
+@application.route('/highest/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
+def highest_user(plotfor):
+    return graph_highest(file = plotfor, show="RP")
+
+# /highest/dave/OS/  <-- page of all highests
+@application.route('/highest/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/')
+def highest_user_ascent(plotfor, showfor):
+    return graph_highest(file = plotfor, show=showfor.upper())
+
+
 
 # /svg/dave/OS/TR/10b/  <-- one svg
 # Need to override default text/html mimetype for proper rendering
 @application.route('/svg/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/<regex("[A-Za-z]+"):showrope>/<regex("[A-Za-z0-9.]+"):showgrade>/')
-def graph_user_ascent_rope_grade(plotfor, showfor, showrope, showgrade):
+def svg_user_ascent_rope_grade(plotfor, showfor, showrope, showgrade):
     content = one_svg(file = plotfor, show=showfor.upper(), rope=showrope.upper(), grade=showgrade.upper())
     return Response(content, mimetype="image/svg+xml")
 

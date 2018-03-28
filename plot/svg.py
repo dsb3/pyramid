@@ -140,7 +140,6 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
 
 
-
 # pyramid will print a page with links to graphs based on "file"
 #
 
@@ -233,5 +232,63 @@ def pyramid(file = "ticks.csv", show = "RP"):
   
   outbuffer += "</body></html>"
   
+  return outbuffer
+
+
+# highest will print a smaller page with only the highest pyramid included
+#
+
+def highest(file = "ticks.csv", show = "RP"):
+
+  # Call our function to turn the CSV file into ticks() data structure
+  ticks = readticks(file, show)
+
+  # Regardless of validrope, we now calculate usedrope that contains
+  # only those rope types we actually have data for.
+  usedrope = []
+
+  # delete any that don't have data present
+  for rope in ticks.keys():
+    count = 0
+    try:
+      for grade in ticks[rope].keys():
+        count += len (ticks[rope][grade])
+    except KeyError:
+      pass
+  
+    # No counted ticks for the rope
+    if (count > 0):
+      usedrope.append(rope)
+
+  # TODO: I just edited the above to count only those ropes which are
+  # valid, instead of filtering validropes to remove those not seen.  This
+  # means we lost the inherant sorting of rope types, and should now resort
+  # the data so (e.g.) the highest grade seen on a rope sorts first.
+
+  
+  # CSV data is now loaded into structure, ready to generate links to our graphs
+  outbuffer = "<html> <head> <title> Highest pyramids for {} </title> </head> <body>".format(file)
+
+  
+  
+  # Iterate top down through validgrades.  For each grade, if we have a tick
+  # for either that grade, or the one below, we print it.
+  
+  # defaults to zero
+  for rope in usedrope:
+  
+    # Pyramid is 4 rows high, so never start below 4th rung
+    #
+  
+    for gradei in reversed(range( 3, len(validgrades))):
+      grade=validgrades[gradei]
+  
+      # print this rope?
+      if len( ticks[rope][validgrades[gradei-1]]) > 0 or len( ticks[rope][validgrades[gradei]]) > 0:
+        outbuffer += "\n<br/>\n"
+        outbuffer += '<object type="image/svg+xml" data="/svg/{}/{}/{}/{}/" width="550" height="300" border="0"></object>\n'.format(file, show, rope, grade)
+        break
+
+
   return outbuffer
 
