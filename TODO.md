@@ -32,6 +32,11 @@ Support gid for downloading different sheets in one doc
 
 
 
+## text
+
+- revert to "print the whole column" for text output
+
+
 ## svg
 
 - headers for each vertical column (don't repeat inside each block)
@@ -40,7 +45,13 @@ Support gid for downloading different sheets in one doc
 
 - shrink image to fit 3x wide more easily
 
-- slider for RP / F / OS
+- show RP / F / OS
+
+- slider to adjust RP / F / OS
+
+- hyperlink in /highest/ output for deeper data
+
+- different colours for different ropes
 
 - fade boxes to indicate old dates
 
