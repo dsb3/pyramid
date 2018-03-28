@@ -14,9 +14,15 @@
   https://github.com/dsb3/pyramid/
 -->
 
+{# entire image data is omitted - left blank - unless we have anything to print #}
+{% if not nodata %}
 
+<!-- create border around frame -->
+<rect x='0' y='0' width='550' height='300' style='fill: none; stroke: black; stroke-width: 2px' />
+
+
+{% if debug %}
 <!-- DEBUG: horiz/vertical alignment marks -->
-<!--
 <line x1="50" y1="0" x2="50" y2="300" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="300" y1="0" x2="300" y2="300" style="stroke:rgb(255,0,0); stroke-width:1" />
 
@@ -24,15 +30,7 @@
 <line x1="0" y1="135" x2="550" y2="135" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="0" y1="195" x2="550" y2="195" style="stroke:rgb(255,0,0); stroke-width:1" />
 <line x1="0" y1="255" x2="550" y2="255" style="stroke:rgb(255,0,0); stroke-width:1" />
--->
-
-
-{# entire image data is omitted - left blank - unless we have anything to print #}
-{% if not nodata %}
-
-<!-- create border around frame -->
-<rect x='0' y='0' width='550' height='300' style='fill: none; stroke: black; stroke-width: 2px' />
-
+{% endif %}
 
 
 <!-- define crosshatch pattern -->
@@ -81,9 +79,13 @@
 </defs>
 
 
-<!-- header lines. x=10, and x=width-10 to align -->
-<text x='10' y='20' fill='black'>{{ title }}</text>
-<text text-anchor="end" x='540' y='20' fill='black'>{{ date }}</text>
+{# HEADER LINES - note to center over blocks, x=300 but to center in plot x=275 #}
+
+<text text-anchor="left" alignment-baseline='middle' x='10' y='25' font-size='30' fill='black'>{{ row1.title }}</text>
+
+
+<text text-anchor="middle" alignment-baseline='middle' x='300' y='20' fill='black'>{{ title }}</text>
+<text text-anchor="end"    alignment-baseline='middle' x='535' y='20' fill='black'>{{ date }}</text>
 
 
 <!-- draw legend in top right blank space -->
@@ -128,8 +130,13 @@
 
 <!-- first row -->
 
-<text x='25' y='70' fill='black' text-anchor='middle' alignment-baseline='baseline'>{{ row1.title }}</text>
+{# the top block will often be empty, especially when only showing highest pyramid #}
+
+{% if row1.count != "(0)" %}
+<text x='25' y='70' fill='black' text-anchor='middle' alignment-baseline='baseline'>{{ row1.title }}</text> 
 <text x='25' y='75' fill='black' text-anchor='middle' alignment-baseline='hanging'>{{  row1.count }}</text>
+{% endif %}
+
 
 <!-- "g" group of elements are all created at (0,0) with internal/relative transforms
      to center around the axis; then the whole group is transformed to locate in the
