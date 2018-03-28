@@ -75,51 +75,21 @@ def pyramid(file = "ticks.csv", show = "RP"):
   
   # Output format
   #
-  # highestgrade + 1
+  # Start printing pyramids at the highest grade ticked, plus one.
+  #
   #               [ ]                  ...
   #             [ ] [ ]                ...
   #         [ ] [ ] [ ] [ ]            ...
   # [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]    ...
   #
-  # nextgrade
-  #               [ ]                  ...
-  #             [ ] [ ]                ...
-  #         [ ] [ ] [ ] [ ]            ...
-  # [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]    ...
+  # [X] is a climb
+  # [+] is a cascaded tick from above
+  # [ ] is a missing tick
   #
-  # ...
-  # ...
-  #
-  # Each vertical strip is rope (TR, L) generated separately but
-  # aligned by grades.
-  #
-  # The separation of pyramids is an indication of TR discrepancy.
-  #
-  # Ticks at each grade are [X]
-  # Overflow where excess climbs are cascaded down are [+]
-  # Empty boxes are [ ]
+  # Vertical columns plot each rope that's used.  Relative positions of
+  # graphs side by side demonstrate discrepancy between abilities.
   #
   #
-  # TODO: for graphics output, graphical distinction for RP, F, OS.
-  #       for graphics, shade distinction for newer vs older ticks
-  #       e.g. ticks > 3 mo are bright, > 6 mo are dimmer, > 9 are
-  #       very faint, and > 12 are grey and look empty
-  #
-  # Each vertical strip is generated separately.  I want these to line
-  # up horizontally, -- the separation between them being an indication of
-  # lead to tr discrepancy.
-  
-  # Overfull grades flow down to empty holes below
-  
-  
-  # TODO:
-  # - dynamic graphical output with slider (SVG/javascript can do this?)
-  #   to show cumulative data RE + RP + F + OS, or RP + F+ OS, or ....
-  #
-  
-  
-  # First draft -- Print text output
-  # (deal with graphics later)
   
   
   
@@ -129,15 +99,13 @@ def pyramid(file = "ticks.csv", show = "RP"):
   # empty pyramid
   # 
   
-  
-  print_row=0
-  print_for={}
-  
-  # defaults to zero
+  # flag to indicate we're starting to print pyramids
+  print_row = 0 
+  print_for = {}
+
   for rope in usedrope:
-    print_for[rope]=-1000   # flag never seen
-  
-  
+    print_for[rope] = 0;
+ 
   # Pyramid is 4 rows high, so can't start below 4th rung
   #
   # We need grade as an index into validgrades more often than we need "grade",
@@ -148,18 +116,9 @@ def pyramid(file = "ticks.csv", show = "RP"):
   
     # From top down, when I find data for either rope, I start printing all
     for rope in usedrope:
-      # only look to start if we've not already done so - this lets decrementing
-      # print_for allow us to stop printing rows
-      if not print_row:
-        if len( ticks[rope][validgrades[gradei-1]]) > 0 or len( ticks[rope][validgrades[gradei]]) > 0:
-          print_row = 1
-  
-      # Separately flag to start printing this rope type, if we've not seen it yet
-      if print_for[rope] <= -1000:
-        if len( ticks[rope][validgrades[gradei-1]]) > 0 or len( ticks[rope][validgrades[gradei]]) > 0:
-          # starting number is how aggressively we stop printing pyramids.
-          # -= 3 on any pyrs with all [X]; -= 1 with all [X] or [+]
-          print_for[rope] = 4  # xxx 3
+      if len( ticks[rope][validgrades[gradei-1]]) > 0 or len( ticks[rope][validgrades[gradei]]) > 0:
+        print_row = 1
+        print_for[rope] = 1
   
   
     # Nothing found yet?  Or both sets ended, then skip this grade
@@ -211,49 +170,6 @@ def pyramid(file = "ticks.csv", show = "RP"):
       outbuffer += "\n"
   
   
-    # analyse row just printed for each rope
-    # - full pyramid of ticks means we stop printing more
-    # - or, after two full pyramids of ticks with overflow we stop
-    #
-    # - if the last row in this pyramid contains ONLY overflow ticks
-    #   and there aren't real ticks below, then stop very aggressively
-    #
-    for rope in usedrope:
-      nticks = sum( pyr[rope]["filled"] )
-      nflows = sum( pyr[rope]["flowed"][:4] )   # discard overflow
-  
-      if nticks >= 15:
-        print_for[rope] -= 2     # -3 since it also counts below
-  
-      if nticks + nflows >= 15:
-        print_for[rope] -= 1
-  
-      # Count any ticks that are below the last row.  If there are any
-      # then keep printing pyramids.  If there are none then we stop
-      # at least when the last row is all overflow.
-      ticksbelow=0
-      i = gradei-4
-      while i >= 0:
-        ticksbelow += len( ticks[rope][ (validgrades[i]) ] )
-        i -= 1
-  
-      # no ticks below, and fourth row is fully "flow" ticks, then stop
-      # very aggressively.
-      # TODO: unify these steps, and thresholds
-      if ticksbelow == 0 and pyr[rope]["flowed"][3] == 8:
-        print_for[rope] -= 10
-  
-  
-    # Did we stop printing for all ropes?  If so, exit our
-    # main loop and stop.
-    keep_printing=0
-    for r in print_for.keys():
-      if print_for[r] > 0 or print_for[r] == -1000: 
-        keep_printing=1
-  
-    # break out of the for loop, and exit
-    if not keep_printing:
-      break
   
   
   return outbuffer
