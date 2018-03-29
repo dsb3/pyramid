@@ -86,7 +86,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
   data={}
 
 
-  data["title"] = "Pyramid for {}".format(abbrev[rope])
+  data["title"] = abbrev[rope]
   data["date"] = latestdate
 
 
