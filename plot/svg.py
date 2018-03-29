@@ -21,7 +21,7 @@ from datetime import datetime
 
 
 # Import our cfg variables (definitions of rope types, grades, etc)
-from plot.cfg import abbrev, validrope, validascent, \
+from plot.cfg import abbrev, validrope, \
         validyds, validboulder, validewbank, validfont, validgrades
 
 from plot.readcsv import readticks, count_pyr

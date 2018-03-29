@@ -24,7 +24,7 @@ from datetime import datetime
 
 
 # Import our cfg variables (definitions of rope types, grades, etc)
-from plot.cfg import abbrev, validrope, validascent, \
+from plot.cfg import abbrev, validrope, \
         validyds, validboulder, validewbank, validfont, validgrades
 
 from plot.readcsv import readticks, count_pyr
@@ -69,7 +69,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
   
   # CSV data is now loaded into structure, ready to graph.
   outbuffer = "<pre>"
-  outbuffer += "Printing pyramids in %s for ascents in %s\n" % (file, validascent)
+  outbuffer += "Printing pyramids in %s for ascents in %s\n" % (file, show)
 
   
   

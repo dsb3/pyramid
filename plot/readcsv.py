@@ -58,13 +58,13 @@ def readticks(file = "ticks.csv", show = "RP"):
   # Passing an invalid value returns the whole suite: "RE", "RP", "F", "OS"
   #
 
-  # NOTE: this edits the global variable validascent, also used
-  # in the "display" functions.
-  #
+  # Take a copy of validascent (global) before deleting elements
+  plotascent = validascent[:]
+
   try:
-    if validascent.index(show.upper()) > 0:   # is NOT the first element
-      del validascent[0: validascent.index(show.upper())]
-  except ValueError:   # not in validascent at all, print everything
+    if plotascent.index(show.upper()) > 0:   # is NOT the first element
+      del plotascent[0: plotascent.index(show.upper())]
+  except ValueError:   # not in plotascent at all, print everything
     pass
 
 
@@ -182,7 +182,7 @@ def readticks(file = "ticks.csv", show = "RP"):
 
     # Is the row we read from the file valid?  If not, continue ...
     # only include valid data items
-    if rope not in validrope or ascent not in validascent or grade not in validgrades:
+    if rope not in validrope or ascent not in plotascent or grade not in validgrades:
       continue
   
     # If so, append it to our data structure
@@ -194,10 +194,10 @@ def readticks(file = "ticks.csv", show = "RP"):
   
   
   # /end "for row in csvfile"
+  fh.close()
 
 
   # Before we return the data, we'll clean it up.
-
   for rope in ticks.keys():
  #   count = 0
     # Sort entries by date where they're found

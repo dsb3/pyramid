@@ -52,9 +52,9 @@ def scrape(user = "dave", sub = "0"):
 
   
   # Save to disk
-  f = open(user + ".csv", "w")
-  f.write(data)
-
+  fh = open(user + ".csv", "w")
+  fh.write(data)
+  fh.close()
   
   # Extract last line to return as a status indicator
   lines = data.split("\r\n")
