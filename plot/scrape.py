@@ -47,7 +47,7 @@ def scrape(user = "dave", sub = "0"):
   # Sanity check content
 
   # If this text exists, the google doc spreadsheet isn't readable by all
-  if data.find('<html lang="'):
+  if data.find('<html lang="') != -1:
     return "<pre>Content not readable. Check that public sharing is enabled."
 
   
