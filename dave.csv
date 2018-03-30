@@ -63,7 +63,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-21,10b,TR,H1,Yellow,Cliff Hangars,Back Wall,Fell on the last move from the top
 2018-01-21,10c,TR,H4,Purple,Cliff Hangars,Facing Cafe,"Last burn - fell, fell, fell, plus spun a hold"
 2018-01-24,7,TR,RE,Pink,TRC MV,Reactor,"Warm-up on something easy, with downclimb"
-2018-01-24,7,DC,F,Pink,TRC MV,Reactor,Downclimb RP
+2018-01-24,7,DC,F,Pink,TRC MV,Reactor,Downclimb
 2018-01-24,9,TR,X,Black,TRC MV,Right of Reactor,"JP route - very weird sequence, fell, hurt my knee."
 2018-01-24,9,TR,X,Black,TRC MV,Right of Reactor,"Tried again, fell again, hurt my knee again"
 2018-01-24,10d,TR,H2,Blue,TRC MV,Reactor,Very close to sending
@@ -75,9 +75,9 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-24,11c,TR,X,Black,TRC MV,Horseshoe,Short attempt
 2018-01-24,7,TR,RE,Yellow,TRC MV,Horseshoe,
 2018-01-24,7,TR,OS,Green,TRC MV,Horseshoe Left,Suspect this was the first time I climbed it?
-2018-01-24,7,DC,RP,Green,TRC MV,Horseshoe Left,With downclimb for mileage
+2018-01-24,7,DC,F,Green,TRC MV,Horseshoe Left,With downclimb for mileage
 2018-01-24,6,TR,RE,Blue,TRC MV,Horseshoe Right,Up
-2018-01-24,6,DC,RP,Blue,TRC MV,Horseshoe Right,With downclimb for mileage
+2018-01-24,6,DC,F,Blue,TRC MV,Horseshoe Right,With downclimb for mileage
 2018-01-25,8,TR,OS,Black,TRC MV,Horseshoe Right,Strenuous warm-up
 2018-01-25,9,TR,OS,Red,TRC MV,Horseshoe,Felt easier
 2018-01-25,10c,TR,OS,Pink,TRC MV,Horseshoe,Felt tricky
@@ -164,7 +164,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-02-11,10b,TR,RP,Pink,TRC MV,Back Alley,Back on to get the send
 2018-02-11,10b,TR,RE,Pink,TRC MV,Horseshoe,"Repeat of ""like a mule"" to show Cole the beta"
 2018-02-11,11b,TR,X,Orange,TRC MV,Back Alley,Looking for a new project
-2018-02-13,11?,TR,X,Black,TRC MV,Horseshoe Right,Looked like a warm-up.  Was not a warm-up!
+2018-02-13,11a,TR,X,Black,TRC MV,Horseshoe Right,Looked like a warm-up.  Was not a warm-up!
 2018-02-13,9,TR,OS,Yellow,TRC MV,Back Alley,Felt easy!
 2018-02-13,9,TR,RP,Red,TRC MV,Back Alley,I tried to cheat through an 11 move on these holds and fell off.  Did that lose me the OS?
 2018-02-13,11b,TR,"H, A",Green,TRC MV,Back Alley,Hard - feels workable
@@ -201,7 +201,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-02-22,8-,TR,OS,Orange,TRC MV,Back Alley,Fun route
 2018-02-28,8,TR,RE,Blue,TRC MV,Right of lead,Warm up
 2018-02-28,7+,TR,OS,Grey,TRC MV,Back Corner,Fun route
-2018-02-28,10-,TR,RE,Pink,TRC MV,Prow,Felt hard
+2018-02-28,10a,TR,RE,Pink,TRC MV,Prow,Felt hard
 2018-02-28,11a,TR,H3,Black,TRC MV,Horseshoe Right,Got the crux move for the first time
 2018-02-28,11c,TR,"H, X",Green,TRC MV,Back Alley,"Saw the beta, now need to execute the beta"
 2018-02-28,10a,TR,OS,Grey,TRC MV,Back Corner,Slopers and awkward mantles; tweaked my shoulder a little
@@ -255,12 +255,12 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-13,9-,TR,RP,Blue,TRC NR,Back right,Warm-up
 2018-03-13,9-,DC,F,Blue,TRC NR,Back right,New rule - first downclimb that wasn't upclimbed will be claimed as flash; downclimb WITHOUT upclimbing the route is OS.
 2018-03-13,9,TR,H1,Green,TRC NR,Back left,Funky move with lead climber nearby
-2018-03-13,10-,TR,X,Orange,TRC NR,Lead wall,"Shane led, I seconded - got rope caught in clip and fell; couldn't get back on route."
-2018-03-13,10+,TR,H2,Yellow,TRC NR,Window,Fell twice working out beta
-2018-03-13,10+,TR,H1,Yellow,TRC NR,Window,Fell once really working out the beta
-2018-03-13,10+,TR,RP,Yellow,TRC NR,Window,Redpoint!
+2018-03-13,10a,TR,X,Orange,TRC NR,Lead wall,"Shane led, I seconded - got rope caught in clip and fell; couldn't get back on route."
+2018-03-13,10d,TR,H2,Yellow,TRC NR,Window,Fell twice working out beta
+2018-03-13,10d,TR,H1,Yellow,TRC NR,Window,Fell once really working out the beta
+2018-03-13,10d,TR,RP,Yellow,TRC NR,Window,Redpoint!
 2018-03-13,11a,TR,"H3, A1",Yellow,TRC NR,Back left,Working out the beta - have wanted to climb this for a while
-2018-03-13,10,TR,X,Yellow,TRC NR,Back left,Tweaky move; abandoned attempt
+2018-03-13,10c,TR,X,Yellow,TRC NR,Back left,Tweaky move; abandoned attempt
 2018-03-13,8,TR,OS,Green,TRC NR,Back left,"Looked at the ten, then climbed the eight.  Feet starting to hurt."
 2018-03-13,6+,L,OS,Black,TRC NR,Tower,Cool down on an easy lead - felt slippery
 2018-03-15,8-,TR,RE,Pink,TRC MV,HS R,Warm up
@@ -334,3 +334,8 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-27,9,DC,F,Orange,TRC NR,Left Front,"Stepped on a spinner, held it together and downclimbed clean"
 2018-03-27,5,TR,OS,Orange,TRC NR,Tower Inside,Went up to come down
 2018-03-27,6,DC,OS,Black,TRC NR,Tower Inside,Rounding out my lower DC pyramid boxes
+2018-03-29,8+,TR,OS,?,TRC MV,HS R,Warm up on a new route
+2018-03-29,10d,TR,RP,Orange,TRC MV,HS R,At last - fifth attempt's the charm!
+2018-03-29,11a,TR,RP,Black,TRC MV,HS R,At last - fifteenth attempt's the charm!
+2018-03-29,11c,TR,X,Orange,TRC MV,HS R,Bailed -- too crimpy.
+2018-03-29,11c,TR,X,Blue,TRC MV,Back Corner,"Bailed -- heard three snaps, and think I partially tore my pulley.  Oh dear."
