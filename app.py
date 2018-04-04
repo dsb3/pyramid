@@ -1,4 +1,4 @@
-# openshift wrapper
+# Openshift wrapper script for s2i
 import os
 
 workers = int(os.environ.get('GUNICORN_PROCESSES', '3'))
