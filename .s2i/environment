@@ -1,0 +1,2 @@
+APP_CONFIG=openshift.py
+ENABLE_PIPENV=True
