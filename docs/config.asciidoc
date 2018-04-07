@@ -1,0 +1,80 @@
+
+= Configuration Options
+
+
+
+== Default
+
+By default, the config.yml file in the git repository itself is used.
+
+
+== Over-ride - YAML file (OpenShift)
+
+In OpenShift, it's relatively easy to create a Config Map, into which a
+new config file can be presented.  This config map needs to be mounted 
+as /data/config.yml
+
+In the Web Console:
+
+Applications -> Deployments -> (your app) -> Configuration
+
+Under "Volumes" -> "Add Config Files"
+
+Source -> Create Config Map
+
+Name: config.yml (this is the reference for the object)
+Key: config.yml  (this is the filename that it's mounted as)
+Value: (cut and paste the contents of the yml)
+
+
+Add the file:
+
+Source: config.yml
+
+Mount Path:  /data
+
+
+
+Testing the file is present:
+
+Go to your pod, Terminal, "cat /data/config.yml"
+
+
+Editing the file:
+
+Resources -> Config Maps -> select config.yml -> Actions -> Edit
+
+
+
+As a comment, OpenShift is also able to handle similar data in secrets
+but as this data is not expected to be particularly sensitive the extra
+overhead of manipulating base64 data (see below) is less worthwhile.
+
+
+== Over-ride - base64 env (Heroku harder)
+
+Heroku doesn't have the same concept of config maps.  It does have environment
+variables (with a 32k limit) which are easier to set.
+
+To drop a full config.yml into place, base64 encode the file and set it as an
+environment variable.
+
+When the application starts, if this environment is found it will be decoded
+and overwrite the built in config.yml for use.
+
+$ heroku config:set CONFIG=$( base64 --wrap=0 my.config.yml )
+
+
+
+== Over-ride - single URL (Heroku easier)
+
+The base64 method is slightly verbose.  As an alternative, a single URL can be
+set in the same environment variable, either the /edit or /export URL (we'll
+automatically convert the first format to the second), and when the application
+starts a single user named "user" will be configured with this one data source.
+
+$ heroku config:set CONFIG=https://docs.google.com/spreadsheets/d/1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg/edit#gid=0
+
+$ heroku config:set CONFIG=https://docs.google.com/spreadsheets/d/1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg/export?format=csv&gid=0
+
+

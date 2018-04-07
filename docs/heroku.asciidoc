@@ -1,0 +1,73 @@
+= Heroku Notes
+
+Heroku is able to pull directly from GitHub.
+
+At the moment, the only way to do this is to grant Heroku full access to your
+github account, giving it access to all repos, not only this one.
+
+As such, we opt to push to Heroku instead of allowing it to pull.
+
+Sign up (if needed) and navigate to your dashboard:
+
+https://dashboard.heroku.com/apps
+
+
+New -> Create new app
+
+App Name: pick one (I'll use cpyr for this example)
+Region: pick one   (I'll pick US)
+
+-> Create App
+
+
+== Download the heroku cli if needed
+
+See: https://devcenter.heroku.com/articles/heroku-cli
+
+
+== Download the repo from github
+
+Because we're pushing, you will need to download a git client for this step.
+
+See: https://git-scm.com/downloads
+
+Now, fork the repo if you so desire: https://help.github.com/articles/fork-a-repo/
+
+Now, check out a local copy:
+
+cd ~/git
+git clone git@github.com:dsb3/pyramid.git
+
+
+== Set git remote heroku
+
+Using the heroku binary, connect this git repo to the heroku application name,
+configure, and push.
+
+$ cd pyramid
+$ heroku git:remote -a cpyr
+$ heroku config:set CONFIG=.... (see config docs)
+$ git push heroku master
+
+
+
+== Visit the site!
+
+https://cpyr.herokuapp.com
+
+
+
+
+== Notes on ps:exec
+
+Heroku allows you to shell into the dyno.
+
+However!
+
+/bin/env does not exist.  To run the debug script, use "python script.py ..."
+instead.
+
+Heroku environment vars are not persisted into the shell.  To view them, you
+can examine /proc/(pid of gunicorn)/environ.
+
+
