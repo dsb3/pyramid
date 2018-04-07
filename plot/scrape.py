@@ -30,12 +30,12 @@ def scrape(user = "dave", sub = "0"):
 
   # If we have a Config Map, read config from different location
   if os.path.isfile("/data/config.yml"):
-    conf="/data/config.yml"
+    conffile="/data/config.yml"
   else:
-    conf="config.yml"
+    conffile="config.yml"
 
   # Read our config
-  config = yaml.load( open("config.yml", "r") )
+  config = yaml.load( open(conffile, "r") )
 
   if user not in config["pages"].keys():
     return "<pre>User not defined"
