@@ -2,6 +2,7 @@
 
 gunicorn = "*"
 flask = "*"
+pyyaml = "*"
 
 [requires]
 # Heroku advises 3.6.4 as being latest and supported, but works with either.
