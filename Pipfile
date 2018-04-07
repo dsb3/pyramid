@@ -4,5 +4,7 @@ gunicorn = "*"
 flask = "*"
 
 [requires]
+# Heroku advises 3.6.4 as being latest and supported, but works with either.
+# OpenShift s2i only works with 3.6.3 for the moment.
 python_full_version = "3.6.3"
 
