@@ -51,6 +51,10 @@ def robotstxt():
     return send_from_directory(os.path.join(application.root_path, 'static'),
                                "robots.txt", mimetype='text/plain')
 
+@application.route('/health')
+def health():
+    return "OK"
+
 #########
 
 @application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
