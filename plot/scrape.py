@@ -9,11 +9,12 @@
 # - limit to ipv4 only (ipv6 can cause delays in downloading)
 #
 
-import os.path
 import sys
 import re
 import urllib.request
-import yaml
+
+from plot.cfg import read_config
+
 
 # Scrape (download) data for the named user.
 #
@@ -23,19 +24,7 @@ import yaml
 
 def scrape(user = "dave", sub = "0"):
 
-  # TODO: move config read to separate function
-
-  # TODO: Before reading our config file, look at ENV[CONFIG]...
-
-
-  # If we have a Config Map, read config from different location
-  if os.path.isfile("/data/config.yml"):
-    conffile="/data/config.yml"
-  else:
-    conffile="config.yml"
-
-  # Read our config
-  config = yaml.load( open(conffile, "r") )
+  config = read_config()
 
   if user not in config["pages"].keys():
     return "<pre>User not defined"
