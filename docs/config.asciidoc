@@ -44,6 +44,8 @@ Editing the file:
 
 Resources -> Config Maps -> select config.yml -> Actions -> Edit
 
+You (probably) need to redeploy the app for the edit in the config map
+to take effect?
 
 
 As a comment, OpenShift is also able to handle similar data in secrets
