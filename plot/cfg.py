@@ -168,5 +168,11 @@ def init_config():
 
 def read_config():
   # Read and return our config file as a dict
-  return yaml.load( open("./config.yml", "r") )
+  config = yaml.load( open("./config.yml", "r") )
+
+  # sanity check - we need a default user
+  if "default" not in config.keys():
+    config["default"] = "user"
+
+  return config
 

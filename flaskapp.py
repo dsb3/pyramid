@@ -16,7 +16,7 @@ from plot.svg import one_svg
 from plot.scrape import scrape
 
 # initialize to use 
-from plot.cfg import init_config
+from plot.cfg import init_config, read_config
 
 
 # Create application with /static path defined
@@ -62,6 +62,11 @@ def health():
 
 #########
 
+@application.route('/text/')
+def text_default():
+    config = read_config()
+    return redirect(request.base_url + config["default"], code=302)
+ 
 @application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
 def text_user(plotfor):
     return text_pyramid(file = plotfor, show="RP")
@@ -75,6 +80,11 @@ def text_user_ascent(plotfor, showfor):
 #########
 
 
+@application.route('/graph/')
+def graph_default():
+    config = read_config()
+    return redirect(request.base_url + config["default"], code=302)
+
 # /graph/dave/  <-- page of all graphs
 @application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
 def graph_user(plotfor):
@@ -85,6 +95,12 @@ def graph_user(plotfor):
 def graph_user_ascent(plotfor, showfor):
     return graph_pyramid(file = plotfor, show=showfor.upper())
 
+
+
+@application.route('/highest/')
+def highest_default():
+    config = read_config()
+    return redirect(request.base_url + config["default"], code=302)
 
 # /highest/dave/  <-- page of highest pyramid only for each rope
 @application.route('/highest/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')

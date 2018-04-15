@@ -139,8 +139,8 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
   # Shortcut for "don't print empty pyramids"
   # - if first and second rows are empty, don't print.
-  # - we actually want to print empty pyramids between large gaps in ticks
-  #   even if these should be rare in live data
+  # - TOTO: we actually want to print empty pyramids between large
+  #   gaps in ticks even if these should be rare in live data
   if pyr["empty"][0:2] == [1, 2]:
     data["nodata"] = 1
 
