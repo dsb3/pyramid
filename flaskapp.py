@@ -62,11 +62,19 @@ def health():
 
 #########
 
+
 @application.route('/text/')
-def text_default():
+@application.route('/graph/')
+@application.route('/highest/')
+@application.route('/scrape/')
+def default_user():
     config = read_config()
     return redirect(request.base_url + config["default"], code=302)
+
  
+#########
+
+
 @application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
 def text_user(plotfor):
     return text_pyramid(file = plotfor, show="RP")
@@ -80,11 +88,6 @@ def text_user_ascent(plotfor, showfor):
 #########
 
 
-@application.route('/graph/')
-def graph_default():
-    config = read_config()
-    return redirect(request.base_url + config["default"], code=302)
-
 # /graph/dave/  <-- page of all graphs
 @application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
 def graph_user(plotfor):
@@ -96,11 +99,6 @@ def graph_user_ascent(plotfor, showfor):
     return graph_pyramid(file = plotfor, show=showfor.upper())
 
 
-
-@application.route('/highest/')
-def highest_default():
-    config = read_config()
-    return redirect(request.base_url + config["default"], code=302)
 
 # /highest/dave/  <-- page of highest pyramid only for each rope
 @application.route('/highest/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
@@ -123,6 +121,7 @@ def svg_user_ascent_rope_grade(plotfor, showfor, showrope, showgrade):
 
 
 #########
+
 
 @application.route('/scrape/<regex("[A-Za-z0-9-]+"):plotfor>/')
 def scrape_user(plotfor):
