@@ -2,6 +2,8 @@
 default:
   dave
 pages:
-  dave:  1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg
-  shane: 1v30fRnnKASoTLeEuGRo0Zg2hcwOSqE95N9B74v4UhAs
+  dave:          1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg/0
+  dave-boulder:  1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg/1825018984
+  dave-rock:     1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg/447635240
+  shane:         1v30fRnnKASoTLeEuGRo0Zg2hcwOSqE95N9B74v4UhAs
 

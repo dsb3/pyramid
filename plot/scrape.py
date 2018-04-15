@@ -29,12 +29,21 @@ def scrape(user = "dave", sub = "0"):
   if user not in config["pages"].keys():
     return "<pre>User not defined"
 
-  # hard coded - first page.
-  gid="0"
+  # format is PAGEID with optional /GID
+  m = re.search('^(\w+)/?(\d+)?$', config["pages"][user])
+
+  if m:
+    page = m.group(1) or ""
+    gid = m.group(2) or "0"
+  else:
+    return "<pre>User not configured correctly"
 
 
   # Generate URL to access, read data and convert to a string
-  url="https://docs.google.com/spreadsheets/d/" + config["pages"][user] + "/export?format=csv&gid=" + gid
+  url="https://docs.google.com/spreadsheets/d/" + page + "/export?format=csv&gid=" + gid
+
+  return "<pre>" + url
+
   data = urllib.request.urlopen(url).read().decode("utf-8")
 
 
