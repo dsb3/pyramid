@@ -42,7 +42,8 @@ def scrape(user = "dave", sub = "0"):
   # Generate URL to access, read data and convert to a string
   url="https://docs.google.com/spreadsheets/d/" + page + "/export?format=csv&gid=" + gid
 
-  return "<pre>" + url
+  ## DEBUG: uncomment this to just show what URL is configured
+  ## return "<pre>" + url
 
   data = urllib.request.urlopen(url).read().decode("utf-8")
 
