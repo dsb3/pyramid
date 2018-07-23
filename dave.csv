@@ -76,7 +76,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-24,7,TR,RE,Yellow,TRC MV,Horseshoe,
 2018-01-24,7,TR,OS,Green,TRC MV,Horseshoe Left,Suspect this was the first time I climbed it?
 2018-01-24,7,DC,F,Green,TRC MV,Horseshoe Left,With downclimb for mileage
-2018-01-24,6,TR,RE,Blue,TRC MV,Horseshoe Right,Up
+2018-01-24,6,TR,RP,Blue,TRC MV,Horseshoe Right,Up
 2018-01-24,6,DC,F,Blue,TRC MV,Horseshoe Right,With downclimb for mileage
 2018-01-25,8,TR,OS,Black,TRC MV,Horseshoe Right,Strenuous warm-up
 2018-01-25,9,TR,OS,Red,TRC MV,Horseshoe,Felt easier
@@ -95,7 +95,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-01-28,9-,L,RP,Pink,TRC MV,Lead area,Pumpy
 2018-01-28,9,L,RE,Yellow,TRC MV,Lead area,Cruxy Lip
 2018-01-28,10d,TR,A1,Orange,TRC MV,Horseshoe Rear,Need to re-work lower section
-2018-01-28,6,TR,RE,Green,TRC MV,Horseshoe Left,Speed climb
+2018-01-28,6,TR,RP,Green,TRC MV,Horseshoe Left,Speed climb
 2018-01-30,9,TR,RE,Red,TRC MV,Horseshoe Rear,Warm-up on 9
 2018-01-30,10c,TR,RP,Red,TRC MV,Horseshoe Rear,"Hard, long-throw crux at top"
 2018-01-30,10d,TR,H1,Orange,TRC MV,Horseshoe Rear,Fell at lower crux
@@ -285,7 +285,7 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-18,8,DC,F,Blue,TRC MV,Back Alley,And Down.
 2018-03-18,9-,TR,H1,Green,TRC MV,Reactor Right,Fell!  On a 9-!  Reachy move done wrong caused my foot to pop off.
 2018-03-18,11d,TR,X,Pink,TRC MV,HS L,Went back to try the crimps - got up to the hard part and lowered off.
-2018-03-21,5,TR,OS,Red,TRC NR,Left Outside,Autobelay
+2018-03-21,5,TR,OS,Red,TRC NR,Left Outside,Autobelay up
 2018-03-21,7,DC,OS,Blue,TRC NR,Left Outside,Down on autobelay
 2018-03-21,7,TR,OS,Yellow,TRC NR,Left Outside,Autobelay
 2018-03-21,10c,TR,X,Orange,TRC NR,Left Outside,Autobelay; fell and auto-lowered
@@ -347,7 +347,7 @@ INJURED,,,,,,,
 2018-04-28,5,TR,OS,Green,TRC NR,Left side,One handed - who knows what colour it really was.
 ,,,,,,,
 2018-05-06,5,TR,OS,Black,TRC MV,,Tentatively testing out the finger.  Easy climbing only.
-2018-05-06,6,TR,RE,Orange,TRC MV,,
+2018-05-06,6,TR,RP,Orange,TRC MV,,
 2018-05-06,7,TR,OS,Yellow,TRC MV,,
 2018-05-06,7,TR,RE,Grey,TRC MV,,
 ,,,,,,,
@@ -402,3 +402,84 @@ INJURED,,,,,,,
 2018-05-24,8+,TR,OS,,TRC MV,,
 2018-05-24,8+,TR,OS,,TRC MV,,"Just noting volume, no specifics are really interesting on these easy routes"
 2018-05-24,9-,TR,X,,TRC MV,,Tried opening moves - reaffirmed my need to heal the finger on 8 and under only
+2018-05-26,6,L,F,Green,TRC MV,Upstairs,Lead test route
+2018-05-26,7-,L,F,Yellow,TRC MV,Back of horseshoe,Went back to lead it
+2018-05-26,7,L,F,White,TRC MV,Horseshoe right,Overhanging - effort on low clips
+2018-05-26,7,L,F,Blue,TRC MV,Prow,Tall - took time at the lip
+2018-05-26,7,L,A2,Green,TRC MV,Lead wall,Got spooked at the top
+2018-05-26,8,L,F,Red,TRC MV,Reactor,Needs trust in friction
+2018-05-26,6+,TR,RE,Black,TRC MV,Back alley,Arete
+2018-05-26,8+,TR,OS,Black,TRC MV,,Inside corner - very burly
+2018-05-26,7,TR,RE,Pink,TRC MV,Back alley,
+2018-05-26,6,TR,RE,Yellow,TRC MV,Back alley,cool down
+2018-05-28,6,TR,RE,,TRC MV,,
+2018-05-28,6,DC,F,,TRC MV,,"Downclimbing again, but keeping it easy"
+2018-05-28,6+,TR,RE,Black,TRC MV,Back Alley,
+2018-05-28,6+,DC,F,Black,TRC MV,Back Alley,
+2018-05-28,6,TR,RE,Yellow,TRC MV,,
+2018-05-28,6,DC,F,Yellow,TRC MV,,
+2018-05-28,8,TR,RE,Red,TRC MV,Reactor,
+2018-05-28,8+,TR,H1,Blue,TRC MV,,The only route 8 and under I've not tried yet - hung at the roof and still tweaked my finger a little
+2018-05-28,7,TR,RE,Orange,TRC MV,Horseshoe Left,
+2018-05-28,6,TR,RE,Grey,TRC MV,Horseshoe Right,Cool down
+2018-05-28,6,DC,F,Grey,TRC MV,Horseshoe Right,
+2018-05-29,6,TR,RE,Grey,TRC MV,Horseshoe Right,Warm up
+2018-05-29,7-,TR,RE,Yellow,TRC MV,Horseshoe,
+2018-05-29,8+,TR,A1,Green,TRC MV,Horseshoe Left,Aided one move to save the finger
+2018-05-29,9,TR,OS,Red,TRC MV,Horseshoe Right,"First 9 in a long, long time"
+2018-05-29,9-,TR,OS,Orange,TRC MV,Upstairs,Slabby at the top
+2018-05-29,6,TR,RE,Blue,TRC MV,Back Alley,
+2018-05-29,6,DC,F,Blue,TRC MV,Back Alley,Fresh downclimb for the pyramid
+2018-05-29,7,TR,RE,Blue,TRC MV,Back Alley,
+2018-05-29,8,TR,RE,Red,TRC MV,Reactor,
+2018-05-29,6+,TR,RE,Purple,TRC MV,Reactor,
+2018-05-29,6+,TR,RE,Green,TRC MV,Back Corner,
+2018-05-29,5+,TR,RE,Black,TRC MV,Horseshoe Left,
+2018-05-29,7,TR,H1,Blue,TRC MV,Prow,Last route - hung to save the finger at the crux
+2018-05-31,7+,TR,OS,Yellow,TRC NR,Left outside,Autobelay - really hard stemming moves
+2018-05-31,7,TR,OS,,TRC NR,,Don't remember where this route was
+2018-05-31,8,TR,OS,Black,TRC NR,Left inside,Interesting inside corner route
+2018-05-31,9-,TR,OS,Orange,TRC NR,Right outside,Back to 5.9 - easy onsight; easy on the finger
+2018-05-31,9,TR,H1,Blue,TRC NR,Right outside,Hung once to protect the finger
+2018-05-31,10-,TR,OS,Green,TRC NR,Right inside,A 5.10! (minus).  Big moves to huge holds.  One move challenged the finger lightly
+2018-05-31,10-,TR,X,Green,TRC NR,Left inside,I mis-read the route - way too finger-heavy in the lower crux move so I bailed early
+2018-05-31,6,TR,RE,Black,TRC NR,Tower,Up ...
+2018-05-31,6,DC,F,Black,TRC NR,Tower,Filling out the DC pyramid
+2018-05-31,9,TR,OS,Yellow,TRC NR,Left inside,Hard moves but the finger responded well
+2018-05-31,9,TR,OS,Green,TRC NR,Left rear,Very overhanging - as hard as I want the finger to work
+2018-05-31,9+,TR,X,Green,TRC NR,Left outside,Very thin moves - just bailed early
+2018-05-31,9,TR,X,Orange,TRC NR,Tower window,Undercling threatened the filter - bailed again
+2018-05-31,7+,TR,OS,Yellow,TRC NR,Left inside,Very difficult traversing moves - enjoyed the climb
+2018-05-31,6,TR,OS,Red,TRC NR,Left outside,"Intended to downclimb on autobelay, but felt like I'd climbed enough"
+2018-06-05,7,L,RP,Green,TRC MV,Lead Wall,Redpoint on lead - committed to smearing mantle at the top
+2018-06-05,9,L,OS,Pink,TRC MV,Lead Wall,"Onsight - very pumped, but it felt like a 9-"
+2018-06-05,9-,L,H1,Orange,TRC MV,Upstairs Edge,One hang to rest my hand before the lip
+2018-06-05,10b,TR,OS,Yellow,TRC MV,Prow,Hard moves but the finger responded well
+2018-06-05,9,L,OS,Red,TRC MV,Prow,Delicate balance at the top
+2018-06-05,7-,TR,OS,Pink,TRC MV,Horseshoe Back,A Ben Cox route - loved the flow
+2018-06-05,9,TR,OS,Grey,TRC MV,Horseshoe Back,Burly - was harder on finger than I'd really wanted
+2018-06-05,6-,TR,OS,Orange?,TRC MV,Reactor,Easy cool down
+,,,,,,,
+2018-07-xx,6b,TR,RP,,Golden Gecko,,UK - easy grading.  Auto belay.
+2018-07-xx,6a+,TR,RP,,Dr Plastik,,Spain - tweaked my finger going back to get it clean.
+,,,,,,,
+2018-07-10,9+,TR,OS,Yellow,TRC MV,,Best climb of the day - fell off most of the rest
+2018-07-12,9,TR,RE,Red,TRC MV,,Best climb of the day
+2018-07-12,10a,TR,H1,Red,TRC MV,,
+2018-07-12,10c,TR,"H2, X",Yellow,TRC MV,,
+2018-07-17,6+,L,F,Green,TRC MV,,Warm up on lead - previously had TR the route so no O/S
+2018-07-17,7+,L,X,Grey,TRC MV,Lead wall,Head wasn't in the game - worked some moves but didn't finish
+2018-07-17,10c,TR,X,Yellow,TRC MV,,Worked the lower moves
+2018-07-17,10c,TR,X,Black,TRC MV,,Worked the lower moves
+2018-07-17,10c,TR,H2,Blue,TRC MV,,"Rested, but made the top"
+2018-07-19,10c,TR,"H2, X",Orange,TRC MV,,"Overhanging, tall.  Quit at the roof.  Fell before."
+2018-07-19,9+,TR,H2,,TRC MV,,Overhanging.  I don't have the endurance any more.
+2018-07-19,7,TR,OS,Purple,TRC MV,Reactor,Enjoyed this route.  Was actually one of the hardest I climbed cleanly.
+2018-07-22,6+,L,RE,Green,TRC MV,Horseshoe,Repeat lead to warm up
+2018-07-22,6+,L,F,Grey,TRC MV,Horseshoe Right,I think I TR this before?
+2018-07-22,7+,L,RP,Grey,TRC MV,Lead,Third try on lead and I got the redpoint.  Moves were less tenuous than I'd remembered
+2018-07-22,7,L,F,Purple,TRC MV,Reactor,"Reactor wall - high exposure on the low moves, pumpy on the high moves"
+2018-07-22,10a,TR,H3,Pink,TRC MV,Lead,"Followed/cleaned and re-clipped for Danny to follow.  Fell a lot, man these moves are hard."
+2018-07-22,10c,TR,H3,Blue,TRC MV,Tall wall,"Hard moves.  Fell, rested, fell, but got to the top."
+2018-07-22,8+,TR,H2,Black,TRC MV,Tall wall corner,"Falling on eights.  My endurance needs work.  On the plus side, my finger is doing better."
+2018-07-22,5,TR,OS,Yellow,TRC MV,Horseshoe Left,Ah!  Success on a route.
