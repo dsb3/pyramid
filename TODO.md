@@ -23,6 +23,9 @@ is a better framework for more complex operations?
 
 Support gid for downloading different sheets in one doc
 
+Support gid for combining multiple sheets in the same doc (e.g. when the sheet
+gets too long, split into "ticks 201x-Q1", "ticks-201x-Q2", etc...)
+
 
 ## html
 
