@@ -339,18 +339,18 @@ Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
 2018-03-29,11a,TR,RP,Black,TRC MV,HS R,At last - fifteenth attempt's the charm!
 2018-03-29,11c,TR,X,Orange,TRC MV,HS R,Bailed -- too crimpy.
 2018-03-29,11c,TR,X,Blue,TRC MV,Back Corner,"Bailed -- heard three snaps, and think I tore my pulley.  Oh dear."
-,,,,,,,
+-,,,,,,,
 INJURED,,,,,,,
-,,,,,,,
+-,,,,,,,
 2018-04-26,5,TR,X,All,TRC MV,All,One handed - didn't get anything clean
 2018-04-28,5,TR,OS,Orange,TRC NR,Kids wall,One handed - got a kids wall route clean.
 2018-04-28,5,TR,OS,Green,TRC NR,Left side,One handed - who knows what colour it really was.
-,,,,,,,
+-,,,,,,,
 2018-05-06,5,TR,OS,Black,TRC MV,,Tentatively testing out the finger.  Easy climbing only.
 2018-05-06,6,TR,RP,Orange,TRC MV,,
 2018-05-06,7,TR,OS,Yellow,TRC MV,,
 2018-05-06,7,TR,RE,Grey,TRC MV,,
-,,,,,,,
+-,,,,,,,
 2018-05-08,7,TR,RE,Yellow,TRC MV,,Clean
 2018-05-08,7,TR,A1,Blue,TRC MV,,Off route to release weight on the finger
 2018-05-08,7,TR,OS,Blue,TRC MV,,
@@ -459,10 +459,10 @@ INJURED,,,,,,,
 2018-06-05,7-,TR,OS,Pink,TRC MV,Horseshoe Back,A Ben Cox route - loved the flow
 2018-06-05,9,TR,OS,Grey,TRC MV,Horseshoe Back,Burly - was harder on finger than I'd really wanted
 2018-06-05,6-,TR,OS,Orange?,TRC MV,Reactor,Easy cool down
-,,,,,,,
-2018-07-xx,6b,TR,RP,,Golden Gecko,,UK - easy grading.  Auto belay.
-2018-07-xx,6a+,TR,RP,,Dr Plastik,,Spain - tweaked my finger going back to get it clean.
-,,,,,,,
+-,,,,,,,
+2018-07-xx,10c,TR,RP,,Golden Gecko,Route was: 6b,UK - easy grading.  Auto belay.
+2018-07-xx,10b,TR,RP,,Dr Plastik,Route was: 6a+,Spain - tweaked my finger going back to get it clean.
+-,,,,,,,
 2018-07-10,9+,TR,OS,Yellow,TRC MV,,Best climb of the day - fell off most of the rest
 2018-07-12,9,TR,RE,Red,TRC MV,,Best climb of the day
 2018-07-12,10a,TR,H1,Red,TRC MV,,
@@ -483,3 +483,116 @@ INJURED,,,,,,,
 2018-07-22,10c,TR,H3,Blue,TRC MV,Tall wall,"Hard moves.  Fell, rested, fell, but got to the top."
 2018-07-22,8+,TR,H2,Black,TRC MV,Tall wall corner,"Falling on eights.  My endurance needs work.  On the plus side, my finger is doing better."
 2018-07-22,5,TR,OS,Yellow,TRC MV,Horseshoe Left,Ah!  Success on a route.
+2018-07-24,8+,TR,RP,Blue,TRC MV,Upstairs,Very hard mantle / off balance / crimpy
+2018-07-24,10c,TR,X,Yellow,TRC MV,,"Got higher than before, bailed above the second roof due to a small left hand grip"
+2018-07-24,10b,TR,X,Purple,TRC MV,,Wanted to climb this for a while.  Fell my way to one move before the top and ran out of enthusiasm.
+2018-07-24,9,TR,H2,Red,TRC MV,Upstairs,"Very physical.  Fell/rested a few times.  This will go clean, and it leadable"
+2018-07-24,7+,TR,A1,Grey,TRC MV,Reactor,Went off route for a foot switch because I was lazy.
+2018-07-26,7-,TR,RE,Pink,TRC MV,Horseshoe Left,Warm up
+2018-07-26,8,TR,RE,Pink,TRC MV,Horseshoe Right,I'm sure I did this when my finger started healing up
+2018-07-26,10d,TR,OS,Grey,TRC MV,Horseshoe Left,"The ""easy"" one, so I did have knowledge that it wasn't consistent 10+ moves"
+2018-07-26,10c,TR,"H3, X",Pink,TRC MV,Front Desk,"Hard crux moves.  Fingery.  Tiny crimps.  Fell, and then gave up!"
+2018-07-26,9+,TR,H3,Green,TRC MV,Horseshoe Right,So pumpy.  Needed encouragement from Bob to finish the route.
+2018-07-26,10a,TR,RP,Red,TRC MV,Horseshoe Right,"Did it!  Hard moves, but I knew the beta from my earlier attempt."
+2018-07-26,10b,TR,H3,Yellow,TRC MV,Horseshoe Left,Flagged as 10c earlier.  I think it's b.  Made it through the cruxes with some rests.
+2018-07-26,7,TR,RE,Purple,TRC MV,Reactor,Great route to cool down on.
+2018-07-26,10a,TR,X,Orange,TRC MV,Horseshoe Right,"Corner route.  So hard.  Gave up, and switched to easier route to get to the top."
+2018-07-29,7,TR,OS,,TRC NR,,Warm up
+2018-07-29,8,TR,OS,,TRC NR,,Warm up
+2018-07-29,9,TR,A1,,TRC NR,,Hard slab problem - crux move shut me down
+2018-07-29,9,TR,H1,,TRC NR,,"Try again.  Hung on the crux, then fired the move."
+2018-07-29,10a,TR,H3,,TRC NR,Prow,"Very hard - fell my way up, but made it"
+2018-07-29,10a,TR,X,,TRC NR,,Abandoned after half a move.  Too hard!
+2018-07-29,10c,TR,X,,TRC NR,,Rosanne's problem.  Shut down by last move.
+2018-07-29,9+,TR,OS,,TRC NR,,Overhanging - every move felt like a 10.
+2018-07-29,9-,TR,OS,,TRC NR,,Ben's route.  Felt every bit a 9 or 9+
+2018-07-29,8,TR,OS,Black,TRC NR,,Fun moves
+2018-07-29,7,L,OS,,TRC NR,,Nice movement
+2018-07-29,8,TR,OS,,TRC NR,,Thin and thoughtful
+2018-07-29,6,L,OS,,TRC NR,,Slippery clipping stances
+2018-07-31,6+,TR,RE,Grey,TRC MV,Horseshoe Right,Warm up
+2018-07-31,7-,TR,RE,Pink,TRC MV,Horseshoe Left,
+2018-07-31,8,TR,RE,Purple,TRC MV,Horseshoe Left,
+2018-07-31,10c,TR,H1,Purple,TRC MV,Horseshoe Back,
+2018-07-31,6+,L,RE,Green,TRC MV,Horseshoe Back,
+2018-07-31,6+,L,RE,Grey,TRC MV,Horseshoe Right,
+2018-07-31,10d,TR,"H3, A, X",Grey,TRC MV,Horseshoe Left,
+2018-07-31,8-,TR,RE,Orange,TRC MV,Horseshoe Right,
+2018-07-31,6+,TR,OS,Red,TRC NR,,
+2018-07-31,8,TR,RE,Yellow,TRC NR,,
+2018-07-31,10a,TR,RP,Red,TRC NR,Prow,
+2018-07-31,10c,TR,OS,Orange,TRC NR,,Ben Cox route
+2018-07-31,7,TR,OS,,TRC NR,,
+2018-07-31,7,DC,FL,,TRC NR,,Cool down
+2018-08-05,6+,TR,RE,Grey,TRC MV,,Warm up
+2018-08-05,8,TR,OS,Black,TRC MV,,Fun route - will come back to lead it
+2018-08-05,10c,TR,H1,Yellow,TRC MV,,Best yet - one fall at the top
+2018-08-05,10d,TR,X,Purple,TRC MV,,Felt dizzy; lowered from half way
+2018-08-07,6+,L,RE,Grey,TRC MV,,Warm up
+2018-08-07,8,L,F,Black,TRC MV,Horseshoe Left,Took a TR preview last week
+2018-08-07,8,L,F,Black,TRC MV,Prow,Had never gotten this clean on TR before.
+2018-08-07,10d,TR,A1,Purple,TRC MV,,One stopper move 2/3 of the way up.
+2018-08-07,7,L,OS,Grey,TRC MV,Reactor Wall,Brand new route
+2018-08-07,6,L,F,,TRC MV,,I don't think I've lead this one before?
+2018-08-07,10c,TR,X,,TRC MV,,Gave up - too crimpy
+2018-08-07,8,TR,RE,,TRC MV,,Cool down
+2018-08-09,9-,TR,A1,Red,TRC MV,,Warm up harder than usual - tricky traverse move
+2018-08-09,9-,TR,H1,Red,TRC MV,,
+2018-08-09,9+,TR,OS,Blue,TRC MV,,Two roofs - hard
+2018-08-09,9,TR,H3,Blue,TRC MV,,Tall dihedral.  Scott route.  Very pumpy
+2018-08-09,9,TR,OS,Red,TRC MV,,Back corner - hard stemming route - lots of fun
+2018-08-09,9+,TR,H,Grey,TRC MV,,JP route - very hard.
+2018-08-09,8,TR,OS,Yellow,TRC MV,,Codr route - very hard stemming at the top
+2018-08-09,8,TR,RE,Black,TRC MV,,Lead this earlier - took a couple of laps on it for volume
+2018-08-09,10d,TR,X,Purple,TRC MV,,Tried to work the moves.  Felt harder than before.
+2018-08-09,10d,TR,X,Orange,TRC MV,Reactor,JP route - too hard to work
+2018-08-09,10d,TR,X,Orange,TRC MV,Prow,Love this route - will go back and work it more
+2018-08-09,6-,TR,OS,,TRC MV,,Cool down
+2018-08-12,10d,TR,H1,Orange,TRC MV,Prow,So close!
+2018-08-12,9,TR,OS,Orange,TRC MV,,
+2018-08-12,10b,TR,H1,Red,TRC MV,Lead wall,Seconded - fell while struggling many times to unclip a draw
+2018-08-14,6,L,RE,Grey,TRC MV,,
+2018-08-14,8,L,RE,Black,TRC MV,,
+2018-08-14,10b,L,H2,Red,TRC MV,,Took on 5th bolt (trouble clipping); legit fall near the top
+2018-08-14,6+,L,RE,Green,TRC MV,,Cool down
+2018-08-14,9,TR,RE,Red,TRC MV,,Corner stem
+2018-08-14,9,TR,RE,Grey,TRC MV,,Felt really hard
+2018-08-14,10d,TR,X,Orange,TRC MV,Prow,Fell too many times to keep working it
+2018-08-16,6,TR,RE,Green,TRC MV,,Warm up.
+2018-08-16,8,TR,RE,Black,TRC MV,,
+2018-08-16,10d,TR,RP,Orange,TRC MV,Prow,AT LAST!!
+2018-08-16,10c,TR,H1,Yellow,TRC MV,,So close.
+2018-08-16,9+,TR,X,Green,TRC MV,,Pumped
+2018-08-16,6+,TR,RE,Grey,TRC MV,,
+2018-08-16,8,TR,H1,Black,TRC MV,Prow,So long
+2018-08-16,5,TR,RE,Yellow,TRC MV,,Cool down
+2018-08-16,5,DC,F,Yellow,TRC MV,,
+2018-08-18,6+,L,OS,Grey,TRC MV,HSR,New route - warm up onsight
+2018-08-18,8,L,OS,Black,TRC MV,HSR,I saved this for a lead onsight attempt
+2018-08-18,10b,L,H1,Red,TRC MV,,"Too slow to start, hung at 4th clip, then climbed to the top"
+2018-08-18,6,L,F,Red,TRC MV,,Upstairs in the corner - sketchy clip on 3rd
+2018-08-18,7,L,RE,Orange,TRC MV,,Repeat of Roseanne's orange route - felt easier than before
+2018-08-18,11b,TR,H1,Green,TRC MV,Prow,Fell on the literal last move to box finish.  Gutted.
+2018-08-18,10c,TR,RP,Yellow,TRC MV,HSL,At last - fought through for the clean send
+2018-08-18,6+,L,RE,Green,TRC MV,,Easier climb for mileage
+2018-08-18,6+,L,RE,Grey,TRC MV,,Repeat
+2018-08-18,10a,TR,X,Orange,TRC MV,Reactor,Hard opening move
+2018-08-18,7,L,RE,Purple,TRC MV,Reactor,Cool down
+2018-08-18,7+,TR,OS,Green,TRC MV,Back Wall,Wow.  Hard for a 7.
+2018-08-19,6+,TR,RE,Grey,TRC MV,,Warm up
+2018-08-19,9+,TR,RE,Yellow,TRC MV,,Felt insecure the whole way - not ready to lead it
+2018-08-19,10+,TR,H1,Purple,TRC MV,,Closer to the send
+2018-08-19,11,TR,H2,Green,TRC MV,,"Bad sequence at lower crux, but close to the send here, too"
+2018-08-19,8,L,RE,Black,TRC MV,,Easier one
+2018-08-19,8,L,RE,Black,TRC MV,,Harder one
+2018-08-19,9,L,X,Red,TRC MV,,Very off-balance - switched to finish on pink/6
+2018-08-19,7,L,RE,Purple,TRC MV,Reactor,Always enjoy this one
+2018-08-19,9,TR,RP,Red,TRC MV,,TR preview so I can come back and lead it
+2018-08-21,6+,L,RE,Grey,TRC MV,HSR,
+2018-08-21,8,L,RE,Black,TRC MV,HSL,
+2018-08-21,10b,L,RP,Red,TRC MV,Lead Wall,Huge success
+2018-08-21,9,L,H1,Red,TRC MV,Upstairs Prow,Needed to refine beta at the fourth clip
+2018-08-21,9,L,RP,Red,TRC MV,Upstairs Prow,SUCCESS!
+2018-08-21,6+,L,RE,Green,TRC MV,Horseshoe,Cool down
+2018-08-21,7,L,RE,Orange,TRC MV,Back Corner,Chose to lead easy routes to close out rather than work hard on TR
+2018-08-21,7,L,RE,Purple,TRC MV,Reactor,
