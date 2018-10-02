@@ -181,10 +181,42 @@ def pyramid(file = "ticks.csv", show = "RP"):
   # means we lost the inherant sorting of rope types, and should now resort
   # the data so (e.g.) the highest grade seen on a rope sorts first.
 
-  
+
+  # hack - extract latest date for valid data
+  all_dates = set()
+  for r in ticks.keys():
+    for g in ticks[r].keys():
+      all_dates |= set( ticks[r][g] )
+   
   # CSV data is now loaded into structure, ready to generate links to our graphs
   outbuffer = "<html> <head> <title> Pyramids for {} </title> </head> <body>".format(file)
 
+
+  # Insert refresh/reload button
+  # TODO: the output from the scrape call (shows latest tick information)
+  outbuffer += '''
+<div>
+<input type="button" style="vertical-align: text-bottom;" onclick="scrape()" value="Refresh (%s)" />
+<span id="scraped"></span>
+</div>
+<script>
+function scrape() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // this will just flash on screen briefly before reload
+      document.getElementById("scraped").innerHTML = this.responseText;
+
+      // refresh content once data is scraped
+      location.reload()
+    }
+  };
+  xhttp.open("GET", "/scrape/%s", true);
+  xhttp.send();
+
+}
+</script>
+''' % (max(all_dates), file)
   
   
   # Iterate top down through validgrades.  For each grade, if we have a tick
@@ -276,10 +308,44 @@ def highest(file = "ticks.csv", show = "RP"):
   # means we lost the inherant sorting of rope types, and should now resort
   # the data so (e.g.) the highest grade seen on a rope sorts first.
 
+
+  # TODO: cut/paste of code above
+  # hack - extract latest date for valid data
+  all_dates = set()
+  for r in ticks.keys():
+    for g in ticks[r].keys():
+      all_dates |= set( ticks[r][g] )
+   
   
   # CSV data is now loaded into structure, ready to generate links to our graphs
   outbuffer = "<html> <head> <title> Highest pyramids for {} </title> </head> <body>".format(file)
 
+  # Insert refresh/reload button
+  # TODO: the output from the scrape call (shows latest tick information)
+  outbuffer += '''
+<div>
+<input type="button" style="vertical-align: text-bottom;" onclick="scrape()" value="Refresh (%s)" />
+<span id="scraped"></span>
+</div>
+<script>
+function scrape() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // this will just flash on screen briefly before reload
+      document.getElementById("scraped").innerHTML = this.responseText;
+
+      // refresh content once data is scraped
+      location.reload()
+    }
+  };
+  xhttp.open("GET", "/scrape/%s", true);
+  xhttp.send();
+
+}
+</script>
+''' % (max(all_dates), file)
+  
   
   
   # Iterate top down through validgrades.  For each grade, if we have a tick
