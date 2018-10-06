@@ -183,7 +183,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
 
 
   # hack - extract latest date for valid data
-  all_dates = set()
+  all_dates = set([ "" ])
   for r in ticks.keys():
     for g in ticks[r].keys():
       all_dates |= set( ticks[r][g] )
@@ -216,7 +216,7 @@ function scrape() {
 
 }
 </script>
-''' % (max(all_dates), file)
+''' % (max(all_dates) or "none", file)
   
   
   # Iterate top down through validgrades.  For each grade, if we have a tick
@@ -311,7 +311,7 @@ def highest(file = "ticks.csv", show = "RP"):
 
   # TODO: cut/paste of code above
   # hack - extract latest date for valid data
-  all_dates = set()
+  all_dates = set([ "" ])
   for r in ticks.keys():
     for g in ticks[r].keys():
       all_dates |= set( ticks[r][g] )
@@ -344,7 +344,7 @@ function scrape() {
 
 }
 </script>
-''' % (max(all_dates), file)
+''' % (max(all_dates) or "none", file)
   
   
   
