@@ -1,0 +1,36 @@
+# Notes to create a local "virtualenv" for testing
+#
+
+# First step as root -- install virtual env tool
+sudo yum install -y python3-virtualenv
+
+# Create python3 virtual environment in local (non root) directory
+virtualenv -p python3 ~/p3env
+
+# Activate it
+source ~/p3env/bin/activate
+
+
+# Install pipenv within this non root directory
+pip install pipenv
+
+cd (dir)
+pipenv install   <-- creates the Pipfile.lock
+
+...
+
+
+# Install heroku binary - this went into /usr/local/bin/
+#
+# See: https://devcenter.heroku.com/articles/heroku-cli
+#
+
+heroku local
+
+
+
+# ... drop back to system python if needed
+deactivate
+
+
+
