@@ -1,5 +1,5 @@
 Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
-,,,,,,,,,
+.,,,,,,,,,
 2014-??-??,,,,Unknown,1,,Peterskill,,Dale
 .,,,,,,,,,
 2015-01-03,5.8,TR,OS,El Cubo,1,,San Sebastian Tutla,,
@@ -27,7 +27,7 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2015-08-25,,,,All Cows Eat Grass,,,,,
 2015-08-31,5.8,Second,OS,Playin' Hooky,"1,2,3,4",CO,Clear Creek,,Confirm date
 2015-08-31,5.4,TR,OS,Gumby Cat,,CO,Clear Creek,,"First sport lead - thanks, Jim and Erika!"
-2015-08-31,5.4,L,F,Gumby Cat,,CO,Clear Creek,,"First sport lead - thanks, Jim and Erika!"
+2015-08-31,5.4,Sport,F,Gumby Cat,,CO,Clear Creek,,"First sport lead - thanks, Jim and Erika!"
 2015-09-03,5.5,Second,OS,Breezy,"1, 2",CO,Eldo,,Erika and Jim
 2015-10-13,5.8,Second,A,Double Cross,1,CA,Joshua Tree,,Todd Gordon
 2015-10-13,5.6,Second,A,Toe Jam,1,CA,,,
@@ -75,7 +75,7 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2016-04-28,5.3,Second,OS,Easy V,3,,Gunks,,
 2016-05-10,,Second,,Horseman,"1,2",,Gunks,,Eric
 2016-05-10,,Second,,RMC,,,Gunks,,
-2016-05-10,5.0,L,OS,Uberfall Descent,1,,Gunks,,
+2016-05-10,5.0,Solo,OS,Uberfall Descent,1,,Gunks,,
 2016-05-10,,Second,,Red Pillar,1,,Gunks,,
 2016-05-10,5.4,Second,,Andrew,,,Gunks,,
 .,,,,,,,,,
@@ -117,15 +117,15 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 .,,,,,,,,,
 2016-12-03,,TR,,Outhouse,,,PIlot,,
 2016-12-03,,TR,,Mild Mannered Secretary,,,,,Route preview
-2016-12-03,,L,,Mild Mannered Secretary,,,,,Clean lead
+2016-12-03,,Sport,,Mild Mannered Secretary,,,,,Clean lead
 2016-12-03,,TR,,Turkey Shoot,,,,,
 2016-12-03,,TR,,I'm Flyin',,,,,
 2016-12-03,,TR,,Body Surfin',,,,,
 .,,,,,,,,,
 2016-12-11,5.8,Second,RE,Block Route,,,Stone,,Tyler
 2016-12-11,5.8,,,"Yardarm - bailed, presumed",,,,,"Belayed only, didn't climb."
-2017-02-11,5.8,L,RP,Block Route,,,Stone,,
-2017-02-11,5.5,L,RP,Great Arch,"1, 3",,,,
+2017-02-11,5.8,Trad,RP,Block Route,,,Stone,,
+2017-02-11,5.5,Trad,RP,Great Arch,"1, 3",,,,
 2017-02-11,5.5,Follow,RE,Great Arch,2,,,,
 2017-02-20,5.7,TR,,Buzzard's Breath,1,,,,
 2017-04-01,5.6,Follow,OS,Little Corner,"1,2,3,4",,Shortoff,,Tyler
@@ -139,7 +139,7 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2017-02-11,5.8,Trad,RP,Block Route,1,NC,Stone,,"Shane, Tyler"
 2017-02-11,5.5,Trad,RE,Great Arch,"1,3",,,,
 2017-09-09,5.7,Sport,OS,Pole Dancing,,NC,Pilot,,w/ Shane.
-2017-09-09,5.8,L,X,Chicken Bone,,NC,Pilot,Parking Lot,
+2017-09-09,5.8,Sport,X,Chicken Bone,,NC,Pilot,Parking Lot,
 2017-09-09,5.8,TR,RP,Chicken Bone,,NC,Pilot,Parking Lot,
 2017-09-09,5.7,TR,OS,Crackin' Up,,NC,Pilot,,
 2017-10-22,5.3,Trad,RP,Three Pines,"1, 2, 2003",NY,Gunks,,Seth; I took the 5.6 variation on P3
@@ -210,8 +210,8 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2019-03-17,5.9,TR,X,The Dish,1,,,,Tried 5.9 variation; fell; went to the top on 5.7 variation instead.
 2019-03-24,5.3,Follow,OS,Sentinel Left,1,NC,Moore's,,Far left variation - researching for Shane's family climbing trip.
 2019-03-24,5.3,Follow,RE,Hopscotch,1,,,,Two variations - research.
-2019-03-24,5.2,Lead,RE,Hopscotch,2,,,,I led directly to the rap station.
-2019-03-24,5.5,Lead,RE,Easy Hard,1,,,,Variation - Easy Hard into the top few feet of Head Jam.
+2019-03-24,5.2,Trad,RE,Hopscotch,2,,,,I led directly to the rap station.
+2019-03-24,5.5,Trad,RE,Easy Hard,1,,,,Variation - Easy Hard into the top few feet of Head Jam.
 2019-03-24,5.7,Follow,OS,Gutterball,1,,,,First pitch only.  Great chimney.
 2019-03-30,5.7+,Follow,RP,U-Slot,1,NC,Stone,,Under the arete variation; then V notch.
 2019-03-30,5.5,Follow,RE,No Alternative,1,,,,Shane's first time leading P1.
@@ -249,7 +249,7 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2019-06-15,5.7+,Second,RE,Zoo View,1,,,,
 2019-07-01,V .. V+,Sport,OS,Stromberg,1-5,Spain,Monserrat,Gorros,Led two pitches
 2019-07-01,IV .. VI,Sport,H1,98 Octanos,1-4,Spain,Monserrat,Gorros,Led first pitch - run out.  Hung on crux move
-2019-07-01,"V, V+",Sport,OS,Campos Magneticos,1-2,Spain,Monserrat,Gorros,Linked two pitches.
+2019-07-01,V .. V+,Sport,OS,Campos Magneticos,1-2,Spain,Monserrat,Gorros,Linked two pitches.
 2019-07-28,5.6,Trad,RP,Head Jam,1,NC,Moore's,,Phew.  Did it at last.
 2019-07-28,5.6,Second,OS,Swag,1,,,,Surprisingly excellent
 2019-07-28,5.?,Trad,X,Unknown,1,,,,Rock was poor quality; pro was hard to find; bailed.
@@ -261,7 +261,7 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2019-08-04,5.5,Trad,RP,Big Buttress,1,,,,Might have been an easier ~ 5.4 variation?
 2019-08-04,5.6,Second,OS,Shakey Flake,1,,,,Nice route
 2019-08-31,5.5,Second,RE,Sentinel Buttress,1,NC,Moore's,,Far right variation - harder!
-2019-08-31,5.7+,Lead,RP,Zoo View,1,,,,Yup!  Did it.
+2019-08-31,5.7+,Trad,RP,Zoo View,1,,,,Yup!  Did it.
 2019-08-31,5.6,Second,RE,My Wife's Pajamas,1,,,,"Far right variation again, which is harder."
 2019-08-31,5.7,Second,H1,Far Right Line,1,,,,Felt closer to 5.8 or 5.9 down low
 2019-08-31,5.7,Trad,X,Center Line,1,,,,Bailed at the insecure first hard move
