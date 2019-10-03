@@ -116,7 +116,7 @@ def highest_user_ascent(plotfor, showfor):
 # Need to override default text/html mimetype for proper rendering
 @application.route('/svg/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/<regex("[A-Za-z]+"):showrope>/<regex("[A-Za-z0-9.]+"):showgrade>/')
 def svg_user_ascent_rope_grade(plotfor, showfor, showrope, showgrade):
-    content = one_svg(file = plotfor, show=showfor.upper(), rope=showrope.upper(), grade=showgrade.upper())
+    content = one_svg(file = plotfor, show=showfor.upper(), rope=showrope, grade=showgrade.upper())
     return Response(content, mimetype="image/svg+xml")
 
 
