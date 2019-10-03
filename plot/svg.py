@@ -42,6 +42,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
   try:
     gradei = validgrades.index(grade.lower())
   except:
+    # TODO: the output is a svg file, so the error should be formatted as such
     return "No such grade"
 
 
@@ -51,6 +52,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
   # If we've requested a rope that wasn't used, error
   if rope not in ticks.keys():
+    # TODO: the output is a svg file, so the error should be formatted as such
      return "No data found"
 
 
