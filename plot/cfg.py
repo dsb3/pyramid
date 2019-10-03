@@ -29,6 +29,7 @@ abbrev     = { "L":  "Lead",
 
                "Trad":  "Trad",
                "Sport": "Sport",
+               "Second": "Second",
 
                "OS": "Onsight",
                "F":  "Flash",
@@ -40,7 +41,7 @@ abbrev     = { "L":  "Lead",
              }
 
 
-validrope   = ['TR', 'L', 'DC', 'DL', 'Cx', "B", "IB", "OB"]
+validrope   = ['TR', 'L', 'DC', 'DL', 'Cx', "B", "IB", "OB", "Trad", "Sport", "Second"]
 
 # validascent can include "RE" (repeat) and better.  By default
 # we only graph "RP" (first redpoint) and better.
