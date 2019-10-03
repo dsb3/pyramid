@@ -170,11 +170,11 @@ def readticks(file = "ticks.csv", show = "RP"):
 
     # Brief attempts to map entered grades into canonical grades if they
     # aren't already valid.
+    # - handle optional 5. prefix for YDS
     # - drop and ignore any -/+ suffix
     # - drop and ignore any /x suffix (e.g. 11a/b -> 11a, or 25/26 -> 25)
     # - TODO: map naked 10 grade into 10b or 10c or ??
     # - TODO: handle capitalization errors
-    # - TODO: handle optional 5. prefix for YDS
     if grade not in validgrades:
       grade = re.sub('^5\.(\d)', '\g<1>', grade)  # 5.8   -> 8
       grade = re.sub('[-+]*$',  '', grade)        # 8+    -> 8
