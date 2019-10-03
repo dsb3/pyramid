@@ -20,16 +20,18 @@ SUFFIX="/export?format=csv&gid="
 
 case "$1" in
 
-  cole)
-     DOC=15cOnJtF9VmatGTyBjB5W5qz3rJ_yuUgmfLEYDJvOHjg
-     wget -4 -O cole.csv $BASEURL$DOC${SUFFIX}0
-     ;;
+  #
+  # YOUR NAME HERE -- send a PR and I'll add the config
+  #
 
-  shane)
-     DOC=1v30fRnnKASoTLeEuGRo0Zg2hcwOSqE95N9B74v4UhAs
+
+  johndoe)
+     DOC=1v1234512345123451234512345123451234512345xx
      wget -4 -O shane.csv $BASEURL$DOC${SUFFIX}0
      ;;
 
+
+  # last / default
   dave|*)
      DOC=1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg
 
