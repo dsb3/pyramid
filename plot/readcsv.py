@@ -176,8 +176,9 @@ def readticks(file = "ticks.csv", show = "RP"):
     # - TODO: handle capitalization errors
     # - TODO: handle optional 5. prefix for YDS
     if grade not in validgrades:
-      grade = re.sub('[-+]*$',  '', grade)  # 8+    -> 8
-      grade = re.sub('/[\w]+$', '', grade)  # 11a/b -> 11a
+      grade = re.sub('^5\.(\d)', '\g<1>', grade)  # 5.8   -> 8
+      grade = re.sub('[-+]*$',  '', grade)        # 8+    -> 8
+      grade = re.sub('/[\w]+$', '', grade)        # 11a/b -> 11a
   
 
     # Is the row we read from the file valid?  If not, continue ...
