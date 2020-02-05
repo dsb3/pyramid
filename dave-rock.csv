@@ -23,8 +23,8 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 .,,,,,,,,,
 2015-08-25,5.5,Second,A,Bedtime for Bonzo,1,,Red River Gorge,,briansnat - aided through opening crack
 2015-08-25,5.5,Second,OS,Bedtime for Bonzo,2,,Red River Gorge,,To the top clean (I think)
-2015-08-25,,,,C Sharp or B Flat,,,,,
-2015-08-25,,,,All Cows Eat Grass,,,,,
+2015-08-25,,TR,,C Sharp or B Flat,,,,,
+2015-08-25,,TR,,All Cows Eat Grass,,,,,
 2015-08-31,5.8,Second,OS,Playin' Hooky,"1,2,3,4",CO,Clear Creek,,Confirm date
 2015-08-31,5.4,TR,OS,Gumby Cat,,CO,Clear Creek,,"First sport lead - thanks, Jim and Erika!"
 2015-08-31,5.4,Sport,F,Gumby Cat,,CO,Clear Creek,,"First sport lead - thanks, Jim and Erika!"
@@ -35,11 +35,11 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2015-11-11,5.4,Second,OS,Entrance Crack,1,,Stone,,Brendan
 2015-11-11,5.5,Second,OS,Great Arch,"1, 2, 3",,,,
 2015-11-11,5.5,Second,OS,No Alternative,"1, 2, 3",,,,
-2015-11-17,5.8,Second,OS,Sundial Crack,"1, 2, 3",,Looking Glass,,
+2015-11-17,5.8,Second,OS,Sundial Crack,"1, 2, 3",NC,Looking Glass,,
 2015-11-17,5.8,Second,OS,The Nose,1,,,,
 2015-11-17,5.8,Second,X,The Nose,2,,,,
-2015-11-24,5.7,,,Pizza,1,,PA,,Brendan
-2015-11-24,5.7,,,Un-named,1,,,,
+2015-11-24,5.7,TR,,Pizza,1,PA,Mystery Crag,,Brendan
+2015-11-24,5.7,TR,,Un-named,1,,,,
 2015-12-26,5.6,Second,OS,Middle Earth,"1,2",,Gunks,,What else on this day? Eric?
 .,,,,,,,,,
 2016-03-11,5.8,Second,OS,Tunnel Vision,"1,2,3,4,5",NV,Red Rock,,Brendan again.
@@ -74,9 +74,9 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2016-04-28,5.3,Second,RE,Easy V,"1,2",,Gunks,,
 2016-04-28,5.3,Second,OS,Easy V,3,,Gunks,,
 2016-05-10,5.4,Second,,Horseman,"1,2",,Gunks,,Eric
-2016-05-10,,Second,,RMC,,,Gunks,,
+2016-05-10,5.5,Second,,RMC,,,Gunks,,
 2016-05-10,5.0,Solo,OS,Uberfall Descent,1,,Gunks,,
-2016-05-10,,Second,,Red Pillar,1,,Gunks,,
+2016-05-10,5.5,Second,,Red Pillar,1,,Gunks,,
 2016-05-10,5.4,Second,,Andrew,,,Gunks,,
 .,,,,,,,,,
 2016-05-30,5.5,TR,OS,Howdy Dude,,NC,Pilot,,Joey
@@ -291,5 +291,17 @@ Date,Grade,Rope,Attempt,Route,Pitch,,Location,Wall,Notes
 2019-11-09,(9),Trad,OS,Siren,1-7,Australia,Mt. Arapiles,,"With Mark, I also took the optional 11 finish pitch."
 2019-11-10,(11),Second,OS,Agamemnon!,1-2,Australia,Mt. Arapiles,,With Brett!!  Loved it.
 2019-12-29,6b+,Mixed,Mixed,LLeida,1-7,Spain,Roca del Arcs,,"I led P1, P6"
-2019-12-29,6a+,Mixed,OS,Poseidon,1-5,Spain,Rocamaura,,Lead onsight; except for a hang on 6a+ pitch 2
-2019-12-29,6a,Second,OS,Punxadits,1-4,Spain,Rocamaura,,
+2019-12-31,6a+,Mixed,OS,Poseidon,1-5,Spain,Rocamaura,,Lead onsight; except for a hang on 6a+ pitch 2
+2019-12-31,6a,Second,OS,Punxadits,1-4,Spain,Rocamaura,,
+2020-01-26,5.8-,Sport,OS,Iron Man,1,NC,Pilot,,A nice warm up
+2020-01-26,5.10b/c,Aid,OS,Black Hole,1,,,,Aided bolt to bolt; free climbed the last few feet to put the rope up
+2020-01-26,5.10b/c,TR,H,Black Hole,1,,,,Fell many times figuring out the sequences
+2020-01-26,5.10b/c,TR,RP,Black Hole,1,,,,"Rested, went back, and got it clean!!"
+2020-01-26,5.10a/b,Sport,H2,Hot Yoga,1,,,,Fell twice at the crux - went left; went right; and then found the sequence left
+2020-01-26,5.10a/b,Sport,RP,Hot Yoga,1,,,,"Rested, went back, and got it clean!!"
+2020-01-26,5.10a,TR,F,Gentle Ben,1,,,,"Arms already tired, just went to TR this one."
+2020-02-02,5.9+,L,H2,Black Rain,1,NC,Pilot,,Not a good choice of warm up
+2020-02-02,5.7,TR,OS,Start The Car,1,,,,Fun climbing - this can go on gear
+2020-02-02,5.10a,Second,"H, A",Thin to Win,1,,,,I think we tried the 5.11 variation.  I had to aid through both cruxes.
+2020-02-02,5.10c/d,Second,H3?,Devil in the White House,1,,,,Couldn't pull the roof cleanly until I swapped hands and bore down on not-my-bad finger.
+2020-02-02,5.10a,Second,H1,Euro Zone,1,,,,Disappointed - I fought all the way to the top bolt without falling and then misread the sequence and took a dive.
