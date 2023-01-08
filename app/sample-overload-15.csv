@@ -1,0 +1,21 @@
+Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
+# Sample data showing 15 ticks at only one grade.  Should demonstrate
+# appropriate cutting off of pyramids with no "interesting" data.
+#
+# This flows down, and WILL completely fill, any lower pyramid
+#
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,
+2018-01-02,11d,TR,OS,

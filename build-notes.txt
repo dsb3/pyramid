@@ -1,0 +1,10 @@
+
+podman build -t docker.io/dsb3/climbing-pyramid:latest .
+
+podman push docker.io/dsb3/climbing-pyramid:latest
+
+
+podman run -ti -p 5000:5000 --rm --name pyr docker.io/dsb3/climbing-pyramid:latest 
+
+
+
