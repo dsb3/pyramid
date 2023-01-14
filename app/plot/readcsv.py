@@ -24,13 +24,13 @@ from datetime import datetime
 
 # Import our cfg variables (definitions of rope types, grades, etc)
 from plot.cfg import abbrev, validrope, validascent, \
-        validyds, validboulder, validewbank, validfont, validgrades
+        validyds, validboulder, validewbank, validsport, validgrades
 
 
 
 # readticks will read a CSV file and populate ticks data structure
 
-def readticks(file = "ticks.csv", show = "RP"):
+def readticks(file = "ticks.csv", show:str = "RP"):
 
   #
   # Data structure to generate
@@ -77,7 +77,7 @@ def readticks(file = "ticks.csv", show = "RP"):
   first_row = 1
 
   # Default to avoid erroring
-  validgrades = validyds     # already defaults to this value
+  validgrades = validsport     # already defaults to this value
 
   # Try to open file named as-is
   try:
@@ -101,25 +101,28 @@ def readticks(file = "ticks.csv", show = "RP"):
           header_fields["date"] = k
           break
 
-      for k in ["Grade", "grade", "YDS", "yds"]:
+      for k in ["Grade", "grade", "Font", "font"]:
         if k in row.keys():
           header_fields["grade"] = k
-          validgrades = validyds     # already defaults to this value
+          validgrades = validsport
           break
+
+      for k in ["YDS", "yds"]:
+        if k in row.keys():
+          header_fields["grade"] = k
+          validgrades = validyds     # This was previously the default; now defaults to font
+          break
+
       for k in ["V", "v"]:
         if k in row.keys():
           header_fields["grade"] = k
           validgrades = validboulder
           break
+
       for k in ["Ewbank", "ewbank"]:
         if k in row.keys():
           header_fields["grade"] = k
           validgrades = validewbank
-          break
-      for k in ["Font", "font"]:
-        if k in row.keys():
-          header_fields["grade"] = k
-          validgrades = validfont
           break
 
       for k in ["Rope", "rope"]:
@@ -179,7 +182,8 @@ def readticks(file = "ticks.csv", show = "RP"):
       grade = re.sub('^5\.(\d)', '\g<1>', grade)  # 5.8   -> 8
       grade = re.sub('[-+]*$',  '', grade)        # 8+    -> 8
       grade = re.sub('/[\w]+$', '', grade)        # 11a/b -> 11a
-  
+      grade = re.sub('^([345])[abc]', '\g<1>', grade) # 4a, 4b, 4c -> 4; 5a, 5b, 5c -> 5
+
 
     # Is the row we read from the file valid?  If not, continue ...
     # only include valid data items

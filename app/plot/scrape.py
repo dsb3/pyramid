@@ -54,7 +54,13 @@ def scrape(user = "dave", sub = "0"):
   if data.find('<html lang="') != -1:
     return "<pre>Content not readable. Check that public sharing is enabled."
 
-  
+ 
+  # debug
+  import os
+  dir_path = os.path.dirname(os.path.realpath(__file__))
+  cwd = os.getcwd()
+  print (cwd)
+
   # Save to disk
   fh = open(user + ".csv", "w")
   fh.write(data)

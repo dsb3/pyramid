@@ -1,9 +1,0 @@
-Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
-# Sparse data to demonstrate how early lower pyramids
-# should be cut off rather than perpetually cascade down
-# ticks from above.
-2018-02-22,10c,TR,RP,
-2018-02-28,10a,TR,RP,
-2018-02-28,10a,TR,F,
-2018-03-04,10d,TR,OS,
-2018-03-05,10a,TR,OS,

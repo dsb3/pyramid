@@ -18,6 +18,11 @@
 BASEURL="https://docs.google.com/spreadsheets/d/"
 SUFFIX="/export?format=csv&gid="
 
+# Doesn't work inside micro alpine container
+# WGETOPT="-4"
+WGETOPT=""
+
+
 case "$1" in
 
   #
@@ -27,7 +32,7 @@ case "$1" in
 
   johndoe)
      DOC=1v1234512345123451234512345123451234512345xx
-     wget -4 -O shane.csv $BASEURL$DOC${SUFFIX}0
+     wget $WGETOPT -O shane.csv $BASEURL$DOC${SUFFIX}0
      ;;
 
 
@@ -35,9 +40,9 @@ case "$1" in
   dave|*)
      DOC=1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg
 
-     wget -4 -O dave.csv         $BASEURL$DOC${SUFFIX}0
-     wget -4 -O dave-boulder.csv $BASEURL$DOC${SUFFIX}1825018984
-     wget -4 -O dave-rock.csv    $BASEURL$DOC${SUFFIX}447635240
+     wget $WGETOPT -O dave.csv         $BASEURL$DOC${SUFFIX}0
+     wget $WGETOPT -O dave-boulder.csv $BASEURL$DOC${SUFFIX}1825018984
+     wget $WGETOPT -O dave-rock.csv    $BASEURL$DOC${SUFFIX}447635240
      ;;
 
 esac

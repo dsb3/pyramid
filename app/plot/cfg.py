@@ -18,7 +18,7 @@ import base64
 
 
 abbrev     = { "L":  "Lead", 
-               "TR": "Top Rope",
+               "TR": "Top Rope",  # Also includes autobelay
                "DC": "Down Climb",
                "DL": "Down Lead",
                "Cx": "Climbing",  # Generic term for when rope isn't specified
@@ -41,7 +41,9 @@ abbrev     = { "L":  "Lead",
              }
 
 
-validrope   = ['TR', 'L', 'DC', 'DL', 'Cx', "B", "IB", "OB", "Trad", "Sport", "Second"]
+# This dictates the order that graphs will be printed
+validrope   = ['L', 'TR', 'DC', 'DL', 'Cx', "B", "IB", "OB", "Trad", "Sport", "Second"]
+
 
 # validascent can include "RE" (repeat) and better.  By default
 # we only graph "RP" (first redpoint) and better.
@@ -67,14 +69,14 @@ validewbank = [ "10", "11", "12", "13", "14",
                 "20", "21", "22", "23", "24",
                 "25", "26", "27", "28", "29" ]
 
-# Font -- scales do not correlate for roped/boulders
-validfont = [ "3", "4", "5", "6a", "6a+", "6b",
-              "6b+", "6c", "6c+", "7a", "7a+",
-              "7b", "7b+", "7c", "7c+", "8a" ]
+# Font -- scales do not correlate between sport / boulders.
+#         sport routes use lowercase; boulders use uppercase
+validsport = [ "3", "4", "5", "6a", "6a+", "6b",
+               "6b+", "6c", "6c+", "7a", "7a+",
+               "7b", "7b+", "7c", "7c+", "8a" ]
  
-# default to YDS
-validgrades = validyds
-
+# default to sport
+validgrades = validsport
 
 
 # This is run one time when we launch.  It handles local config
@@ -169,7 +171,7 @@ def init_config():
 
 def read_config():
   # Read and return our config file as a dict
-  config = yaml.load( open("./config.yml", "r") )
+  config = yaml.safe_load( open("/app/config.yml", "r") )   ###  ./config.yaml -- edited for quick restart in kube
 
   # sanity check - we need a default user
   if "default" not in config.keys():

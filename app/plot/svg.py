@@ -22,7 +22,7 @@ from datetime import datetime
 
 # Import our cfg variables (definitions of rope types, grades, etc)
 from plot.cfg import abbrev, validrope, \
-        validyds, validboulder, validewbank, validfont, validgrades
+        validyds, validboulder, validewbank, validsport, validgrades
 
 from plot.readcsv import readticks, count_pyr
 
@@ -189,9 +189,10 @@ def pyramid(file = "ticks.csv", show = "RP"):
   for r in ticks.keys():
     for g in ticks[r].keys():
       all_dates |= set( ticks[r][g] )
-   
+
   # CSV data is now loaded into structure, ready to generate links to our graphs
-  outbuffer = "<html> <head> <title> Pyramids for {} </title> </head> <body>".format(file)
+  # outbuffer = "<html> <head> <title> Pyramids for {} </title> </head> <body>".format(file)
+  outbuffer = "<html> <head> <title> Pyramids for {} </title> <meta http-equiv=\"Content-Security-Policy\" content=\"upgrade-insecure-requests\"> </head> <body>".format(file)
 
 
   # Insert refresh/reload button
@@ -319,8 +320,13 @@ def highest(file = "ticks.csv", show = "RP"):
       all_dates |= set( ticks[r][g] )
    
   
+  # If we are serving over https we need to upgrade-insecure-requests; if we aren't then we don't
+  #  -- TODO: put some javascript in the page to determine whether to turn this on or not - by the time
+  #     we are inside the flask app we don't directly the original request method when behind a proxy
+
   # CSV data is now loaded into structure, ready to generate links to our graphs
-  outbuffer = "<html> <head> <title> Highest pyramids for {} </title> </head> <body>".format(file)
+  # outbuffer = "<html> <head> <title> Highest pyramids for {} </title> </head> <body>".format(file)
+  outbuffer = "<html> <head> <title> Highest pyramids for {} </title> <meta http-equiv=\"Content-Security-Policy\" content=\"upgrade-insecure-requests\"> </head> <body>".format(file)
 
   # Insert refresh/reload button
   # TODO: the output from the scrape call (shows latest tick information)
@@ -364,7 +370,7 @@ function scrape() {
   
       # print this rope?
       if len( ticks[rope][validgrades[gradei-1]]) > 0 or len( ticks[rope][validgrades[gradei]]) > 0:
-        outbuffer += "\n<br/>\n"
+        outbuffer += "\n<br/><br/>\n"
         outbuffer += '<object type="image/svg+xml" data="/svg/{}/{}/{}/{}/" width="550" height="300" border="0"></object>\n'.format(file, show, rope, grade)
         break
 

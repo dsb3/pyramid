@@ -3,6 +3,12 @@ MAINTAINER Dave Baker <dave@dsb3.com>
 
 EXPOSE 5000
 
+# bash is not needed but just makes diags more comfortable
+RUN apk update && \
+    apk upgrade && \
+    apk add bash
+
+
 # Creates /rsync directory where we'll drop our configs
 RUN adduser -h /app -u 1000 -D app
 WORKDIR /app

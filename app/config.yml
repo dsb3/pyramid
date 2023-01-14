@@ -1,4 +1,5 @@
 ---
+# If you create a file /data/config.yml and it will overwrite/replace this in the running container
 default:
   dave
 pages:

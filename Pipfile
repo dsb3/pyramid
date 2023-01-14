@@ -1,9 +1,0 @@
-[packages]
-
-gunicorn = "*"
-flask = "*"
-pyyaml = "*"
-
-[requires]
-python_full_version = "3.7.6"
-
