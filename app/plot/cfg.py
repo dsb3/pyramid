@@ -18,7 +18,8 @@ import base64
 
 
 abbrev     = { "L":  "Lead", 
-               "TR": "Top Rope",  # Also includes autobelay
+               "TR": "Top Rope",
+               "AB": "Autobelay",
                "DC": "Down Climb",
                "DL": "Down Lead",
                "Cx": "Climbing",  # Generic term for when rope isn't specified
@@ -42,7 +43,7 @@ abbrev     = { "L":  "Lead",
 
 
 # This dictates the order that graphs will be printed
-validrope   = ['L', 'TR', 'DC', 'DL', 'Cx', "B", "IB", "OB", "Trad", "Sport", "Second"]
+validrope   = ['L', 'TR', 'AB', 'DC', 'DL', 'Cx', "B", "IB", "OB", "Trad", "Sport", "Second"]
 
 
 # validascent can include "RE" (repeat) and better.  By default
