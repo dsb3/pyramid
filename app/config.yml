@@ -1,9 +1,21 @@
 ---
 # If you create a file /data/config.yml and it will overwrite/replace this in the running container
+#
+# These are sample files to demonstrate, and test, the system.  Document is visible here:
+# -- https://docs.google.com/spreadsheets/d/1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/edit#gid=0
+#
 default:
-  dave
+  onerope
 pages:
-  dave:          1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg/0
-  dave-boulder:  1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg/1825018984
-  dave-rock:     1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg/447635240
+  onerope:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/1902460718
+  badformat:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/2036775967
+  lowgrade:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/1851883018
+  onetick:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/2009840706
+  overload14:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/879616418
+  overload15:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/1706337436
+  sparse1:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/702836240
+  sparse2:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/23139326
+  twocolumn:  1QYpw61dQ44nQeaz28TEF8hgVrAZ0YzwL-GeniRtnBf0/2072395929
+  
+
 

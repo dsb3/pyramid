@@ -1,4 +1,4 @@
-Date,Grade,Rope,Attempt,Colour,Location,Wall,Notes
+Date,YDS,Rope,Attempt,Colour,Location,Wall,Notes
 # Sample data showing 14 ticks at only one grade.  Should demonstrate
 # appropriate cutting off of pyramids with no "interesting" data.
 # 
