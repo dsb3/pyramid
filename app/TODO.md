@@ -6,9 +6,10 @@ Make sure pipenv runs properly, with correct libraries
 
 Make notes on sequence to update, if needed.
 
-Make notes on start to finish sequence to install in heroku
 
-Future: notes on how to deploy on openshift, too.
+## health check
+
+/healthz check or similar, which can also populate first scrape content
 
 
 ## flask vs django
@@ -26,6 +27,8 @@ Support gid for downloading different sheets in one doc
 Support gid for combining multiple sheets in the same doc (e.g. when the sheet
 gets too long, split into "ticks 201x-Q1", "ticks-201x-Q2", etc...)
 
+Support google IAM credentials to download protected pages
+
 
 ## html
 
@@ -38,6 +41,11 @@ gets too long, split into "ticks 201x-Q1", "ticks-201x-Q2", etc...)
 ## text
 
 - revert to "print the whole column" for text output
+
+
+## dates
+
+- support "show last X months" data filter
 
 
 ## svg

@@ -32,7 +32,7 @@ case "$1" in
 
   johndoe)
      DOC=1v1234512345123451234512345123451234512345xx
-     wget $WGETOPT -O shane.csv $BASEURL$DOC${SUFFIX}0
+     wget $WGETOPT -O johndoe.csv $BASEURL$DOC${SUFFIX}0
      ;;
 
 

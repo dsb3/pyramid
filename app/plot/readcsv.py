@@ -215,7 +215,7 @@ def readticks(file = "ticks.csv", show:str = "RP"):
  #     del ticks[rope]
   
 
-  
+
   # Return the loaded data
   return ticks
 

@@ -30,7 +30,7 @@ def scrape(user = "dave", sub = "0"):
     return "<pre>User not defined"
 
   # format is PAGEID with optional /GID
-  m = re.search('^(\w+)/?(\d+)?$', config["pages"][user])
+  m = re.search('^([A-Za-z0-9-]+)/?(\d+)?$', config["pages"][user])
 
   if m:
     page = m.group(1) or ""
