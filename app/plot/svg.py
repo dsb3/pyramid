@@ -20,8 +20,6 @@ import csv
 import jinja2
 
 from datetime import datetime
-from dateutil import parser
-from dateutil.relativedelta import *
 
 # Global defs can be in the config file
 #from plot.cfg import read_config
@@ -41,7 +39,12 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
   # call function to gather ticks data structure
   ticks = readticks(file, show)
 
-  # TODO -- filter ticks set to time out older ascents
+  # Extract all dates for valid data, which we can then min() and max() on
+  all_dates = set([ ])
+  for r in ticks.keys():
+    for g in ticks[r].keys():
+      all_dates |= set( ticks[r][g] )
+
 
 
   # If we got a string, return it as our error message
@@ -180,33 +183,6 @@ def pyramid(file = "ticks.csv", show = "RP"):
     for g in ticks[r].keys():
       all_dates |= set( ticks[r][g] )
 
-  # NEW -- look at "max date - 3 months" to start to filter for a rolling
-  #
-  # get the latest date in the list, parse it, subtract 3 months,
-  # turn back into isoformat, and truncate to return YYYY-MM-DD
-  cutoff = ( parser.parse(max(all_dates)) - relativedelta(months=3) ).isoformat()[0:10]
-
-
-  ## above does not work; setting to arbitrarily early until I've figured out and simplified what's happening
-  # manifestation is the individual rope svg with "updated as of" can be earlier than the start date, causing rendering problems
-  cutoff = ( parser.parse(max(all_dates)) - relativedelta(months=999) ).isoformat()[0:10]
-
-
-  # Now iterate through ticks again and delete anything older.
-  # loop through ropes
-  for r in ticks.keys():
-    # loop through grades
-    for g in ticks[r].keys():
-      trimmedset = list(x for x in ticks[r][g] if x > cutoff)
-      ticks[r][g] = trimmedset
-
-
-  # Now regenerate our all_dates field with what's left over after filtering
-  all_dates = set([ ])
-  for r in ticks.keys():
-    for g in ticks[r].keys():
-      all_dates |= set( ticks[r][g] )
-  
 
   # Regardless of validrope, we now calculate usedrope that contains
   # only those rope types we actually have data for.
@@ -244,7 +220,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
 </div>
 <script>
 
-if (window.location.protocol.indexOf('https') == 0){
+if (window.location.protocol === "https:"){
   var el = document.createElement('meta')
   el.setAttribute('http-equiv', 'Content-Security-Policy')
   el.setAttribute('content', 'upgrade-insecure-requests')
@@ -386,7 +362,7 @@ def highest(file = "ticks.csv", show = "RP"):
 </div>
 <script>
 
-if (window.location.protocol.indexOf('https') == 0){
+if (window.location.protocol === "https:"){
   var el = document.createElement('meta')
   el.setAttribute('http-equiv', 'Content-Security-Policy')
   el.setAttribute('content', 'upgrade-insecure-requests')

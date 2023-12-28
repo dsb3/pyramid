@@ -22,6 +22,8 @@ from plot.cfg import init_config, read_config
 # Create application with /static path defined
 application = Flask(__name__, static_url_path='/static')
 
+
+## delete this - not needed
 # cut/pasted from stack exchange to permit regex in routes
 class RegexConverter(BaseConverter):
     def __init__(self, url_map, *items):
@@ -29,6 +31,8 @@ class RegexConverter(BaseConverter):
         self.regex = items[0]
 
 application.url_map.converters['regex'] = RegexConverter
+
+## /delete
 
 
 
@@ -87,12 +91,12 @@ def default_user():
 #########
 
 
-@application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
+@application.route('/text/<plotfor>/')
 def text_user(plotfor):
     return text_pyramid(file = plotfor, show="RP")
 
 
-@application.route('/text/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/')
+@application.route('/text/<plotfor>/<showfor>/')
 def text_user_ascent(plotfor, showfor):
     return text_pyramid(file = plotfor, show=showfor.upper())
 
@@ -101,24 +105,24 @@ def text_user_ascent(plotfor, showfor):
 
 
 # /graph/dave/  <-- page of all graphs
-@application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
+@application.route('/graph/<plotfor>/')
 def graph_user(plotfor):
     return graph_pyramid(file = plotfor, show=str("RP"))
 
 # /graph/dave/OS/  <-- page of all graphs
-@application.route('/graph/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/')
+@application.route('/graph/<plotfor>/<showfor>/')
 def graph_user_ascent(plotfor, showfor):
     return graph_pyramid(file = plotfor, show=showfor.upper())
 
 
 
 # /highest/dave/  <-- page of highest pyramid only for each rope
-@application.route('/highest/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/')
+@application.route('/highest/<plotfor>/')
 def highest_user(plotfor):
     return graph_highest(file = plotfor, show="RP")
 
 # /highest/dave/OS/  <-- page of highest pyramids with ascent qualifier
-@application.route('/highest/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/')
+@application.route('/highest/<plotfor>/<showfor>/')
 def highest_user_ascent(plotfor, showfor):
     return graph_highest(file = plotfor, show=showfor.upper())
 
@@ -126,7 +130,7 @@ def highest_user_ascent(plotfor, showfor):
 
 # /svg/dave/OS/TR/10b/  <-- one svg
 # Need to override default text/html mimetype for proper rendering
-@application.route('/svg/<regex("[A-Za-z0-9-]+(.csv)?"):plotfor>/<regex("[A-Za-z]+"):showfor>/<regex("[A-Za-z]+"):showrope>/<regex("[A-Za-z0-9.+]+"):showgrade>/')
+@application.route('/svg/<plotfor>/<showfor>/<showrope>/<showgrade>/')
 def svg_user_ascent_rope_grade(plotfor, showfor, showrope, showgrade):
     content = one_svg(file=plotfor, show=showfor.upper(), rope=showrope, grade=showgrade.upper())
     return Response(content, mimetype="image/svg+xml")
@@ -135,7 +139,7 @@ def svg_user_ascent_rope_grade(plotfor, showfor, showrope, showgrade):
 #########
 
 
-@application.route('/scrape/<regex("[A-Za-z0-9-]+"):plotfor>/')
+@application.route('/scrape/<plotfor>/')
 def scrape_user(plotfor):
     return scrape(user = plotfor)
 
@@ -145,9 +149,9 @@ def scrape_user(plotfor):
 
 # Note, this is literally "before first request", i.e. at the
 # time the first request is received, and not when the app starts.
-@application.before_first_request
-def get_ready_get_set():
-  init_config()
+#@application.before_first_request
+#def get_ready_get_set():
+#  init_config()
 
 
 

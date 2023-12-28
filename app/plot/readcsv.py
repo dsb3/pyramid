@@ -21,6 +21,8 @@ import re
 import csv
 
 from datetime import datetime
+from dateutil import parser
+from dateutil.relativedelta import *
 
 # Import our cfg variables (definitions of rope types, grades, etc)
 from plot.cfg import abbrev, validrope, validascent, \
@@ -214,6 +216,33 @@ def readticks(file = "ticks.csv", show:str = "RP"):
  #   if count == 0:
  #     del ticks[rope]
   
+
+
+
+  ## TODO: refactor this.
+  #  get all dates; then strip for only last N months (currently hardcoded)
+
+  # Extract all dates for valid data, which we can then min() and max() on
+  all_dates = set([ ])
+  for r in ticks.keys():
+    for g in ticks[r].keys():
+      all_dates |= set( ticks[r][g] )
+
+  # NEW -- look at "max date - 3 months" to start to filter for a rolling
+  #
+  # get the latest date in the list, parse it, subtract 3 months,
+  # turn back into isoformat, and truncate to return YYYY-MM-DD
+  cutoff = ( parser.parse(max(all_dates)) - relativedelta(months=3) ).isoformat()[0:10]
+
+  # Now iterate through ticks again and delete anything older.
+  # loop through ropes
+  for r in ticks.keys():
+    # loop through grades
+    for g in ticks[r].keys():
+      trimmedset = list(x for x in ticks[r][g] if x > cutoff)
+      ticks[r][g] = trimmedset
+
+  ## month limit
 
 
   # Return the loaded data
