@@ -1,11 +1,6 @@
 gunicorn
+flask
+
 pyyaml
-
-# flask v2 breaks the regex handling in application.route
-flask==1.1.4
-
-# Force downgrade of markupsafe (alt is to force downgrade of jinja2 -- last version used was 2.10.3)
-markupsafe==2.0.1
-
 python-dateutil
 
