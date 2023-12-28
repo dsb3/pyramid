@@ -187,6 +187,11 @@ def pyramid(file = "ticks.csv", show = "RP"):
   cutoff = ( parser.parse(max(all_dates)) - relativedelta(months=3) ).isoformat()[0:10]
 
 
+  ## above does not work; setting to arbitrarily early until I've figured out and simplified what's happening
+  # manifestation is the individual rope svg with "updated as of" can be earlier than the start date, causing rendering problems
+  cutoff = ( parser.parse(max(all_dates)) - relativedelta(months=999) ).isoformat()[0:10]
+
+
   # Now iterate through ticks again and delete anything older.
   # loop through ropes
   for r in ticks.keys():
@@ -228,18 +233,24 @@ def pyramid(file = "ticks.csv", show = "RP"):
 
 
   # CSV data is now loaded into structure, ready to generate links to our graphs
-  # outbuffer = "<html> <head> <title> Pyramids for {} </title> </head> <body>".format(file)
-  outbuffer = "<html> <head> <title> Highest pyramids for {} </title> <meta http-equiv=\"Content-Security-Policy\" {} > </head> <body>".format(file, 'content="upgrade-insecure-requests"' if "http" not in config else "")
+  outbuffer = "<html><head><title>Pyramids for %s</title>" % (file)
 
 
   # Insert refresh/reload button
-  # TODO: the output from the scrape call (shows latest tick information)
   outbuffer += '''
 <div>
 <input type="button" style="vertical-align: text-bottom;" onclick="scrape()" value="Refresh (%s - %s)" />
 <span id="scraped"></span>
 </div>
 <script>
+
+if (window.location.protocol.indexOf('https') == 0){
+  var el = document.createElement('meta')
+  el.setAttribute('http-equiv', 'Content-Security-Policy')
+  el.setAttribute('content', 'upgrade-insecure-requests')
+  document.head.append(el)
+}
+
 function scrape() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -251,6 +262,7 @@ function scrape() {
       location.reload()
     }
   };
+
   xhttp.open("GET", "/scrape/%s", true);
   xhttp.send();
 
@@ -361,13 +373,9 @@ def highest(file = "ticks.csv", show = "RP"):
   
   # If we are serving over https we need to upgrade-insecure-requests; if we
   # aren't then we don't.
-  # TODO: put some javascript in the page to work it out automatically since
-  # inside the flask app we will always see only a http request.  In the
-  # interim we have a config element to capture it.
 
   # CSV data is now loaded into structure, ready to generate links to our graphs
-  # outbuffer = "<html> <head> <title> Highest pyramids for {} </title> </head> <body>".format(file)
-  outbuffer = "<html> <head> <title> Highest pyramids for {} </title> <meta http-equiv=\"Content-Security-Policy\" {} > </head> <body>".format(file, 'content="upgrade-insecure-requests"' if "http" not in config else "")
+  outbuffer = "<html> <head> <title>Highest pyramids for %s</title></head><body>" % (file)
 
   # Insert refresh/reload button
   # TODO: the output from the scrape call (shows latest tick information)
@@ -377,6 +385,14 @@ def highest(file = "ticks.csv", show = "RP"):
 <span id="scraped"></span>
 </div>
 <script>
+
+if (window.location.protocol.indexOf('https') == 0){
+  var el = document.createElement('meta')
+  el.setAttribute('http-equiv', 'Content-Security-Policy')
+  el.setAttribute('content', 'upgrade-insecure-requests')
+  document.head.append(el)
+}
+
 function scrape() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -388,6 +404,7 @@ function scrape() {
       location.reload()
     }
   };
+
   xhttp.open("GET", "/scrape/%s", true);
   xhttp.send();
 
