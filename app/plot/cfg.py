@@ -72,9 +72,10 @@ validewbank = [ "10", "11", "12", "13", "14",
 
 # Font -- scales do not correlate between sport / boulders.
 #         sport routes use lowercase; boulders use uppercase
-validsport = [ "3", "4", "5", "6a", "6a+", "6b",
-               "6b+", "6c", "6c+", "7a", "7a+",
-               "7b", "7b+", "7c", "7c+", "8a" ]
+validsport = [ "4", "5", 
+               "6a", "6a+", "6b", "6b+", "6c", "6c+",
+               "7a", "7a+", "7b", "7b+", "7c", "7c+", 
+               "8a", "8a+" ]
  
 # default to sport
 validgrades = validsport
