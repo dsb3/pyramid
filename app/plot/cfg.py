@@ -172,7 +172,7 @@ def init_config():
 
 def read_config():
   # Read and return our config file as a dict
-  config = yaml.safe_load( open("/app/config.yml", "r") )   ###  ./config.yaml -- edited for quick restart in kube
+  config = yaml.safe_load( open("./config.yml", "r") )   ### TODO: look in different places; e.g. ./ /tmp/ /app/ /data/ etc
 
   # sanity check - we need a default user
   if "default" not in config.keys():
