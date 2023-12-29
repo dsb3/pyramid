@@ -163,7 +163,7 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
   return jinja2.Environment(
     loader=jinja2.FileSystemLoader('./plot/')
-  ).get_template("svg.j2").render(data)
+  ).get_template("graph-svg.j2").render(data)
 
 
 
