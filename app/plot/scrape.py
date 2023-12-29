@@ -62,9 +62,16 @@ def scrape(user = "dave", sub = "0"):
   print (cwd)
 
   # Save to disk
-  fh = open(user + ".csv", "w")
-  fh.write(data)
-  fh.close()
+  # GAE hack - if we can't write in cwd, divert to /tmp
+  try:
+      fh = open("./" + user + ".csv", "w")
+      fh.write(data)
+      fh.close()
+  except OSError as e:
+      fh = open("/tmp/" + user + ".csv", "w")
+      fh.write(data)
+      fh.close()
+
   
   # Extract last line to return as a status indicator
   lines = data.split("\r\n")

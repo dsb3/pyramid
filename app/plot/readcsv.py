@@ -81,14 +81,15 @@ def readticks(file = "ticks.csv", show:str = "RP"):
   # Default to avoid erroring
   validgrades = validsport     # already defaults to this value
 
-  # Try to open file named as-is
+
+  # Try to open file from /tmp first (GAE hack)
   try:
-    fh = open(file)
+    fh = open("/tmp/" + file + ".csv")
   except (FileNotFoundError, IOError):
     try:
       fh = open(file + ".csv")
     except (FileNotFoundError, IOError):
-      return "File could not be opened"
+        return { "Failed:": "File could not be opened" }
 
   # Use a filter to strip comments from the CSV while we read it
   csvfile = csv.DictReader(filter(lambda row: row[0]!='#', fh))
@@ -229,6 +230,13 @@ def readticks(file = "ticks.csv", show:str = "RP"):
       all_dates |= set( ticks[r][g] )
 
   # NEW -- look at "max date - 3 months" to start to filter for a rolling
+  #
+  # - this needs some careful thought.  If we have too short of a rolling window
+  #   then the various gym routes which were climbed when first put up might "roll off"
+  #   and disappear since subsequent RE climbs won't be shown.
+  #
+  # - TODO: only enable rolling for gym climbs, perhaps in the config.yml file?
+  #         option for different lengths of rolling, perhaps in web ui?
   #
   # get the latest date in the list, parse it, subtract 3 months,
   # turn back into isoformat, and truncate to return YYYY-MM-DD

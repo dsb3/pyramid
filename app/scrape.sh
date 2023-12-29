@@ -23,6 +23,13 @@ SUFFIX="/export?format=csv&gid="
 WGETOPT=""
 
 
+# GAE only.  If we're running in GAE, then chdir to /tmp which is writeable
+if [ ! -z "$HTTP_X_APPENGINE_COUNTRY" -o ! -z "$GAE_APPLICATION" ]; then
+  echo Running in GAE
+  cd /tmp
+fi
+
+
 case "$1" in
 
   #
@@ -33,6 +40,20 @@ case "$1" in
   johndoe)
      DOC=1v1234512345123451234512345123451234512345xx
      wget $WGETOPT -O johndoe.csv $BASEURL$DOC${SUFFIX}0
+     ;;
+
+
+  # GAE hack - whenever we start a new instance we simply scrape
+  # data before launching the flask app to render the first page
+  #
+  # Note: GAE puts all files in 
+  start)
+     DOC=1MU9vmWep4GDHleJo6Tw0BJb4fo0XjVJuz1p9uYgCrpg
+     wget $WGETOPT -O dave.csv         $BASEURL$DOC${SUFFIX}0
+
+     DOC=1sBWppVHHS_6b9kK68bdNMvCtLs0GHYjPxSgs5FT6_FI
+     wget $WGETOPT -O joe.csv         $BASEURL$DOC${SUFFIX}0
+
      ;;
 
 

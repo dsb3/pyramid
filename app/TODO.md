@@ -6,6 +6,10 @@ Make sure pipenv runs properly, with correct libraries
 
 Make notes on sequence to update, if needed.
 
+Manage directory to store persisted files better (e.g. GAE cannot write to root filesystem).  Option to dump in /tmp.  This is preferred for kubernetes deployment as well to allow us to set readOnlyRootFilesystem.
+
+Manage other ways of storing persisted files.  Again, GAE is the use case using google data storage calls, not local file system i/o to behave properly in that environment.
+
 
 ## health check
 
@@ -28,6 +32,11 @@ Support gid for combining multiple sheets in the same doc (e.g. when the sheet
 gets too long, split into "ticks 201x-Q1", "ticks-201x-Q2", etc...)
 
 Support google IAM credentials to download protected pages
+
+
+## data
+
+- read csv one time and process; then store serialized data object for faster processing
 
 
 ## html
