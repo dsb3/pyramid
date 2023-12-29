@@ -1,0 +1,22 @@
+---
+# app.yaml
+#
+# Used for deployment to Google App Engine (GAE)
+#
+
+runtime: python311
+
+# By default, GAE will launch a couple of instances.  However, the app is currently simple and
+# only expects the files downloaded to be local.  Limiting to a single instance means data
+# downloading to the one node is always available to that same node.
+#
+# Currently, the app is also simple enough to only handle files in /tmp (which is writeable in
+# GAE).
+automatic_scaling:
+  max_instances: 1
+
+
+# GAE - scrape files on instance creation to refresh data before rendering the first page
+entrypoint: ./scrape.sh start && gunicorn -b :$PORT -w 1 wsgi:application
+
+

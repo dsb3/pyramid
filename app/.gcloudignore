@@ -1,0 +1,10 @@
+# Files ignored (not uploaded) when deploying in Google App Engine (GAE)
+
+Containerfile
+
+*.csv
+*.pickle
+
+__pycache__
+
+
