@@ -28,6 +28,7 @@ RUN chown -R 1000 /app
 USER 1000
 
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+## CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD [ "gunicorn", "-b", ":5000", "-w", "1", "wsgi:application" ]
 
 
