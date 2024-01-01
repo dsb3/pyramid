@@ -26,7 +26,8 @@ from dateutil.relativedelta import *
 
 # Import our cfg variables (definitions of rope types, grades, etc)
 from plot.cfg import abbrev, validrope, validascent, \
-        validyds, validboulder, validewbank, validsport, validgrades
+        validyds, validboulder, validewbank, validsport, validgrades, \
+        read_config
 
 
 
@@ -82,6 +83,13 @@ def readticks(file = "ticks.csv", show:str = "RP"):
   validgrades = validsport     # already defaults to this value
 
 
+  # Note - this prevents dropping random .csv files that can be rendered (e.g. test suites)
+  # without them also having a corresponding definition in the config data
+  config = read_config()
+  if file not in config["pages"].keys():
+      return "User not defined"
+
+
   # Try to open file from /tmp first (GAE hack)
   try:
     fh = open("/tmp/" + file + ".csv")
@@ -89,7 +97,7 @@ def readticks(file = "ticks.csv", show:str = "RP"):
     try:
       fh = open(file + ".csv")
     except (FileNotFoundError, IOError):
-        return { "Failed:": "File could not be opened" }
+        return "File could not be opened"
 
   # Use a filter to strip comments from the CSV while we read it
   csvfile = csv.DictReader(filter(lambda row: row[0]!='#', fh))
@@ -170,7 +178,7 @@ def readticks(file = "ticks.csv", show:str = "RP"):
   
   
     # ensure valid date (also strips comments or extraneous lines)
-    if not re.match("^20\d\d-\d\d-\d\d$", date):
+    if not re.match(r'^20\d\d-\d\d-\d\d$', date):
       continue
   
 
@@ -182,10 +190,10 @@ def readticks(file = "ticks.csv", show:str = "RP"):
     # - TODO: map naked 10 grade into 10b or 10c or ??
     # - TODO: handle capitalization errors
     if grade not in validgrades:
-      grade = re.sub('^5\.(\d)', '\g<1>', grade)  # 5.8   -> 8
-      grade = re.sub('[-+]*$',  '', grade)        # 8+    -> 8
-      grade = re.sub('/[\w]+$', '', grade)        # 11a/b -> 11a
-      grade = re.sub('^([345])[abc]', '\g<1>', grade) # 4a, 4b, 4c -> 4; 5a, 5b, 5c -> 5
+      grade = re.sub(r'^5\.(\d)', r'\g<1>', grade)  # 5.8   -> 8
+      grade = re.sub(r'[-+]*$',  r'', grade)        # 8+    -> 8
+      grade = re.sub(r'/[\w]+$', r'', grade)        # 11a/b -> 11a
+      grade = re.sub(r'^([345])[abc]', r'\g<1>', grade) # 4a, 4b, 4c -> 4; 5a, 5b, 5c -> 5
 
 
     # Is the row we read from the file valid?  If not, continue ...
@@ -223,7 +231,7 @@ def readticks(file = "ticks.csv", show:str = "RP"):
   ## TODO: refactor this.
   #  get all dates; then strip for only last N months (currently hardcoded)
 
-  # Extract all dates for valid data, which we can then min() and max() on
+  # Extract all the dates for our dataset
   all_dates = set([ ])
   for r in ticks.keys():
     for g in ticks[r].keys():
@@ -242,6 +250,7 @@ def readticks(file = "ticks.csv", show:str = "RP"):
   # turn back into isoformat, and truncate to return YYYY-MM-DD
   cutoff = ( parser.parse(max(all_dates)) - relativedelta(months=3) ).isoformat()[0:10]
 
+
   # Now iterate through ticks again and delete anything older.
   # loop through ropes
   for r in ticks.keys():
@@ -250,7 +259,7 @@ def readticks(file = "ticks.csv", show:str = "RP"):
       trimmedset = list(x for x in ticks[r][g] if x > cutoff)
       ticks[r][g] = trimmedset
 
-  ## month limit
+
 
 
   # Return the loaded data
@@ -274,7 +283,7 @@ def readticks(file = "ticks.csv", show:str = "RP"):
 
 
 
-def count_pyr(ticks = "", show = "", rope = "", grade = ""):
+def count_pyr(ticks = {}, show = "", rope = "", grade = ""):
 
   # grade should have been checked before calling this.
   gradei = validgrades.index(grade.lower())
@@ -312,3 +321,5 @@ def count_pyr(ticks = "", show = "", rope = "", grade = ""):
 
 
   return dataset
+
+

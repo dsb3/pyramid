@@ -7,6 +7,7 @@
 # - avoid downloading one file too often (rate limit)
 # - handle/trap errors on URL downloading
 # - limit to ipv4 only (ipv6 can cause delays in downloading)
+# - handle google auth service accounts
 #
 
 import sys
@@ -30,7 +31,7 @@ def scrape(user = "dave", sub = "0"):
     return "<pre>User not defined"
 
   # format is PAGEID with optional /GID
-  m = re.search('^([A-Za-z0-9-]+)/?(\d+)?$', config["pages"][user])
+  m = re.search(r'^([A-Za-z0-9-]+)/?(\d+)?$', config["pages"][user])
 
   if m:
     page = m.group(1) or ""

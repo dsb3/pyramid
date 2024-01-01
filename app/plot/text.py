@@ -41,7 +41,7 @@ def pyramid(file = "ticks.csv", show = "RP"):
 
   # If we got a string, return it as our error message
   if isinstance(ticks, str):
-     return ticks
+     return "<pre>" + ticks
 
 
   # Regardless of validrope, we now calculate usedrope that contains

@@ -21,14 +21,10 @@ import jinja2
 
 from datetime import datetime
 
-# Global defs can be in the config file
-#from plot.cfg import read_config
-
 
 # Import our cfg variables (definitions of rope types, grades, etc)
 from plot.cfg import abbrev, validrope, \
-        validyds, validboulder, validewbank, validsport, validgrades, \
-        read_config
+        validyds, validboulder, validewbank, validsport, validgrades
 
 from plot.readcsv import readticks, count_pyr
 
@@ -172,17 +168,23 @@ def one_svg(file = "ticks.csv", show = "RP", rope = "", grade = ""):
 
 def pyramid(file = "ticks.csv", show = "RP"):
 
-  config = read_config()
-
   # Call our function to turn the CSV file into ticks() data structure
   ticks = readticks(file, show)
 
+  # If we got a string, return it as our error message
+  if isinstance(ticks, str):
+     return "<pre>" + ticks
+
   # Extract all dates for valid data, which we can then min() and max() on
   all_dates = set([ ])
-  for r in ticks.keys():
-    for g in ticks[r].keys():
-      all_dates |= set( ticks[r][g] )
 
+  try:
+     for r in ticks.keys():
+       for g in ticks[r].keys():
+         all_dates |= set( ticks[r][g] )
+  except:
+    # We might have a "failed to open" error here that cannot be iterated over
+    return ticks
 
   # Regardless of validrope, we now calculate usedrope that contains
   # only those rope types we actually have data for.
@@ -306,15 +308,22 @@ function scrape() {
   return outbuffer
 
 
+
+
 # highest will print a smaller page with only the highest pyramid included
 #
 
 def highest(file = "ticks.csv", show = "RP"):
 
-  config = read_config()
-
   # Call our function to turn the CSV file into ticks() data structure
   ticks = readticks(file, show)
+
+  # If we got a string, return it as our error message
+  if isinstance(ticks, str):
+     return "<pre>" + ticks
+
+
+  ## todo - handle file not found causing ticks to not match our expected data structure
 
   # Regardless of validrope, we now calculate usedrope that contains
   # only those rope types we actually have data for.
@@ -332,6 +341,8 @@ def highest(file = "ticks.csv", show = "RP"):
     # No counted ticks for the rope
     if (count > 0):
       usedrope.append(rope)
+
+
 
   # TODO: I just edited the above to count only those ropes which are
   # valid, instead of filtering validropes to remove those not seen.  This

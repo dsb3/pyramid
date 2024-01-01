@@ -93,6 +93,13 @@ validgrades = validsport
 
 def init_config():
 
+  print ("Running init_config()")
+
+
+  # Look at $CONFIG and write to config.yml if it's found
+  confenv=os.environ.get('CONFIG', None)
+
+
   # If we have a Config Map in the expected place, symlink the
   # local config to use that instead (this also means changes in
   # the config map do not require a restart)
@@ -103,17 +110,6 @@ def init_config():
     print ("Debug: symlink /data/config.yml -> config.yml\n")
     try:
       os.symlink("/data/config.yml", "./config.yml")
-    except:
-      pass
-
-  # For testing, also do this for an alternate path
-  if os.path.isfile("./cmap-config.yml"):
-    # make sure this is a regular file, not a link
-    if os.path.isfile("./config.yml") and not os.path.islink("./config.yml"):
-      os.remove("./config.yml")
-    print ("Debug: symlink ./cmap-config.yml -> config.yml\n")
-    try:
-      os.symlink("./cmap-config.yml", "./config.yml")
     except:
       pass
 
@@ -131,7 +127,7 @@ def init_config():
   if confenv:
     # Do we have a CONFIG url?
     # 
-    url = re.compile(".*google.*/d/([^/]+)/.*gid=(\d+)")
+    url = re.compile(r'.*google.*/d/([^/]+)/.*gid=(\d+)')
     results = url.match(confenv) # , flags=re.IGNORECASE)
     if results:
       # if both args ...
@@ -145,20 +141,6 @@ def init_config():
       fh.write( yaml.dump(config, default_flow_style=False) )
       fh.close()
 
-
-    # Else, do we have a base64 string?
-    b64 = ""
-    try:
-      b64 = base64.b64decode( confenv )
-    except:
-      pass
-
-    if b64:
-      # TODO - confirm syntax
-      # "wb" needed to write bytes (versus string).
-      fh = open("./config.yml", "wb")
-      fh.write(b64)
-      fh.close()
 
 
 
