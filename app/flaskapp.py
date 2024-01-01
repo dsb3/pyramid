@@ -8,9 +8,9 @@ from werkzeug.routing import BaseConverter
 from plot.text import pyramid as text_pyramid
 
 # graphical creator
-from plot.svg import pyramid as graph_pyramid
-from plot.svg import highest as graph_highest
-from plot.svg import one_svg
+from plot.graph import pyramid as graph_pyramid
+from plot.graph import highest as graph_highest
+from plot.graph import one_svg
 
 # scrape new data
 from plot.scrape import scrape

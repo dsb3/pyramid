@@ -4,7 +4,7 @@
 #
 
 import sys
-from plot.svg import one_svg
+from plot.graph import one_svg
 
 
 # Handle input file as first arg, or use default filename.
